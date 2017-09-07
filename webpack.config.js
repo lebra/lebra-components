@@ -1,210 +1,75 @@
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import autoprefixer from 'autoprefixer';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import OfflinePlugin from 'offline-plugin';
-import path from 'path';
-const ENV = process.env.NODE_ENV || 'development';
-
-const CSS_MAPS = ENV!=='production';
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    context: path.resolve(__dirname, "example"),
-    entry: './index.js',
-
-    output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: '/',
-        filename: 'bundle.js'
-    },
-
-    resolve: {
-        extensions: ['.jsx', '.js', '.json', '.less'],
-        modules: [
-            path.resolve(__dirname, "example/lib"),
-            path.resolve(__dirname, "node_modules"),
-            'node_modules'
-        ],
-        alias: {
-            components: path.resolve(__dirname, "example/components"),    // used for tests
-            style: path.resolve(__dirname, "example/style"),
-            src: path.resolve(__dirname, "src/components"),
-        }
-    },
-
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: [path.resolve(__dirname, 'example'),path.resolve(__dirname, 'src') ],
-                enforce: 'pre',
-                use: 'source-map-loader'
-            },
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: 'babel-loader'
-            },
-            {
-                // Transform our own .(less|css) files with PostCSS and CSS-modules
-                test: /\.(less|css)$/,
-                include: [path.resolve(__dirname, 'example/components'),path.resolve(__dirname, 'src/components')],
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader'
-                        },
-                        {
-                            loader: `postcss-loader`,
-                            options: {
-                                sourceMap: CSS_MAPS,
-                                plugins: () => {
-                                    autoprefixer({ browsers: [ 'last 2 versions' ] });
-                                }
-                            }
-                        },
-                        {
-                            loader: 'less-loader',
-                            options: { sourceMap: CSS_MAPS }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.(less|css)$/,
-                exclude: [path.resolve(__dirname, 'example/components'), path.resolve(__dirname, 'src/components')],
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            options: { sourceMap: CSS_MAPS, importLoaders: 1 }
-                        },
-                        {
-                            loader: `postcss-loader`,
-                            options: {
-                                sourceMap: CSS_MAPS,
-                                plugins: () => {
-                                    autoprefixer({ browsers: [ 'last 2 versions' ] });
-                                }
-                            }
-                        },
-                        {
-                            loader: 'less-loader',
-                            options: { sourceMap: CSS_MAPS }
-                        }
-                    ]
-                })
-            },
-            {
-                test: /\.json$/,
-                use: 'json-loader'
-            },
-            {
-                test: /\.(xml|html|txt|md)$/,
-                use: 'raw-loader'
-            },
-            {
-                test: /\.(svg|woff2?|ttf|eot|jpe?g|png|gif)(\?.*)?$/i,
-                use: ENV==='production' ? 'file-loader' : 'url-loader'
-            }
-        ]
-    },
-    plugins: ([
-        new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin({
-            filename: 'style.css',
-            allChunks: true,
-            disable: ENV !== 'production'
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(ENV)
-        }),
-        new HtmlWebpackPlugin({
-            template: './index.ejs',
-            minify: { collapseWhitespace: true }
-        }),
-        new CopyWebpackPlugin([
-            { from: './manifest.json', to: './' },
-            { from: './favicon.ico', to: './' }
-        ])
-    ]).concat(ENV==='production' ? [
-        new webpack.optimize.UglifyJsPlugin({
-            output: {
-                comments: false
-            },
-            compress: {
-                unsafe_comps: true,
-                properties: true,
-                keep_fargs: false,
-                pure_getters: true,
-                collapse_vars: true,
-                unsafe: true,
-                warnings: false,
-                screw_ie8: true,
-                sequences: true,
-                dead_code: true,
-                drop_debugger: true,
-                comparisons: true,
-                conditionals: true,
-                evaluate: true,
-                booleans: true,
-                loops: true,
-                unused: true,
-                hoist_funs: true,
-                if_return: true,
-                join_vars: true,
-                cascade: true,
-                drop_console: true
-            }
-        }),
-
-        new OfflinePlugin({
-            relativePaths: false,
-            AppCache: false,
-            excludes: ['_redirects'],
-            ServiceWorker: {
-                events: true
-            },
-            cacheMaps: [
-                {
-                    match: /.*/,
-                    to: '/',
-                    requestTypes: ['navigate']
-                }
-            ],
-            publicPath: '/'
-        })
-    ] : []),
-
-    stats: { colors: true },
-
-    node: {
-        global: true,
-        process: false,
-        Buffer: false,
-        __filename: false,
-        __dirname: false,
-        setImmediate: false
-    },
-
-    devtool: ENV==='production' ? 'source-map' : 'cheap-module-eval-source-map',
-
-    devServer: {
-        port: process.env.PORT || 8080,
-        host: 'localhost',
-        publicPath: '/',
-        contentBase: './example',
-        historyApiFallback: true,
-        open: true,
-        proxy: {
-            // OPTIONAL: proxy configuration:
-            // '/optional-prefix/**': { // path pattern to rewrite
-            //   target: 'http://target-host.com',
-            //   pathRewrite: path => path.replace(/^\/[^\/]+\//, '')   // strip first path segment
-            // }
-        }
-    }
+	devtool: 'inline-source-map',
+	devServer : {
+		contentBase : "dist",
+		hot: true
+	},
+	entry: {
+		app: "./example/index.js"
+	},
+	output: {
+		filename: '[name].[hash].bundle.js',
+		path: path.resolve(__dirname, 'dist')
+	},
+	externals: {
+		"react": "React",
+		"react-dom": "ReactDOM"
+	},
+	resolve : {
+		alias: {
+			components: path.resolve(__dirname, 'src/components/'),
+			assets: path.resolve(__dirname, 'src/assets/')
+		}
+	},
+	module: {
+		rules : [{
+			test : /\.js$/,
+			exclude: /(node_modules|bower_components)/,
+			use : [
+				"babel-loader"
+			]
+		},{
+			test : /\.css$/,
+			use: ExtractTextPlugin.extract({
+				fallback: "style-loader",
+				use: ["css-loader","postcss-loader"]
+			})
+		},{
+			test: /\.less$/,
+			use: ExtractTextPlugin.extract({
+				use: ['css-loader', 'postcss-loader', 'less-loader'],
+				fallback: 'style-loader'
+			})
+		},{
+			test : /\.(png|svg|jpg|gif)$/,
+			use : [{
+				loader: 'file-loader',
+				options: {
+					name: 'images/[name].[hash:8].[ext]'
+				}
+			}]
+		},{
+			test: /\.(woff|woff2|eot|ttf|otf)$/,
+			use : [
+				"file-loader"
+			]
+		}]
+	},
+	plugins : [
+		new ExtractTextPlugin("[name].[hash].css"),
+		new webpack.optimize.CommonsChunkPlugin({
+			name: "vendor"
+		}),
+		new webpack.HotModuleReplacementPlugin(),
+		new HtmlWebpackPlugin({
+			template : "./example/index.html",
+			inject : "body",
+			hash : false
+		})
+	]
 };
