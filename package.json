@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress --open"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --progress --open",
+    "build": "cross-env NODE_ENV=production rollup -c rollup.config.js"
   },
   "repository": {
     "type": "git",
@@ -74,5 +75,8 @@
     "url-loader": "^0.5.8",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.4.4"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }
