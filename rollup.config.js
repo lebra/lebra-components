@@ -4,7 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 
 export default {
-    entry : `src/components/index.js`,
+    entry : `src/index.js`,
     dest : `lib/index.js`,
     format : 'umd',
     moduleName : `lebra`,
@@ -23,16 +23,21 @@ export default {
             sourceMap: false,
             exclude: 'node_modules/**',
             presets: [
-                ["es2015", { "modules": false }], 'stage-0'
+				[
+					"es2015",
+					{
+						"modules": false
+					}
+				],
+				'stage-0',
+				"react"
             ],
             plugins: [
-                [
-
-                ], "external-helpers"
+            	"external-helpers"
             ]
         }),
 
-        commonjs({exclude: ['node_modules/**'], extensions: ['.js'], ignoreGlobal: false, sourceMap: false})
+        commonjs({ extensions: ['.js'], ignoreGlobal: false, sourceMap: false})
 
     ]
 };
