@@ -2,17 +2,18 @@ import { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+const propTypes = {
 
-export default class Input extends Component {
-	static propTypes = {
+};
 
-	}
-	static defaultProps = {
-		labelStyle: {},
-		style: {},
-		inputStyle: {},
+const defaultProps = {
+	labelStyle: {},
+	style: {},
+	inputStyle: {},
+}
 
-	}
+class Input extends Component {
+
 	render() {
 		let {
 			style,
@@ -60,3 +61,9 @@ export default class Input extends Component {
 		)
 	}
 }
+
+Input.propTypes = propTypes;
+Input.defaultProps = defaultProps;
+
+export default Input;
+

@@ -1,5 +1,7 @@
 import Input from './components/Input';
 
-export const lebra = {
+const lebra = {
 	Input
 };
+
+export default lebra;
