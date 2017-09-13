@@ -49,8 +49,7 @@ class Input extends Component {
 		return (
 			<div
 				className={classes}
-				style={ style ? style : null}
-			>
+				style={ style ? style : null}>
 				{ children
 					? (<label className={ labelClassName } style={ labelStyle }>{children}</label>)
 					: null
@@ -60,9 +59,7 @@ class Input extends Component {
 					style={ inputStyle }
 					className={ inputClassName }
 					required={required ? required : null}
-					{...props}
-				/>
-
+					{...props} />
 			</div>
 		);
 	}
@@ -72,4 +69,3 @@ Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
 
 export default Input;
-
