@@ -10,7 +10,8 @@ const defaultProps = {
 	labelStyle: {},
 	style: {},
 	inputStyle: {},
-    type: 'text'
+    type: 'text',
+    componentClass: 'input'
 };
 
 class Input extends Component {
@@ -29,6 +30,7 @@ class Input extends Component {
 			InputClass,
 			inputStyle,
 			type,
+            componentClass: Component,
 			required,
 			...props
 		} = this.props;
@@ -54,7 +56,7 @@ class Input extends Component {
 					? (<label className={ labelClassName } style={ labelStyle }>{children}</label>)
 					: null
 				}
-				<input
+				<Component
 					type={type}
 					style={ inputStyle }
 					className={ inputClassName }
