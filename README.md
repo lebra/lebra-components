@@ -48,7 +48,7 @@ git clone https://github.com/lebra/lebra-components.git
 cd lebra-components
 
 //如果是集团内部，使用ynpm下载会快一些
-npm install -g ynpm-cli & ynpm install
+npm install -g ynpm-tool & ynpm install
 
 //如果不是，使用npm下载依赖
 npm install

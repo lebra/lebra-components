@@ -1,18 +1,23 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-
+	className: PropTypes.string,
 };
 
 const defaultProps = {
 	labelStyle: {},
 	style: {},
 	inputStyle: {},
-}
+    type: 'text'
+};
 
 class Input extends Component {
+    constructor(props, context){
+       super(props, context);
+
+    }
 
 	render() {
 		let {
@@ -20,24 +25,25 @@ class Input extends Component {
 			className,
 			children,
 			labelStyle,
+			labelClass,
+			InputClass,
 			inputStyle,
-			type = 'text',
+			type,
 			required,
-			defaultValue,
 			...props
 		} = this.props;
 
 		let classes = classNames({
 			'u-input': true
-		});
-
-		let inputClass = classNames({
-			'u-input-item': true
 		}, className);
 
-		let labelClass = classNames({
+		let inputClassName = classNames({
+			'u-input-item': true
+		}, InputClass);
+
+		let labelClassName = classNames({
 			'u-input-label': true
-		});
+		}, labelClass);
 
 
 		return (
@@ -46,19 +52,19 @@ class Input extends Component {
 				style={ style ? style : null}
 			>
 				{ children
-					? (<label className={ labelClass } style={ labelStyle }>{children}</label>)
+					? (<label className={ labelClassName } style={ labelStyle }>{children}</label>)
 					: null
 				}
 				<input
 					type={type}
 					style={ inputStyle }
-					className={ inputClass }
+					className={ inputClassName }
 					required={required ? required : null}
 					{...props}
 				/>
 
 			</div>
-		)
+		);
 	}
 }
 

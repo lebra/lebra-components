@@ -1,9 +1,11 @@
 module.exports = {
 	extends: [
-		"airbnb",
+		"./js.eslintrc.js",
 	],
 	plugins: [
-		'react'
+		'react',
+		'jsx-a11y',
+		'import'
 	],
 	settings: {
 		react: {
@@ -133,7 +135,7 @@ module.exports = {
 		'react/jsx-closing-tag-location': 'off',
 		// @fixable 大括号内前后禁止有空格
 		'react/jsx-curly-spacing': [
-			'error',
+			'off',
 			{
 				when: 'never',
 				attributes: {
@@ -162,12 +164,12 @@ module.exports = {
 		// @fixable jsx 的 children 缩进必须为四个空格
 		'react/jsx-indent': [
 			'error',
-			4
+			'tab'
 		],
 		// @fixable jsx 的 props 缩进必须为四个空格
 		'react/jsx-indent-props': [
 			'error',
-			4
+			'tab'
 		],
 		// 数组中的 jsx 必须有 key
 		'react/jsx-key': 'error',
