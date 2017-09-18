@@ -2,13 +2,20 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const glob = require('glob');
 
-console.log(process.env.ENV_LIB);
 
-let compName = process.env.ENV_LIB;
+let compName = process.env.DEV_PATH;
 
-let webpackConfig = {
+let entry = "./src/components/"+ compName +"/demo/basic/index.js";
+
+if(/\//.test(compName)){
+    compName = compName.split('/')[0];
+    let demoName = compName.split('/')[1];
+    entry = "./src/components/"+ compName +"/demo/" + demoName + "/index.js";
+}
+
+
+module.exports = {
 	devtool: 'inline-source-map',
 	devServer : {
 		contentBase : "dist",
@@ -16,7 +23,7 @@ let webpackConfig = {
         open: true
 	},
 	entry: {
-
+        app: entry
 	},
 	output: {
 		filename: '[name].[hash].bundle.js',
@@ -77,46 +84,11 @@ let webpackConfig = {
 			name: "vendor"
 		}),
 		new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template : "./example/index.html",
+            inject : "body",
+            hash : false
+        })
 	]
 };
-let htmlEntrys = [];
 
-// glob.sync("./src/components/" + compName + "/demo/*/index.js").forEach(path => {
-//     console.log(path);
-//     const chunk = path.split("demo/")[1].split("/index.js")[0];
-//     webpackConfig.entry[chunk] = [path];
-// });
-//
-// //多页面配置
-// glob.sync("./src/components/" + compName + "/demo/*/index.js").forEach(compath => {
-//     const chunk = compath.split("demo/")[1].split("/index.js")[0];
-//     const filename = chunk + '.html';
-//     const htmlConf = {
-//         filename: filename,
-//         template: './example/index.html',
-//         inject: "body",
-//         hash: false,
-//     };
-//     htmlEntrys.push(chunk);
-//     webpackConfig.plugins.push(new HtmlWebpackPlugin(htmlConf));
-// });
-
-
-
-
-webpackConfig.plugins.push(
-    new HtmlWebpackPlugin(
-        {
-            filename: 'index.html',
-            title: 'demo',
-            htmls: htmlEntrys,
-            template: "./example/demo.ejs",
-            inject: false,
-            cache: false
-        }
-    )
-)
-
-console.log(webpackConfig);
-
-module.exports = webpackConfig;

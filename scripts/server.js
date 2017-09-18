@@ -1,6 +1,4 @@
-const path = require('path');
-const fs = require('fs');
-const fse = require('fs-extra');
+
 const spawn = require('cross-spawn');
 const exec = require('child_process').exec;
 
@@ -11,8 +9,15 @@ const component = argvs[2];
 
 console.log('server on', component);
 
-let COMMOND = 'cross-env NODE_ENV=' + component;
+let result = spawn(
+    'cross-env',
+    ['DEV_PATH=' + component, 'NODE_ENV=development', 'webpack-dev-server','--progress', '--open'],
+    { stdio: 'inherit' }
+    );
 
-spawn.sync('cross-env',['ENV_LIB=' + component, 'npm', 'run', 'dev'], { stdio: 'inherit' });
+console.log(result);
 
-//spawn('npm',['run', 'dev'], { stdio: 'inherit' });
+result.on('exit', function (code) {
+    console.log('child process exited with code ' + code);
+});
+

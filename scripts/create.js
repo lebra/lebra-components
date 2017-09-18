@@ -40,6 +40,10 @@ var srcComponentContentDemo =  [
     "export default BaseDemo;"
 ].join('\n');
 
+var srcComponentContentDemoLess = [
+    '@import "../../../../style/index";'
+].join('\n');
+
 var srcComponentContentTest = [
 
 ];
@@ -58,8 +62,12 @@ const mapFileContent = [
         content: srcComponentIndexLess
     },
     {
-        file: path.resolve('src/components', componentName, 'demo','basic.js'),
+        file: path.resolve('src/components', componentName, 'demo', 'basic','basic.js'),
         content: srcComponentContentDemo
+    },
+    {
+        file: path.resolve('src/components', componentName, 'demo', 'basic','index.less'),
+        content: srcComponentContentDemoLess
     },
     {
         file: path.resolve('src/components', componentName, '__test__','demo.test.js'),

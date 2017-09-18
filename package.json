@@ -4,11 +4,10 @@
   "description": "",
   "main": "./lib/lebra.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "server": "node scripts/server",
     "build": "npm run clean & npm run build:gulp",
     "lint": "gulp lint",
-    "webpack_build": "webpack --config webpack.prod.config.js",
     "pub": "gulp pub",
     "clean": "rimraf lib",
     "build:gulp": "cross-env NODE_ENV=production gulp build",
