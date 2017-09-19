@@ -1,0 +1,43 @@
+@import "../../style/theme/default";
+@checkedColor: #64bd63;
+@duration: 0.4s;
+.borderRadius{
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.u-switch {
+  width: 52px;
+  height: 31px;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  outline: none;
+  .borderRadius
+  &:before {
+    content: '';
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    .borderRadius
+  }
+  &:checked {
+    border-color: @checkedColor;
+    box-shadow: @checkedColor 0 0 0 16px inset;
+    background-color: @checkedColor;
+    &:before {
+        left: 21px;
+    }
+  }
+}

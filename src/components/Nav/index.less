@@ -1,0 +1,44 @@
+@import "../../style/theme/default";
+.u-nav{
+  position: relative;
+  min-height: 44px;
+  background-color: #f6f6f6;
+  z-index: 5;
+  &-back{
+    color: @primary;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-weight: 500;
+    line-height: 44px;
+    text-decoration: none;
+    height: 44px;
+    min-width: 44px;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-left: 2px solid #ffffff;
+      border-bottom: 2px solid #ffffff;
+       -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin: 0px -3px 0px 0px;
+      border-left: 2px solid @primary;
+      border-bottom: 2px solid @primary;
+    }
+  }
+  &-title{
+    color: @primary;
+    font-size: 1em;
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 9px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+}
