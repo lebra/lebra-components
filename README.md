@@ -56,10 +56,16 @@ npm install
 ```
 - 开发调试
 
-组件库提供开发调试的组件demo，运行命令`npm run dev`,可以启动demo工程，查看组件示例和开发组件。
+生成组件基本目录
 
 ```
-npm run dev
+npm run create Input(组件名称)
+```
+
+组件库提供开发调试的组件demo，查看组件示例和开发组件。
+
+```
+npm run server Input
 ```
 
 - 打包构建

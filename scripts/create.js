@@ -34,6 +34,7 @@ var srcComponentIndexLess = [
 var srcComponentContentDemo =  [
     "import " + componentName + " from '../index';",
     "import React, { Component } from 'react';",
+    "import './index.less",
     "class BaseDemo extends Component {",
     "render(){return( <" + componentName + "/> )}",
     "}",
@@ -49,7 +50,10 @@ var srcComponentContentTest = [
 ];
 
 var srcComponentContentDoc = [
-
+    '#' + componentName,
+    '### API',
+    '|参数|说明|类型|默认值|',
+    '|:--|:---|:--|:---|'
 ];
 
 const mapFileContent = [
