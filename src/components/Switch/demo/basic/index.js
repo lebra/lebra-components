@@ -5,10 +5,14 @@ import { render } from 'react-dom';
 import './index.less';
 
 export default class SwitchDemo extends Component{
+    onChange = (e) => {
+
+    }
     render() {
         return (
             <div className="switch-demo">
-                <Switch />
+                <Switch defaultChecked={false}/>
+                <Switch onChange={this.onChange} defaultChecked={true}/>
             </div>
         )
     }

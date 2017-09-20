@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
 	className: PropTypes.string,
+    defaultChecked: PropTypes.bool
 };
 
 const defaultProps = {
@@ -19,7 +20,7 @@ class Switch extends Component {
 	render() {
         let {
             className,
-            componentClass: Component,
+            defaultChecked,
             ...props
         } = this.props;
 
@@ -28,11 +29,15 @@ class Switch extends Component {
         },className);
 
 		return (
-            <div>
-                <label>
-                    <input className={classes} type="checkbox" />
-                </label>
-            </div>
+            <label className={classes}>
+                <input type="checkbox"
+                       onChange={this.props.onChange}
+                       defaultChecked={defaultChecked}
+                />
+                <div className="u-track">
+                    <div className="u-handle"></div>
+                </div>
+            </label>
 		);
 	}
 }

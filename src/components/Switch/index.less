@@ -1,43 +1,54 @@
 @import "../../style/theme/default";
-@checkedColor: #64bd63;
-@duration: 0.4s;
-.borderRadius{
-  border-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
+
 .u-switch {
-  width: 52px;
-  height: 31px;
-  position: relative;
-  border: 1px solid #dfdfdf;
-  background-color: #fdfdfd;
-  box-shadow: #dfdfdf 0 0 0 0 inset;
-  background-clip: content-box;
-  display: inline-block;
-  -webkit-appearance: none;
-  user-select: none;
-  outline: none;
-  .borderRadius
-  &:before {
-    content: '';
-    width: 29px;
-    height: 29px;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    .borderRadius
-  }
-  &:checked {
-    border-color: @checkedColor;
-    box-shadow: @checkedColor 0 0 0 16px inset;
-    background-color: @checkedColor;
-    &:before {
-        left: 21px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    input[type="checkbox"] {
+        display: none;
+        &:checked ~ .u-track {
+            border-color: @primary;
+            background-color: @primary;
+            .u-handle {
+                -webkit-transform: translate3d(21px, 0, 0);
+                transform: translate3d(21px, 0, 0);
+                background-color: #fff;
+            }
+        }
     }
-  }
+    .u-track {
+        transition: background-color ease-in-out .3s, border ease-in-out .3s;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 52px;
+        height: 32px;
+        border: solid 2px #e6e6e6;
+        border-radius: 20px;
+        background-color: #fff;
+        content: ' ';
+        cursor: pointer;
+        pointer-events: none;
+        margin-bottom: -5px;
+    }
+    .u-handle {
+        transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+        -webkit-transition-property: background-color, transform;
+        transition-property: background-color, transform;
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        border-radius: 27px;
+        background-color: #fff;
+        top: 3px;
+        left: 4px;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+        &:before {
+            position: absolute;
+            top: -4px;
+            left: -21.5px;
+            padding: 18.5px 34px;
+            content: " ";
+        }
+    }
 }

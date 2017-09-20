@@ -44,7 +44,7 @@ class Nav extends Component {
             <div
                 className={classes}
                 style={ style ? style : null}>
-                <a className={backClassName}>{backTxt}</a>
+                <a className={backClassName} onClick={this.props.onBack}>{backTxt}</a>
                 <h3 className={titleClassName}>{navTitle}</h3>
             </div>
 		);
