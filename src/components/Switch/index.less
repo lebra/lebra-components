@@ -1,0 +1,54 @@
+@import "../../style/theme/default";
+
+.u-switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    input[type="checkbox"] {
+        display: none;
+        &:checked ~ .u-track {
+            border-color: @primary;
+            background-color: @primary;
+            .u-handle {
+                -webkit-transform: translate3d(21px, 0, 0);
+                transform: translate3d(21px, 0, 0);
+                background-color: #fff;
+            }
+        }
+    }
+    .u-track {
+        transition: background-color ease-in-out .3s, border ease-in-out .3s;
+        display: inline-block;
+        box-sizing: border-box;
+        width: 52px;
+        height: 32px;
+        border: solid 2px #e6e6e6;
+        border-radius: 20px;
+        background-color: #fff;
+        content: ' ';
+        cursor: pointer;
+        pointer-events: none;
+        margin-bottom: -5px;
+    }
+    .u-handle {
+        transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+        -webkit-transition-property: background-color, transform;
+        transition-property: background-color, transform;
+        position: absolute;
+        display: block;
+        width: 26px;
+        height: 26px;
+        border-radius: 27px;
+        background-color: #fff;
+        top: 3px;
+        left: 4px;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+        &:before {
+            position: absolute;
+            top: -4px;
+            left: -21.5px;
+            padding: 18.5px 34px;
+            content: " ";
+        }
+    }
+}
