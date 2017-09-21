@@ -4,15 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
-let compName = process.env.DEV_PATH;
-
-let entry = "./src/components/"+ compName +"/demo/basic/index.js";
-
-if(/\//.test(compName)){
-    compName = compName.split('/')[0];
-    let demoName = compName.split('/')[1];
-    entry = "./src/components/"+ compName +"/demo/" + demoName + "/index.js";
-}
+// let compName = process.env.DEV_PATH;
+//
+// let entry = "./src/components/"+ compName +"/demo/basic/index.js";
+//
+// if(/\//.test(compName)){
+//     compName = compName.split('/')[0];
+//     let demoName = compName.split('/')[1];
+//     entry = "./src/components/"+ compName +"/demo/" + demoName + "/index.js";
+// }
 
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
         open: true
 	},
 	entry: {
-        app: entry
+        app: ''
 	},
 	output: {
 		filename: '[name].[hash].bundle.js',

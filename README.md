@@ -7,35 +7,32 @@ lebra(天枰座)是一款针对移动端的react组件库。
 
 ```
 │   
-├── example                       示例工程
-│   ├── components								
-│   │   └── Input                 每个组件对应一个单独的例子文件
-│   │   	├── index.less        Input组件例子样式
-│   │   	└── index.js          Input组件例子
-│   ├── containers
-│   │   └── main
-│   │   	├── index.less        例子主页面样式
-│   │   	└── index.js          例子主页面
-│   ├── index.html                例子html文件
-│   ├── index.less                例子公用样式
-│   └── index.js                  例子入口
+├── example                           示例工程
+│   ├── index.html                    例子html文件
 ├── lib
 │   └── lebra.js
 ├── src
-│   ├── components                组件目录
-│   │   └── Input                 每个组件单独一个文件夹
-│   │   	├── index.less        组件样式
-│   │   	└── index.js          组件
+│   ├── components                    组件目录
+│   │   └── Input                     每个组件单独一个文件夹
+│   │   	├── __test__              
+│   │       │    └── index.js         测试用例
+│   │   	├── demo                  例子文件夹
+│   │   	│    └── basic            基础例子
+│   │   	│        ├── index.js     例子组件
+│   │   	│        └── index.less   例子样式
+│   │   	├── index.less            组件样式
+│   │   	├── index.zh-CN.md        组件中文文档
+│   │   	└── index.js              组件
 │   ├── style
 │   │   ├── theme
-│   │   │	└── default.less      默认的UI主题，含有通用变量及组件变量
-│   │   ├── mixins.less           通用的mixin
-│   │   └── index.less            样式入口文件
+│   │   │	└── default.less          默认的UI主题，含有通用变量及组件变量
+│   │   ├── mixins.less               通用的mixin
+│   │   └── index.less                样式入口文件
 │   ├── utils
-│   │   └── index.js              通用工具函数
-│   └── index.js                  入口文件
+│   │   └── index.js                  通用工具函数
+│   └── index.js                      入口文件
 │   
-└── test                          测试用例
+└── test                              测试用例
 ```
 
 ### 开发调试
@@ -66,6 +63,13 @@ npm run create Input(组件名称)
 
 ```
 npm run server Input
+```
+如果组件有多个示例，如：`./src/components/Input/demo/search`,在组件名后面增加文件名
+
+`npm run server 组件名 [文件名]`
+
+```
+npm run server Input search
 ```
 
 - 打包构建
