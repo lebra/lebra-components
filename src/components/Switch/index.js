@@ -42,7 +42,7 @@ class Switch extends Component {
 	}
 }
 
-Nav.propTypes = propTypes;
-Nav.defaultProps = defaultProps;
+Switch.propTypes = propTypes;
+Switch.defaultProps = defaultProps;
 
 export default Switch;
