@@ -34,7 +34,7 @@ var srcComponentIndexLess = [
 var srcComponentContentDemo =  [
     "import " + componentName + " from '../index';",
     "import React, { Component } from 'react';",
-    "import './index.less",
+    "import './index.less;",
     "class BaseDemo extends Component {",
     "render(){return( <" + componentName + "/> )}",
     "}",
@@ -66,7 +66,7 @@ const mapFileContent = [
         content: srcComponentIndexLess
     },
     {
-        file: path.resolve('src/components', componentName, 'demo', 'basic','basic.js'),
+        file: path.resolve('src/components', componentName, 'demo', 'basic','index.js'),
         content: srcComponentContentDemo
     },
     {
