@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
 	className: PropTypes.string,
+    listData:PropTypes.array
 };
 
 const defaultProps = {
 	labelStyle: {},
 	style: {},
 	inputStyle: {},
-    type: 'text',
-    componentClass: 'input'
 };
 
 class List extends Component {
@@ -36,7 +35,7 @@ class List extends Component {
 		} = this.props;
 
 		let classes = classNames({
-			'u-input': true
+			'u-list': true
 		}, className);
 
 		let inputClassName = classNames({

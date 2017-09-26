@@ -22,11 +22,10 @@ class ContentList extends List{
         e.preventDefault();
         this.props.listClick(e)
     }
-    renderTabContent = () => {
+    renderList = () => {
         let _this = this;
         let data = this.props.data;
-        let flag = this.props.flagData;
-        if(!data.length && flag) {
+        if(!data.length) {
             return(
                 <div>
                     <WithoutData />
@@ -61,13 +60,13 @@ class ContentList extends List{
 
     render() {
         return (
-            <div className="list">{this.renderTabContent()}</div>
+            <div className="list">{this.renderList()}</div>
         )
     }
 }
 
 ContentList.propTypes = {
-    data: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+    data: PropTypes.array
 }
 
 export default ContentList;
