@@ -1,0 +1,88 @@
+@import "../../style/theme/default";
+@import "../../style/mixins";
+
+.lebra-btn {
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space: nowrap;
+    padding: 0 18px;
+    margin:0 10px 20px 10px;
+    color:#fff;
+    font-size:@normal-size;
+    cursor: pointer;
+    &.lebra-btn-primary{
+    	background: @primary;
+      border: 1px solid @primary;
+      &.lebra-btn-disabled{
+        background: @primary-light;
+        border:1px solid @primary-light;
+      }
+    }
+    &.lebra-btn-dark{
+      background:@auxiliary-black;
+      border: 1px solid @auxiliary-black;
+      &.lebra-btn-disabled{
+        background: @auxiliary-black-light;
+        border:1px solid @auxiliary-black-light;
+      }
+    }
+    &.lebra-btn-priLine{
+      border: 1px solid @primary;
+      color: @primary;
+      background: #fff;
+      &.lebra-btn-disabled{
+        border:1px solid @primary-light;
+        color: @primary-light;
+      }
+    }
+    &.lebra-btn-darkLine{
+      background:#fff;
+      border: 1px solid @auxiliary-black;
+      color: @auxiliary-black;
+      &.lebra-btn-disabled{
+        border:1px solid @auxiliary-black-light;
+        color: @auxiliary-black-light;
+      }
+    }
+    &.lebra-btn-floating {
+      border-radius: 4px;
+    }
+    &.lebra-btn-ghost{
+      background: transparent;
+      border:1px solid transparent;
+      width: 122px;
+      height: 44px;
+      color: @primary;  
+    }
+    &.lebra-btn-squared {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+   }
+}
+.lebra-btn-disabled{
+  cursor: not-allowed; 
+}
+.lebra-btn-lg {
+    width: 344px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.lebra-btn-md {
+    width: 167px;
+    height: 44px;
+    line-height: 44px;
+}
+
+.lebra-btn-sm {
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+}

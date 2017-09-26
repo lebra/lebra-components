@@ -36,7 +36,8 @@ module.exports = {
 	resolve : {
 		alias: {
 			components: path.resolve(__dirname, 'src/components/'),
-			assets: path.resolve(__dirname, 'src/assets/')
+			assets: path.resolve(__dirname, 'src/assets/'),
+            i18n: path.resolve(__dirname, 'src/i18n.js'),
 		}
 	},
 	module: {

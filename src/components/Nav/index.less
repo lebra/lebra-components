@@ -2,10 +2,10 @@
 .u-nav{
   position: relative;
   min-height: 44px;
-  background-color: #f6f6f6;
+  background-color: @primary;
   z-index: 5;
   &-back{
-    color: @primary;
+    color: #ffffff;
     position: absolute;
     top: 0;
     left: 10px;
@@ -23,13 +23,11 @@
       border-bottom: 2px solid #ffffff;
        -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
-      margin: 0px -3px 0px 0px;
-      border-left: 2px solid @primary;
-      border-bottom: 2px solid @primary;
+      margin-bottom: -2px;
     }
   }
   &-title{
-    color: @primary;
+    color: #ffffff;
     font-size: 1em;
     text-align: center;
     display: block;
