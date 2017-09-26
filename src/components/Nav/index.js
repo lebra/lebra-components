@@ -21,7 +21,6 @@ const defaultProps = {
 class Nav extends Component {
     constructor(props, context){
        super(props, context);
-
     }
 
     renderList = () => {
