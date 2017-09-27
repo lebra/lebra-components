@@ -6,18 +6,8 @@ test('Input should be change', () => {
     const component = renderer.create(
         <Input>姓名</Input>
     );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    let input = component.toJSON();
+    console.log(input);
+    expect(input).toMatchSnapshot();
 
-    // manually trigger the callback
-    tree.props.onMouseEnter();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-
-    // manually trigger the callback
-    tree.props.onMouseLeave();
-    // re-rendering
-    tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
 });
