@@ -25,7 +25,7 @@ class Switch extends Component {
         } = this.props;
 
         let classes = classNames({
-            'u-switch' : true
+            'lebra-switch' : true
         },className);
 
 		return (
@@ -34,8 +34,8 @@ class Switch extends Component {
                        onChange={this.props.onChange}
                        defaultChecked={defaultChecked}
                 />
-                <div className="u-track">
-                    <div className="u-handle"></div>
+                <div className="lebra-track">
+                    <div className="lebra-handle"></div>
                 </div>
             </label>
 		);

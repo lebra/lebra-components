@@ -1,22 +1,22 @@
 @import "../../style/theme/default";
 
-.u-switch {
+.lebra-switch {
     position: relative;
     display: inline-block;
     vertical-align: middle;
     input[type="checkbox"] {
         display: none;
-        &:checked ~ .u-track {
+        &:checked ~ .lebra-track {
             border-color: @primary;
             background-color: @primary;
-            .u-handle {
+            .lebra-handle {
                 -webkit-transform: translate3d(21px, 0, 0);
                 transform: translate3d(21px, 0, 0);
                 background-color: #fff;
             }
         }
     }
-    .u-track {
+    .lebra-track {
         transition: background-color ease-in-out .3s, border ease-in-out .3s;
         display: inline-block;
         box-sizing: border-box;
@@ -30,7 +30,7 @@
         pointer-events: none;
         margin-bottom: -5px;
     }
-    .u-handle {
+    .lebra-handle {
         transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
         -webkit-transition-property: background-color, transform;
         transition-property: background-color, transform;

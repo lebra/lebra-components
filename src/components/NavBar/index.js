@@ -21,7 +21,6 @@ const defaultProps = {
 class Nav extends Component {
     constructor(props, context){
        super(props, context);
-
     }
 
     renderList = () => {
@@ -49,19 +48,19 @@ class Nav extends Component {
         } = this.props;
 
         let classes = classNames({
-            'u-nav' : true
+            'lebra-nav' : true
         },className);
 
         let backClassName = classNames({
-            'u-nav-back' : true
+            'lebra-nav-back' : true
         },backClass);
 
         let titleClassName = classNames({
-            'u-nav-title' : true
+            'lebra-nav-title' : true
         },titleClass);
 
         let rightBtnClassName = classNames({
-            'u-nav-rightBtn' : true
+            'lebra-nav-rightBtn' : true
         },rightClass);
 
 		return (
