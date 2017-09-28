@@ -1,1 +1,328 @@
-.u-input{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;padding-left:1.5rem;min-height:4.4rem;background-color:#fff;vertical-align:middle;overflow:hidden;-webkit-transition:background-color .2s;transition:background-color .2s;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.u-input-label{color:#000;font-size:1.7rem;margin-left:0;margin-right:.5rem;text-align:left;white-space:nowrap;overflow:hidden;padding:.2rem 0}.u-input-item{-webkit-box-sizing:border-box;box-sizing:border-box;display:block;background-color:transparent;color:rgba(0,0,0,.87);border:none;border-bottom:1px solid rgba(0,0,0,.26);outline:0;width:100%;padding:0;-webkit-box-shadow:none;box-shadow:none;border-radius:0;font-size:1.6rem;line-height:inherit;background-image:none;cursor:text}.u-input-item:focus{border-bottom:1px solid #eee}
+.lebra-input {
+  position: relative;
+  min-height: 1.6rem;
+  background-color: #fff;
+  vertical-align: middle;
+  overflow: hidden;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.lebra-input-label {
+  width: 30%;
+  margin-left: 0.106667rem;
+  overflow: hidden;
+  padding: 0.133333rem 0;
+  text-align: left;
+  white-space: nowrap;
+  color: #9e9e9e;
+}
+
+[data-dpr="1"] .lebra-input-label {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-label {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-label {
+  font-size: 21px;
+}
+
+.lebra-input-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: transparent;
+  background-image: none;
+  color: #424242;
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  line-height: inherit;
+  cursor: text;
+}
+
+[data-dpr="1"] .lebra-input-item {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-item {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-item {
+  font-size: 21px;
+}
+
+.lebra-input-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e0e0e0;
+}
+
+.lebra-input-vertical .lebra-input-item {
+  height: 1.6rem;
+  padding: 0 0.106667rem;
+  border: 1px solid #e0e0e0;
+}
+
+.lebra-input-textarea .lebra-input-item {
+  height: 3.2rem;
+  padding: 0.266667rem 0.106667rem;
+  border: 1px solid #e0e0e0;
+  resize: none;
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+}
+
+.lebra-input-font-length {
+  position: absolute;
+  right: 0.133333rem;
+  bottom: 0.133333rem;
+  color: #424242;
+}
+
+[data-dpr="1"] .lebra-input-font-length {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-font-length {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-font-length {
+  font-size: 21px;
+}
+
+.lebra-input-font-length .total-length {
+  color: #e0e0e0;
+}
+
+.lebra-input input::-webkit-input-placeholder,
+.lebra-input textarea::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #e0e0e0;
+}
+
+.lebra-input input::-moz-placeholder,
+.lebra-input textarea::-moz-placeholder {
+  /* Mozilla Firefox 19 */
+  color: #e0e0e0;
+}
+
+.lebra-input input:-moz-placeholder,
+.lebra-input textarea:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #e0e0e0;
+}
+
+.lebra-input input:-ms-input-placeholder,
+.lebra-input textarea:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #e0e0e0;
+}
+
+.lebra-nav {
+  position: relative;
+  min-height: 0.586667rem;
+  background-color: #e14c46;
+  z-index: 5;
+}
+
+.lebra-nav-back {
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0.133333rem;
+  font-weight: 500;
+  line-height: 0.586667rem;
+  text-decoration: none;
+  height: 0.586667rem;
+  min-width: 0.586667rem;
+}
+
+.lebra-nav-back:before {
+  content: "";
+  display: inline-block;
+  width: 0.186667rem;
+  height: 0.186667rem;
+  border-left: 0.026667rem solid #ffffff;
+  border-bottom: 0.026667rem solid #ffffff;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-bottom: -0.026667rem;
+}
+
+.lebra-nav-title {
+  color: #ffffff;
+  font-size: 1em;
+  text-align: center;
+  display: block;
+  margin: 0;
+  padding: 0.12rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lebra-switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.lebra-switch input[type="checkbox"] {
+  display: none;
+}
+
+.lebra-switch input[type="checkbox"]:checked ~ .lebra-track {
+  border-color: #e14c46;
+  background-color: #e14c46;
+}
+
+.lebra-switch input[type="checkbox"]:checked ~ .lebra-track .lebra-handle {
+  -webkit-transform: translate3d(0.28rem, 0, 0);
+  transform: translate3d(0.28rem, 0, 0);
+  background-color: #fff;
+}
+
+.lebra-switch .lebra-track {
+  -webkit-transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
+  transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 0.693333rem;
+  height: 0.426667rem;
+  border: solid 0.026667rem #e6e6e6;
+  border-radius: 0.266667rem;
+  background-color: #fff;
+  content: ' ';
+  cursor: pointer;
+  pointer-events: none;
+  margin-bottom: -0.066667rem;
+}
+
+.lebra-switch .lebra-handle {
+  -webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+  transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+  -webkit-transition-property: background-color, transform;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+  position: absolute;
+  display: block;
+  width: 0.346667rem;
+  height: 0.346667rem;
+  border-radius: 0.36rem;
+  background-color: #fff;
+  top: 0.04rem;
+  left: 0.053333rem;
+  -webkit-box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+}
+
+.lebra-switch .lebra-handle:before {
+  position: absolute;
+  top: -0.053333rem;
+  left: -0.286667rem;
+  padding: 0.246667rem 0.453333rem;
+  content: " ";
+}
+
+.lebra-mask-transparent {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.lebra-mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.lebra-dialog {
+  position: fixed;
+  z-index: 5000;
+  width: 80%;
+  max-width: 4rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #FFFFFF;
+  text-align: center;
+  border-radius: 0.04rem;
+  overflow: hidden;
+}
+
+.lebra-dialog-hd {
+  padding: 1.3em 1.6em 0.5em;
+}
+
+.lebra-dialog-bd {
+  padding: 0 1.6em 0.8em;
+  min-height: 0.533333rem;
+  font-size: 0.2rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #999999;
+}
+
+.lebra-dialog-bd:first-child {
+  padding: 2.7em 0.266667rem 1.7em;
+  color: #353535;
+}
+
+.lebra-dialog-ft {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lebra-dialog-btn {
+  display: block;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  line-height: 0.64rem;
+  font-size: 0.24rem;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
+  color: #e14c46;
+}
+
+.lebra-dialog-btn-default {
+  color: #e0e0e0;
+}
+
+.lebra-dialog-btn-primary {
+  color: #e14c46;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+}
