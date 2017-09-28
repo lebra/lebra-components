@@ -1,11 +1,11 @@
 ---
 category: Components
 type: Data Entry
-title: Input
-subtitle: 输入框
+title: List
+subtitle: 列表
 ---
 
-输入框组件，包含了label和input元素。自定义标题和输入样式，完成输入数据校验，支持自定义校验扩展。
+列表组件分为三个部分，左边图片区，中间内容区和右边次要信息区。
 
 
 ## API
@@ -15,22 +15,24 @@ subtitle: 输入框
 |参数|说明|类型|默认值|
 |:--|:---|:--|:---|
 |style|给最外层元素设置样式|object|{}|
-|classNames|给最外层元素设置class|string|''|
-|labelStyle|给label元素设置style|object|{}|
-|inputStyle|给input元素设置style|object|{}|
-|labelClass|给label元素设置class|string|''|
-|inputClass|给input元素设置class|string|''|
-|type|给input元素设置type|string|'text'|
-|required|给input元素设置required|boolean|-|
-|componentClass|给input元素设置required|input/textarea|input|
+|classNames|给li标签中的a元素设置class|string|''|
+|imgSrc|左边区域图片的路径|string|''|
+|imgStlye|左边区域图片为形状|string|'circle'|
+|title|中间文字区域标题|string|''|
+|text|中间文字区域内容|string|''|
+|multipleLine|是否多行显示|boolean|false|
+|wordBreak|文字是否折行显示|boolean|true|
+|arrow|是否显示右边箭头|bollean|false|
+|rightItem|是否显示右边内容|string|''|
+|onClick|列表的点击事件|function|null|
 
-传入的其他props会通过以下方式传递给input元素。
+传入的其他props会通过以下方式传递给list元素。
 
 ```
 let {className, ...others} = this.props;
 
 return (
-    <input { ...others } />
+    <List { ...others } />
 )
 
 ```

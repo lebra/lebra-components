@@ -71,7 +71,7 @@ class List extends Component {
             style,
             className,
             imgSrc,
-            imgStle,
+            imgStlye,
             title,
             text,
             multipleLine,
@@ -91,7 +91,7 @@ class List extends Component {
         let imgClass=classNames({
             'lebra-list-item-img':true
         },{
-            'lebra-img-square': imgStle=='square' ? true :false
+            'lebra-img-square': imgStlye=='square' ? true :false
         });
         let titleClass=classNames({
             'lebra-list-item-title':true
@@ -101,10 +101,16 @@ class List extends Component {
         let textClass=classNames({
             "lebra-list-item-text":true
         },{
-            'lebra-text-overflow' : wordBreak ? true :false
+            'lebra-text-overflow' : wordBreak ? true : false
+        })
+        let bodyClass=classNames({
+            "lebra-list-item-body":true
+        },{
+            'body-justify-start':multipleLine ? true : false
         })
         let leftItem=null,
             itemTitle=null,
+            rightContent=null,
             liClass='lebra-listview-row';
 
         if(imgSrc ){
@@ -117,22 +123,22 @@ class List extends Component {
         }
         if(arrow){
             liClass='lebra-listview-row lebra-list-arrow'
-        }else if(arrow=='bottom'){
-
-        }else if(arrow=='bottom'){
-
         }
+        if(rightItem){
+            rightContent=(<div className="lebra-um-list-right">
+                {rightItem}
+            </div>)
+        }
+
         return (
             <li className={liClass} style={ style ? style :null} onClick={onClick}>
                 <a href="#" className={classes}>
                     {leftItem}
-                    <div className="lebra-list-item-body">
+                    <div className={bodyClass}>
                         {itemTitle}
                         <p className={textClass}>{text}</p>
                     </div>
-                    <div className="lebra-um-list-right">
-
-                    </div>
+                    {rightContent}
                 </a>
             </li>
         );
