@@ -11,15 +11,16 @@ const componentName = argvs[2];
 
 fse.mkdirsSync(path.resolve('src/components', componentName));
 fse.mkdirsSync(path.resolve('src/components', componentName, 'demo'));
-fse.mkdirsSync(path.resolve('src/components', componentName, '__test__'));
+fse.mkdirsSync(path.resolve('src/components', componentName, '__tests__'));
 
 var srcComponentIndex =  [
-    "import React, { Component, PropTypes } from 'react';",
+    "import React, { Component } from 'react';",
+    "import PropTypes from 'prop-types;",
     "const propTypes = {};",
     "const defaultProps = {};",
     "class " + componentName + " extends Component {",
     "render(){",
-    "return(<h2>Welcome use tinper-bee</h2> )}",
+    "return(<h2>lebra is best</h2> )}",
     "};",
     componentName + ".propTypes = propTypes;",
     componentName + ".defaultProps = defaultProps;",
@@ -74,7 +75,7 @@ const mapFileContent = [
         content: srcComponentContentDemoLess
     },
     {
-        file: path.resolve('src/components', componentName, '__test__','demo.test.js'),
+        file: path.resolve('src/components', componentName, '__tests__','demo.test.js'),
         content: srcComponentContentTest
     },
     {

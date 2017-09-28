@@ -1,7 +1,8 @@
 import React from 'react';
+import Modal from '../index';
 import renderer from 'react-test-renderer';
 
-test('Nav should be exsit', () => {
+test('Modal should be exsit', () => {
 
 
 });

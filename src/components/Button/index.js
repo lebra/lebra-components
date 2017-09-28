@@ -1,16 +1,16 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './index.less';
 
 const propTypes = {
     /**
      * @title 尺寸
      */
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
-    /** 
+    /**
      * @title:颜色
      */
-    colors: PropTypes.oneOf(['primary', 'dark','priLine','darkLine']),
+    color: PropTypes.oneOf(['primary', 'dark','priLine','darkLine']),
     /**
      * @title 形状
      */
@@ -36,7 +36,7 @@ const propTypes = {
 const defaultProps = {
     clsPrefix: 'lebra-btn',
     size: 'lg',
-    colors: 'primary',
+    color: 'primary',
     ghost: false,
     disabled: false,
     iconType:''
@@ -62,9 +62,9 @@ const shapeMap = {
 
 class Button extends Component {
   render() {
-    let {colors, shape, disabled, className, size, ghost, children, clsPrefix,iconType, ...others} = this.props;
+    let {color, shape, disabled, className, size, ghost, children, clsPrefix,iconType, ...others} = this.props;
     let clsObj = {};
-    
+
 
     if (sizeMap[size]) {
         clsObj[`${clsPrefix}-${sizeMap[size]}`] = true;
@@ -74,7 +74,7 @@ class Button extends Component {
         clsObj[`${clsPrefix}-${shapeMap[shape]}`] = true;
     }
     if (colorsMap[colors]) {
-        clsObj[`${clsPrefix}-${colorsMap[colors]}`] = true;
+        clsObj[`${clsPrefix}-${colorMap[color]}`] = true;
     }
 
     if (className) {

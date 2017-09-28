@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should be change 1`] = `
+<div
+  className="u-input"
+  style={Object {}}
+>
+  <label
+    className="u-input-label"
+    style={Object {}}
+  >
+    姓名
+  </label>
+  <input
+    className="u-input-item"
+    required={null}
+    style={Object {}}
+    type="text"
+  />
+</div>
+`;
