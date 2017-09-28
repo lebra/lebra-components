@@ -1,22 +1,17 @@
 @import "../../style/theme/default";
 
-.u-input {
+.lebra-input {
     position: relative;
-    display: flex;
-    padding-left: 15px;
-    min-height: 60px;
+    min-height: 120px;
     background-color: #fff;
     vertical-align: middle;
     overflow: hidden;
     transition: background-color .2s;
-    align-items: center;
-    border: 1px solid @border-color;
     &-label {
         width: 30%;
-        margin-left: 0;
-        margin-right: 8px;
+        margin-left: 8px;
         overflow: hidden;
-        padding: .2rem 0;
+        padding: 10px 0;
         text-align: left;
         white-space: nowrap;
         color: @inline-label-color;
@@ -37,5 +32,55 @@
         font-size: @normal-size;
         line-height: inherit;
         cursor: text;
+    }
+    &-inline {
+        display: flex;
+        align-items: center;
+        border: 1px solid @border-color;
+        .lebra-input-label {
+
+        }
+    }
+    &-vertical {
+        .lebra-input-label {
+
+        }
+        .lebra-input-item {
+            height: 120px;
+            padding: 0 8px;
+            border: 1px solid @border-color;
+        }
+    }
+    &-textarea {
+        .lebra-input-item {
+            height: 240px;
+            padding: 20px 8px;
+            border: 1px solid @border-color;
+            resize: none;
+            font-family: @font-family;
+        }
+    }
+
+    &-font-length {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 14px;
+        color: @font-color;
+        .total-length {
+            color: @placeholder-color;
+        }
+    }
+    input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */
+        color: @placeholder-color;
+    }
+    input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19 */
+        color: @placeholder-color;
+    }
+    input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: @placeholder-color;
+    }
+    input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: @placeholder-color;
     }
 }

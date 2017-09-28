@@ -11,13 +11,25 @@ const defaultProps = {
 	style: {},
 	inputStyle: {},
     type: 'text',
-    componentClass: 'input'
+    componentClass: 'input',
+    pattern: 'inline' //inline,textarea,vertical
 };
 
 class Input extends Component {
     constructor(props, context){
        super(props, context);
+       this.state = {
+           value: ''
+       }
 
+    }
+
+    handleChange = (e) => {
+        let { onChange } = this.props;
+        this.setState({
+            value: e.target.value
+        });
+        onChange && onChange(e)
     }
 
 	render() {
@@ -32,20 +44,27 @@ class Input extends Component {
 			type,
             componentClass: Component,
 			required,
+			pattern,
 			...props
 		} = this.props;
 
 		let classes = classNames({
-			'u-input': true
+			'lebra-input': true,
+            [`lebra-input-${pattern}`]: true
 		}, className);
 
 		let inputClassName = classNames({
-			'u-input-item': true
+			'lebra-input-item': true
 		}, InputClass);
 
 		let labelClassName = classNames({
-			'u-input-label': true
+			'lebra-input-label': true
 		}, labelClass);
+
+		if(pattern === 'textarea'){
+            Component = pattern;
+            props.maxLength = '140'
+        }
 
 
 		return (
@@ -60,8 +79,19 @@ class Input extends Component {
 					type={type}
 					style={ inputStyle }
 					className={ inputClassName }
+                    value={ this.state.value}
+                    onChange={ this.handleChange }
 					required={required ? required : null}
-					{...props} />
+					{...props}
+                />
+                {
+                    pattern === 'textarea' ? (
+                        <div className="lebra-input-font-length">
+                            {this.state.value.length}/
+                            <span className="total-length">140</span>
+                        </div>
+                    ) : null
+                }
 			</div>
 		);
 	}
