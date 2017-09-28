@@ -73,8 +73,8 @@ class Button extends Component {
     if (shapeMap[shape]) {
         clsObj[`${clsPrefix}-${shapeMap[shape]}`] = true;
     }
-    if (colorsMap[colors]) {
-        clsObj[`${clsPrefix}-${colorMap[color]}`] = true;
+    if (colorsMap[color]) {
+        clsObj[`${clsPrefix}-${colorsMap[color]}`] = true;
     }
 
     if (className) {

@@ -1,52 +1,40 @@
 @import "../../style/theme/default";
-.u-input{
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 1.5rem;
-  min-height: 4.4rem;
-  background-color: #fff;
-  vertical-align: middle;
-  overflow: hidden;
-  -webkit-transition: background-color .2s;
-  transition: background-color .2s;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  &-label{
-	color: #000;
-	font-size: 1.7rem;
-	margin-left: 0;
-	margin-right: .5rem;
-	text-align: left;
-	white-space: nowrap;
-	overflow: hidden;
-	padding: .2rem 0;
-  }
-  &-item{
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	display: block;
-	background-color: transparent;
-	color: rgba(0,0,0,.87);
-	border: none;
-	border-bottom: 1px solid rgba(0,0,0,.26);
-	outline: 0;
-	width: 100%;
-	padding: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border-radius: 0;
-	font-size: 1.6rem;
-	line-height: inherit;
-	background-image: none;
-	cursor: text;
 
-	&:focus{
-	  border-bottom: 1px solid @primary;
-	}
-  }
+.u-input {
+    position: relative;
+    display: flex;
+    padding-left: 15px;
+    min-height: 60px;
+    background-color: #fff;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: background-color .2s;
+    align-items: center;
+    border: 1px solid @border-color;
+    &-label {
+        color: @inline-label-color;
+        font-size: @normal-size;
+        margin-left: 0;
+        margin-right: 8px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: .2rem 0;
+    }
+    &-item {
+        box-sizing: border-box;
+        display: block;
+        background-color: transparent;
+        color: @font-color;
+        border: none;
+        outline: 0;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+        font-size: @normal-size;
+        line-height: inherit;
+        background-image: none;
+        cursor: text;
+    }
 }
