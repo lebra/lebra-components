@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Input from '../../index';
+import ListItem from '../../index';
 import { render } from 'react-dom';
 
-import './index.less';
+import './index.less'
 
 export default class InputDemo extends Component{
     render() {
         return (
-            <div className="input-demo">
-            <Input >姓名</Input>
-            </div>
+            <ul className="input-demo">
+                <ListItem text={'你好'}></ListItem>
+            </ul>
     )
     }
 }
