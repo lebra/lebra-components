@@ -1,21 +1,40 @@
 @import "../../style/theme/default";
-.lebra-list-row {
+body {
+    margin: 0;
+
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.lebra-listview-row {
     width: 100%;
     transform: translate3d(0,0,0);
-    height: 1.4rem;
+    height: 48px;
+    padding: 0 0 0 16px;
+    margin: 8px 0;
     position: relative;
-    &.lebra-list-arrow::after {
+    &.lebra-list-arrow{
+        &::after {
         content: '';
         display: inline-block;
         width: 10px;
         height: 10px;
-        border-left: 2px solid #c2c2c2;
-        border-bottom: 2px solid #c2c2c2;
+        border-left: 2px solid @border-color;
+        border-bottom: 2px solid @border-color;
         position: absolute;
         top: 50%;
-        right: 5px;
+        right: 8px;
         z-index: 2;
-        transform: translate(0,-50%) rotate(-135deg);
+        transform: translate(0, -50%) rotate(-135deg);
+    }
     }
     .lebra-list-item {
         position: relative;
@@ -26,29 +45,31 @@
         padding: 0;
         color: #000;
         transition: all ease .3s;
+        border-bottom: 1px solid @border-color;
         .lebra-list-item-left {
             margin: 0;
             padding: 0;
-            margin-right: 0.3rem;
-            height: 1.4rem;
-            line-height: 1.4rem;
+            margin-right: 5px;
+            height: 48px;
+            line-height: 48px;
             position: relative;
+            paddint-top:4px;
             .lebra-badge {
                     position: absolute;
-                    top: 0.1rem;
-                    right: -0.1rem;
-                    width: 0.4rem;
-                    height: 0.4rem;
+                    top: 5px;
+                    right:5px;
+                    width: 20px;
+                    height: 20px;
                     text-align: center;
-                    line-height: 0.4rem;
+                    line-height: 20px;
                     padding: 0;
-                    font-size: 0.2rem;
+                    font-size: 10px;
                     border-radius: 50%;
                     min-width: auto;
             }
             .lebra-list-item-img{
-                width: 1.01rem;
-                height: 1.01rem;
+                width:40px;
+                height: 40px;
                 -webkit-border-radius: 50%;
                 border-radius: 50%;
                 &.lebra-img-square {
@@ -59,11 +80,17 @@
         }
         .lebra-list-item-body{
             flex: 1;
-            height: 1.4rem;
+            height: 48px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            &.body-justify-start {
+                justify-content: flex-start;
+            }
             .lebra-list-item-title {
-                font-size: 0.32rem;
+                font-size: 16px;
+                margin-bottom: 2px;
+                color: @font-color-dark;
                 &.lebra-text-overflow {
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -71,8 +98,10 @@
                 }
             }
             .lebra-list-item-text {
-                flex: 1;
-                font-size: 0.28rem;
+                height: 16px;
+                line-height: 16px;
+                font-size: 14px;
+                color: @font-color;
                 &.lebra-text-overflow {
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -82,7 +111,11 @@
 
         }
         .lebra-um-list-right{
-
+            font-size:14px;
+            color: @font-color;
+            height:48px;
+            margin-right: 13px;
+            width: 45px;
         }
     }
 }
