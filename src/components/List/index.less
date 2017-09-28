@@ -1,0 +1,88 @@
+@import "../../style/theme/default";
+.lebra-list-row {
+    width: 100%;
+    transform: translate3d(0,0,0);
+    height: 1.4rem;
+    position: relative;
+    &.lebra-list-arrow::after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #c2c2c2;
+        border-bottom: 2px solid #c2c2c2;
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        z-index: 2;
+        transform: translate(0,-50%) rotate(-135deg);
+    }
+    .lebra-list-item {
+        position: relative;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        padding: 0;
+        color: #000;
+        transition: all ease .3s;
+        .lebra-list-item-left {
+            margin: 0;
+            padding: 0;
+            margin-right: 0.3rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+            position: relative;
+            .lebra-badge {
+                    position: absolute;
+                    top: 0.1rem;
+                    right: -0.1rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
+                    text-align: center;
+                    line-height: 0.4rem;
+                    padding: 0;
+                    font-size: 0.2rem;
+                    border-radius: 50%;
+                    min-width: auto;
+            }
+            .lebra-list-item-img{
+                width: 1.01rem;
+                height: 1.01rem;
+                -webkit-border-radius: 50%;
+                border-radius: 50%;
+                &.lebra-img-square {
+                    border-radius: 0;
+                }
+            }
+
+        }
+        .lebra-list-item-body{
+            flex: 1;
+            height: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            .lebra-list-item-title {
+                font-size: 0.32rem;
+                &.lebra-text-overflow {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+            .lebra-list-item-text {
+                flex: 1;
+                font-size: 0.28rem;
+                &.lebra-text-overflow {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+
+        }
+        .lebra-um-list-right{
+
+        }
+    }
+}
