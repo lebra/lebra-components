@@ -1,0 +1,1 @@
+import React from 'react';,import Toast from '../index';,import renderer from 'react-test-renderer';,test('Toast should be exsit', () => {,});
