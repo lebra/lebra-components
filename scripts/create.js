@@ -47,7 +47,11 @@ var srcComponentContentDemoLess = [
 ].join('\n');
 
 var srcComponentContentTest = [
-
+"import React from 'react';",
+"import "+componentName+" from '../index';",
+"import renderer from 'react-test-renderer';",
+"test('"+componentName+" should be exsit', () => {",
+"});"
 ];
 
 var srcComponentContentDoc = [

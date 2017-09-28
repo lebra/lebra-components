@@ -12,29 +12,30 @@
     align-items: center;
     border: 1px solid @border-color;
     &-label {
-        color: @inline-label-color;
-        font-size: @normal-size;
+        width: 30%;
         margin-left: 0;
         margin-right: 8px;
-        text-align: left;
-        white-space: nowrap;
         overflow: hidden;
         padding: .2rem 0;
+        text-align: left;
+        white-space: nowrap;
+        color: @inline-label-color;
+        font-size: @normal-size;
     }
     &-item {
-        box-sizing: border-box;
         display: block;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
         background-color: transparent;
+        background-image: none;
         color: @font-color;
         border: none;
         outline: 0;
-        width: 100%;
-        padding: 0;
         box-shadow: none;
         border-radius: 0;
         font-size: @normal-size;
         line-height: inherit;
-        background-image: none;
         cursor: text;
     }
 }
