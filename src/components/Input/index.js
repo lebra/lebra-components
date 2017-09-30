@@ -12,7 +12,8 @@ const defaultProps = {
 	inputStyle: {},
     type: 'text',
     componentClass: 'input',
-    pattern: 'inline' //inline,textarea,vertical
+    pattern: 'inline', //inline,textarea,vertical
+    border: 'double' //double bottom bordered
 };
 
 class Input extends Component {
@@ -45,12 +46,14 @@ class Input extends Component {
             componentClass: Component,
 			required,
 			pattern,
+			border,
 			...props
 		} = this.props;
 
 		let classes = classNames({
 			'lebra-input': true,
-            [`lebra-input-${pattern}`]: true
+            [`lebra-input-${pattern}`]: true,
+            [`lebra-input-${border}`]: true
 		}, className);
 
 		let inputClassName = classNames({

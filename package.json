@@ -12,7 +12,8 @@
     "clean": "rimraf lib",
     "build:gulp": "cross-env NODE_ENV=production gulp build",
     "test": "jest --config jest.config.js",
-    "create": "node scripts/create"
+    "create": "node scripts/create",
+    "server:exam": "webpack-dev-server --config webpack.server.js"
   },
   "repository": {
     "type": "git",

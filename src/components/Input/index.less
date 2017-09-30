@@ -2,7 +2,7 @@
 
 .lebra-input {
     position: relative;
-    min-height: 60px;
+    min-height: 120px; /*px*/
     background-color: #fff;
     vertical-align: middle;
     overflow: hidden;
@@ -11,7 +11,7 @@
         width: 30%;
         margin-left: 8px;
         overflow: hidden;
-        padding: 10px 0;
+        padding: 20px 0;
         text-align: left;
         white-space: nowrap;
         color: @inline-label-color;
@@ -36,7 +36,8 @@
     &-inline {
         display: flex;
         align-items: center;
-        border: 1px solid @border-color;/*no*/
+        border-top: 1px solid @border-color;/*no*/
+        border-bottom: 1px solid @border-color;/*no*/
         .lebra-input-label {
 
         }
@@ -46,15 +47,16 @@
 
         }
         .lebra-input-item {
-            height: 60px;
-            padding: 0 8px;
-            border: 1px solid @border-color;/*no*/
+            height: 120px;/*px*/
+            padding: 0 16px;
+            border-top: 1px solid @border-color;/*no*/
+            border-bottom: 1px solid @border-color;/*no*/
         }
     }
     &-textarea {
         .lebra-input-item {
-            height: 120px;
-            padding: 20px 8px;
+            height: 240px;/*px*/
+            padding: 40px 16px;
             border: 1px solid @border-color;/*no*/
             resize: none;
             font-family: @font-family;
