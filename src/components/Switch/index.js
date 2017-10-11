@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
 	className: PropTypes.string,
-    defaultChecked: PropTypes.bool
+    defaultChecked: PropTypes.bool,
+    disabled: PropTypes.bool
 };
 
 const defaultProps = {
-
+    className: "",
+    defaultChecked: true,
+    disabled: false,
 };
 
 class Switch extends Component {
@@ -21,6 +24,7 @@ class Switch extends Component {
         let {
             className,
             defaultChecked,
+            disabled,
             ...props
         } = this.props;
 
@@ -31,6 +35,7 @@ class Switch extends Component {
 		return (
             <label className={classes}>
                 <input type="checkbox"
+                       disabled={disabled}
                        onChange={this.props.onChange}
                        defaultChecked={defaultChecked}
                 />

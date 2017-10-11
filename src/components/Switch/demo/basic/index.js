@@ -11,8 +11,8 @@ export default class SwitchDemo extends Component{
     render() {
         return (
             <div className="switch-demo">
-                <Switch defaultChecked={false}/>
-                <Switch onChange={this.onChange} defaultChecked={true}/>
+                <Switch defaultChecked={false} disabled={true}/>
+                <Switch onChange={this.onChange} defaultChecked={true} disabled={true}/>
             </div>
         )
     }

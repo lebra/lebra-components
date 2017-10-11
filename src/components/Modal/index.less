@@ -30,7 +30,7 @@
     transform: translate(-50%, -50%);
     background-color: #FFFFFF;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 6px;
     overflow: hidden;
     &-hd{
         padding: 1.3em 1.6em 0.5em;
@@ -67,11 +67,15 @@
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         position: relative;
         color: @primary;
+        border-top: 1px solid #ddd;
         &-default{
             color: @default-color;
         }
         &-primary{
             color: @primary;
+        }
+        &:first-child {
+            border-right: 1px solid #ddd;
         }
     }
 }

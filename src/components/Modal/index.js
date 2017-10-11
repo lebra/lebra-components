@@ -64,7 +64,7 @@ class Modal extends Component {
             });
 
             return (
-                <button key={key} {...others} className={className}>{label}</button>
+                <a key={key} {...others} className={className}>{label}</a>
             );
         });
     }
