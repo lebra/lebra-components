@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
 	className: PropTypes.string,
+
 };
 
 const defaultProps = {
