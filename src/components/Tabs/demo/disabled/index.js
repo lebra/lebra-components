@@ -37,7 +37,7 @@ class BaseDemo extends Component {
     const start = this.state.start;
     return (
       <div style={{ margin: 20 }}>
-        <h1>Simple Tabs</h1>
+        <h1>Disabled Tabs</h1>
         <Tabs
           renderTabBar={() => <ScrollableInkTabBar onTabClick={this.onTabClick} />}
           renderTabContent={() => <TabContent animatedWithMargin />}
@@ -47,7 +47,7 @@ class BaseDemo extends Component {
           <TabPane tab={`tab ${start}`} key="1">
             <PanelContent id={start} />
           </TabPane>
-          <TabPane tab={`tab ${start + 1}`} key="2">
+          <TabPane tab={`tab ${start + 1}`} key="2" disabled>
             <PanelContent id={start + 1} />
           </TabPane>
           <TabPane tab={`tab ${start + 2}`} key="3">

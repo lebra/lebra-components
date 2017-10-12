@@ -37,23 +37,23 @@ class BaseDemo extends Component {
     const start = this.state.start;
     return (
       <div style={{ margin: 20 }}>
-        <h1>Simple Tabs</h1>
+        <h1>Icon Tabs</h1>
         <Tabs
           renderTabBar={() => <ScrollableInkTabBar onTabClick={this.onTabClick} />}
           renderTabContent={() => <TabContent animatedWithMargin />}
           activeKey={this.state.activeKey}
           onChange={this.onChange}
         >
-          <TabPane tab={`tab ${start}`} key="1">
+          <TabPane tab={<span><i class="icon cl cl-kttx"></i>tab {start}</span>} key="1">
             <PanelContent id={start} />
           </TabPane>
-          <TabPane tab={`tab ${start + 1}`} key="2">
+          <TabPane tab={`tab ${start + 1}`} key="2" disabled>
             <PanelContent id={start + 1} />
           </TabPane>
           <TabPane tab={`tab ${start + 2}`} key="3">
             <PanelContent id={start + 2} />
           </TabPane>
-          <TabPane tab={`tab ${start + 3}`} key="4">
+          <TabPane tab={<span><i class="icon cl cl-notice-p"></i>tab {start + 3}</span>} key="4">
             <PanelContent id={start + 3} />
           </TabPane>
           <TabPane tab={`tab ${start + 4}`} key="5">
