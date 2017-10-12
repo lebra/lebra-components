@@ -181,7 +181,7 @@ class Input extends Component {
                     ref={el => this.inputRef = el}
                 />
                 {
-                    clear && this.state.value !== '' ? (
+                    pattern !== 'textarea' && clear && this.state.value !== '' ? (
                         <Icon
                             className="lebra-input-clear"
                             type="backspace"
