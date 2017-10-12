@@ -5,26 +5,19 @@ title: List
 subtitle: 列表
 ---
 
-列表组件分为三个部分，左边图片区，中间内容区和右边次要信息区。
-
-
 ## API
 
 适用平台：WEB
 
 |参数|说明|类型|默认值|
 |:--|:---|:--|:---|
-|style|给最外层元素设置样式|object|{}|
-|classNames|给li标签中的a元素设置class|string|''|
-|imgSrc|左边区域图片的路径|string|''|
-|imgStlye|左边区域图片为形状|string|'circle'|
-|title|中间文字区域标题|string|''|
-|text|中间文字区域内容|string|''|
-|multipleLine|是否多行显示|boolean|false|
-|wordBreak|文字是否折行显示|boolean|true|
-|arrow|是否显示右边箭头|bollean|false|
-|rightItem|是否显示右边内容|string|''|
-|onClick|列表的点击事件|function|null|
+|style|给ul元素设置样式|object|{}|
+|classNames|给最外层的div元素设置class|string|''|
+|renderHeader|设置列表头部内容|string|''|
+|headerDir|列表头部内容位置|string|'center'|
+|renderFooter|设置列表底部内容|string|''|
+|footerDir|列表底部内容位置|string|'center'|
+
 
 传入的其他props会通过以下方式传递给list元素。
 

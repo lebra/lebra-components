@@ -1,4 +1,6 @@
 @import "../../style/theme/default";
+@import "../../style/mixins";
+
 body {
     margin: 0;
 }
@@ -17,12 +19,12 @@ a {
     width: 100%;
     .lebra-list-header {
         width:100%;
-        height: 16px;
-        line-height: 16px;
-        font-size: 14px;
+        height: 16px;/*px*/
+        line-height: 16px;/*px*/
+        font-size: 14px;/*px*/
         color: @font-color;
         text-align: left;
-        padding: 0 8px 0 16px;
+        padding: 0 8px 0 16px;/*px*/
         background-color: #ccc;
         &.lebra-list-header-center {
             text-align: center;
@@ -33,8 +35,8 @@ a {
     }
     .lebra-list{
         list-style:none;
-        border-bottom: 1px solid #e0e0e0;
-        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;/*no*/
+        border-top: 1px solid #e0e0e0;/*no*/
         .lebra-listview-row{
             &:last-child {
                 .lebra-list-item{
@@ -45,12 +47,12 @@ a {
     }
     .lebra-list-footer {
         width:100%;
-        height: 16px;
-        line-height: 16px;
-        font-size: 14px;
+        height: 16px;/*px*/
+        line-height: 16px;/*px*/
+        font-size: 14px;/*px*/
         color: @font-color;
         text-align: left;
-        padding: 0 8px 0 16px;
+        padding: 0 8px 0 16px;/*px*/
         background-color: #ccc;
         &.lebra-list-footer-center {
             text-align: center;
