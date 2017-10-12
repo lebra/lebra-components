@@ -47,7 +47,7 @@ class BaseDemo extends Component {
           <TabPane tab={`tab ${start}`} key="1">
             <PanelContent id={start} />
           </TabPane>
-          <TabPane tab={`tab ${start + 1}`} key="2">
+          <TabPane tab={`tab ${start + 1}`} key="2" disabled>
             <PanelContent id={start + 1} />
           </TabPane>
           <TabPane tab={`tab ${start + 2}`} key="3">
