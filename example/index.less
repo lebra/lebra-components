@@ -1,0 +1,40 @@
+@import "../src/style/theme/default";
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+.header{
+    height: 60px;
+    font-size: 30px;
+    background-color: @primary;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    width: 1880px;
+}
+.menu{
+    width: 20%;
+    border: 1px solid @primary;
+    li{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 18px;
+        color: @font-color;
+        &:hover{
+            color: @primary;
+        }
+    }
+}
+.content{
+    float: left;
+    margin-left: 20%;
+}
+

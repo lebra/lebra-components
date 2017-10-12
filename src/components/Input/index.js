@@ -2,8 +2,31 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
+function toThousands(num) {
+    return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+}
+
 const propTypes = {
 	className: PropTypes.string,
+    labelStyle: PropTypes.object,
+    style: PropTypes.object,
+    inputStyle: PropTypes.object,
+    componentClass: PropTypes.oneOfType([
+        PropTypes.element,
+        PropTypes.string,
+        PropTypes.node
+    ]),
+    pattern: PropTypes.oneOf([
+        'inline',
+        'vertical',
+        'textarea'
+    ]),
+    border: PropTypes.oneOf([
+        'double',
+        'bottom',
+        'bordered'
+    ]),
+    onChange: PropTypes.func,
 
 };
 
@@ -13,7 +36,9 @@ const defaultProps = {
 	inputStyle: {},
     type: 'text',
     componentClass: 'input',
-    pattern: 'inline' //inline,textarea,vertical
+    pattern: 'inline', //inline,textarea,vertical
+    border: 'double', //double bottom bordered
+    editable: true
 };
 
 class Input extends Component {
@@ -22,15 +47,63 @@ class Input extends Component {
        this.state = {
            value: ''
        }
+       this.inputRef = {};
 
     }
 
+    componentWillMount() {
+        let { defaultValue } = this.props;
+        if(defaultValue){
+            this.setState({
+                value: defaultValue
+            })
+        }
+    }
+
+    formatValue = (value) => {
+        let valueLen = value.length;
+        let { type } = this.props;
+        switch (type) {
+            case 'text':
+                break;
+            case 'bankCard':
+                value = value.replace(/\D/g, '').replace(/(....)(?=.)/g, '$1 ');
+                break;
+            case 'phone':
+                value = value.replace(/\D/g, '').substring(0, 11);
+
+                if (valueLen > 3 && valueLen < 8) {
+                    value = `${value.substr(0, 3)} ${value.substr(3)}`;
+                } else if (valueLen >= 8) {
+                    value = `${value.substr(0, 3)} ${value.substr(3, 4)} ${value.substr(7)}`;
+                }
+                break;
+            case 'number':
+                value = value.replace(/\D/g, '');
+                break;
+            case 'password':
+                break;
+            case 'money':
+                value = value.replace(/\D/g, '');
+                value = toThousands(Number(value));
+                break;
+            default:
+                break;
+        }
+        return value;
+    }
+
     handleChange = (e) => {
-        let { onChange } = this.props;
-        this.setState({
-            value: e.target.value
-        });
-        onChange && onChange(e)
+        let { onChange, editable } = this.props;
+        let value = e.target.value;
+
+        if(editable){
+            value = this.formatValue(value);
+            this.setState({
+                value
+            });
+            onChange && onChange(value, e)
+        }
     }
 
 	render() {
@@ -46,12 +119,16 @@ class Input extends Component {
             componentClass: Component,
 			required,
 			pattern,
+			border,
+            editable,
+            defaultValue,
 			...props
 		} = this.props;
 
 		let classes = classNames({
 			'lebra-input': true,
-            [`lebra-input-${pattern}`]: true
+            [`lebra-input-${pattern}`]: true,
+            [`lebra-input-${border}`]: true
 		}, className);
 
 		let inputClassName = classNames({
@@ -64,7 +141,9 @@ class Input extends Component {
 
 		if(pattern === 'textarea'){
             Component = pattern;
-            props.maxLength = '140'
+            if(!props.hasOwnProperty('maxLength')){
+                props.maxLength = '140'
+            }
         }
 
 
@@ -84,6 +163,7 @@ class Input extends Component {
                     onChange={ this.handleChange }
 					required={required ? required : null}
 					{...props}
+                    ref={el => this.inputRef = el}
                 />
                 {
                     pattern === 'textarea' ? (

@@ -16,42 +16,96 @@
   text-align: left;
   white-space: nowrap;
   color: #9e9e9e;
-  font-size: 0.186667rem;
+}
+
+[data-dpr="1"] .lebra-input-label {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-label {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-label {
+  font-size: 21px;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-item {
   display: block;
   width: 100%;
   padding: 0;
+<<<<<<< HEAD
   box-sizing: border-box;
+=======
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   background-color: transparent;
   background-image: none;
   color: #424242;
   border: none;
   outline: 0;
+<<<<<<< HEAD
   box-shadow: none;
   border-radius: 0;
   font-size: 0.186667rem;
+=======
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   line-height: inherit;
   cursor: text;
 }
 
+<<<<<<< HEAD
 .lebra-input-inline {
   display: flex;
   align-items: center;
   border: 0.013333rem solid #e0e0e0;
+=======
+[data-dpr="1"] .lebra-input-item {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-item {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-item {
+  font-size: 21px;
+}
+
+.lebra-input-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-vertical .lebra-input-item {
   height: 1.6rem;
   padding: 0 0.106667rem;
+<<<<<<< HEAD
   border: 0.013333rem solid #e0e0e0;
+=======
+  border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-textarea .lebra-input-item {
   height: 3.2rem;
   padding: 0.266667rem 0.106667rem;
+<<<<<<< HEAD
   border: 0.013333rem solid #e0e0e0;
+=======
+  border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   resize: none;
   font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
 }
@@ -60,10 +114,28 @@
   position: absolute;
   right: 0.133333rem;
   bottom: 0.133333rem;
+<<<<<<< HEAD
   font-size: 0.186667rem;
   color: #424242;
 }
 
+=======
+  color: #424242;
+}
+
+[data-dpr="1"] .lebra-input-font-length {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-input-font-length {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-input-font-length {
+  font-size: 21px;
+}
+
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 .lebra-input-font-length .total-length {
   color: #e0e0e0;
 }
@@ -158,9 +230,17 @@
 }
 
 .lebra-switch .lebra-track {
+<<<<<<< HEAD
   transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
   display: inline-block;
   box-sizing: border-box;
+=======
+  -webkit-transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
+  transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   width: 0.693333rem;
   height: 0.426667rem;
   border: solid 0.026667rem #e6e6e6;
@@ -173,9 +253,19 @@
 }
 
 .lebra-switch .lebra-handle {
+<<<<<<< HEAD
   transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
   -webkit-transition-property: background-color, transform;
   transition-property: background-color, transform;
+=======
+  -webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+  transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+  -webkit-transition-property: background-color, transform;
+  -webkit-transition-property: background-color, -webkit-transform;
+  transition-property: background-color, -webkit-transform;
+  transition-property: background-color, transform;
+  transition-property: background-color, transform, -webkit-transform;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   position: absolute;
   display: block;
   width: 0.346667rem;
@@ -184,7 +274,12 @@
   background-color: #fff;
   top: 0.04rem;
   left: 0.053333rem;
+<<<<<<< HEAD
   box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+=======
+  -webkit-box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-switch .lebra-handle:before {
@@ -223,7 +318,10 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
+<<<<<<< HEAD
   -ms-transform: translate(-50%, -50%);
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   text-align: center;
@@ -253,7 +351,10 @@
 .lebra-dialog-ft {
   position: relative;
   display: -webkit-box;
+<<<<<<< HEAD
   display: -webkit-flex;
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   display: -ms-flexbox;
   display: flex;
 }
@@ -261,7 +362,10 @@
 .lebra-dialog-btn {
   display: block;
   -webkit-box-flex: 1;
+<<<<<<< HEAD
   -webkit-flex: 1;
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   -ms-flex: 1;
   flex: 1;
   line-height: 0.64rem;
@@ -280,6 +384,7 @@
   color: #e14c46;
 }
 
+<<<<<<< HEAD
 .lebra-toast {
   position: fixed;
   z-index: 5000;
@@ -431,6 +536,8 @@ a {
   width: 0.6rem;
 }
 
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 body {
   font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
 }

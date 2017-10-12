@@ -12,7 +12,8 @@
     "clean": "rimraf lib",
     "build:gulp": "cross-env NODE_ENV=production gulp build",
     "test": "jest --config jest.config.js",
-    "create": "node scripts/create"
+    "create": "node scripts/create",
+    "server:exam": "webpack-dev-server --config webpack.server.js"
   },
   "repository": {
     "type": "git",
@@ -109,6 +110,11 @@
     "webpack-dev-server": "^2.4.4"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "create-react-class": "^15.6.2",
+    "hammerjs": "^2.0.8",
+    "lodash.debounce": "^4.0.8",
+    "prop-types": "^15.5.10",
+    "rc-util": "^4.1.0",
+    "warning": "^3.0.0"
   }
 }

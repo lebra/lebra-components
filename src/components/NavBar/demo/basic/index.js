@@ -11,13 +11,11 @@ export default class NavDemo extends Component{
     render() {
         return (
             <div className="nav-demo">
-                <Nav leftBtn={true} backTxt="返回" navTitle="导航栏" onBack={this.onBack}/>
+                <Nav leftBtn={true}  navTitle="导航栏" onBack={this.onBack}/>
             </div>
         )
     }
 }
 
-
 let root = document.getElementById('app');
-
 render(<NavDemo />, root);

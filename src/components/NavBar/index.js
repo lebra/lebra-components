@@ -15,21 +15,12 @@ const propTypes = {
 };
 
 const defaultProps = {
-
+    backTxt: "返回"
 };
 
 class Nav extends Component {
     constructor(props, context){
        super(props, context);
-    }
-
-    renderList = () => {
-        let rightItem = this.props.rightItem;
-        let tabList = [];
-        for(let i = 0;i<rightItem.length;i++){
-
-        }
-        return tabList;
     }
 
 	render() {

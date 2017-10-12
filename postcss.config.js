@@ -1,8 +1,8 @@
+const px2rem = require('postcss-px2rem')
 module.exports = {
 	plugins: [
-        require('cssnano'),
-        require('postcss-px2rem')({remUnit: 75}),
+        px2rem({remUnit: 75}),
 		require('autoprefixer'),
-		require('css-mqpacker'),
+        require('cssnano'),
 	]
 }

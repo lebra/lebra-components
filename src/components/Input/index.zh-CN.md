@@ -23,8 +23,18 @@ subtitle: 输入框
 |type|给input元素设置type|string|'text'|
 |required|给input元素设置required|boolean|-|
 |componentClass|给input元素设置required|input/textarea|input|
+|placeholder|输入框默认提示信息|string|''|
 
-传入的其他props会通过以下方式传递给input元素。
+|editable|是否可编辑|boolean|true|
+|disabled|是否可用|boolean|input|
+|value|输入框值|string|''|
+|defaultValue|输入框默认值|string|''|
+|onChange|给input元素设置required|function(e)|-|
+|maxLength|输入框可输入最大长度|number|不限制/如果是textarea默认是140|
+|componentClass|给input元素设置required|input/textarea|input|
+
+
+- 传入的其他props会通过以下方式传递给input元素。
 
 ```
 let {className, ...others} = this.props;
@@ -32,5 +42,25 @@ let {className, ...others} = this.props;
 return (
     <input { ...others } />
 )
+
+```
+
+- 获取input的DOM,组件采用如下写法，使用`this.refs.demo.inputRef`获取DOM。
+
+```
+...
+<Input
+    ref="demo"
+    placeholder="请输入汉字">
+   姓名
+</Input>
+```
+
+- 受控与非受控
+
+```
+//非受控
+
+//受控
 
 ```
