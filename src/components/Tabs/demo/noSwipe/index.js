@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Tabs from '../../index';
 import { TabPane } from '../../index';
-import TabContent from '../../SwipeableTabContent';
-import ScrollableInkTabBar from '../../ScrollableInkTabBar';
+import TabContent from '../../TabContent';
+import InkTabBar from '../../InkTabBar';
 import './index.less';
 
 const PanelContent = ({ id }) => (
@@ -37,9 +37,9 @@ class BaseDemo extends Component {
     const start = this.state.start;
     return (
       <div style={{ margin: 20 }}>
-        <h1>Simple Tabs</h1>
+        <h1>Can't Swipe Tabs</h1>
         <Tabs
-          renderTabBar={() => <ScrollableInkTabBar onTabClick={this.onTabClick} />}
+          renderTabBar={() => <InkTabBar onTabClick={this.onTabClick} />}
           renderTabContent={() => <TabContent animatedWithMargin />}
           activeKey={this.state.activeKey}
           onChange={this.onChange}
@@ -47,7 +47,7 @@ class BaseDemo extends Component {
           <TabPane tab={`tab ${start}`} key="1">
             <PanelContent id={start} />
           </TabPane>
-          <TabPane tab={`tab ${start + 1}`} key="2" disabled>
+          <TabPane tab={`tab ${start + 1}`} key="2">
             <PanelContent id={start + 1} />
           </TabPane>
           <TabPane tab={`tab ${start + 2}`} key="3">
