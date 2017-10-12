@@ -37,7 +37,7 @@ class BaseDemo extends Component {
     const start = this.state.start;
     return (
       <div style={{ margin: 20 }}>
-        <h1>Simple Tabs</h1>
+        <h1>Icon Tabs</h1>
         <Tabs
           renderTabBar={() => <ScrollableInkTabBar onTabClick={this.onTabClick} />}
           renderTabContent={() => <TabContent animatedWithMargin />}
