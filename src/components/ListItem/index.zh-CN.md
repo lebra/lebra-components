@@ -1,11 +1,11 @@
 ---
 category: Components
 type: Data Entry
-title: List
-subtitle: 列表
+title: ListItem
+subtitle: 列表项
 ---
 
-列表组件分为三个部分，左边图片区，中间内容区和右边次要信息区。
+列表项组件分为三个部分，左边图片区，中间内容区和右边次要信息区。
 
 
 ## API
@@ -32,7 +32,7 @@ subtitle: 列表
 let {className, ...others} = this.props;
 
 return (
-    <List { ...others } />
+    <ListItem { ...others } />
 )
 
 ```
