@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Icon from '../Icon';
 
 function toThousands(value) {
     return value.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
@@ -27,6 +28,7 @@ const propTypes = {
         'bordered'
     ]),
     onChange: PropTypes.func,
+    clear: PropTypes.bool,
 
 };
 
@@ -38,7 +40,8 @@ const defaultProps = {
     componentClass: 'input',
     pattern: 'inline', //inline,textarea,vertical
     border: 'double', //double bottom bordered
-    editable: true
+    editable: true,
+    clear: true
 };
 
 class Input extends Component {
@@ -106,6 +109,17 @@ class Input extends Component {
         }
     }
 
+    handleClear = () => {
+        this.setState({
+            value: ''
+        });
+        this.focus();
+    }
+
+    focus = () => {
+        this.inputRef.focus();
+    }
+
 	render() {
 		let {
 			style,
@@ -122,6 +136,7 @@ class Input extends Component {
 			border,
             editable,
             defaultValue,
+			clear,
 			...props
 		} = this.props;
 
@@ -165,6 +180,15 @@ class Input extends Component {
 					{...props}
                     ref={el => this.inputRef = el}
                 />
+                {
+                    clear && this.state.value !== '' ? (
+                        <Icon
+                            className="lebra-input-clear"
+                            type="backspace"
+                            onClick={ this.handleClear }
+                        />
+                    ) : null
+                }
                 {
                     pattern === 'textarea' ? (
                         <div className="lebra-input-font-length">
