@@ -1,0 +1,1 @@
+import React from 'react';,import Icon from '../index';,import renderer from 'react-test-renderer';,test('Icon should be exsit', () => {,});
