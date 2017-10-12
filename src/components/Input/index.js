@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-function toThousands(num) {
-    return (num || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+function toThousands(value) {
+    return value.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
 }
 
 const propTypes = {
@@ -55,7 +55,7 @@ class Input extends Component {
         let { defaultValue } = this.props;
         if(defaultValue){
             this.setState({
-                value: defaultValue
+                value: this.formatValue(defaultValue)
             })
         }
     }
@@ -85,7 +85,7 @@ class Input extends Component {
                 break;
             case 'money':
                 value = value.replace(/\D/g, '');
-                value = toThousands(Number(value));
+                value = toThousands(value);
                 break;
             default:
                 break;
