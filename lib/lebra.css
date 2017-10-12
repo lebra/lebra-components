@@ -3,8 +3,8 @@
   min-height: 1.6rem;
   background-color: #fff;
   vertical-align: middle;
+  margin: 0.4rem 0.2rem;
   overflow: hidden;
-  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 
@@ -28,26 +28,43 @@
 
 [data-dpr="3"] .lebra-input-label {
   font-size: 21px;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-item {
   display: block;
   width: 100%;
   padding: 0;
+<<<<<<< HEAD
+  box-sizing: border-box;
+=======
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   background-color: transparent;
   background-image: none;
   color: #424242;
   border: none;
   outline: 0;
+<<<<<<< HEAD
+  box-shadow: none;
+  border-radius: 0;
+  font-size: 0.186667rem;
+=======
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   line-height: inherit;
   cursor: text;
 }
 
+<<<<<<< HEAD
+.lebra-input-inline {
+  display: flex;
+  align-items: center;
+  border: 0.013333rem solid #e0e0e0;
+=======
 [data-dpr="1"] .lebra-input-item {
   font-size: 7px;
 }
@@ -68,18 +85,27 @@
       -ms-flex-align: center;
           align-items: center;
   border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-vertical .lebra-input-item {
   height: 1.6rem;
   padding: 0 0.106667rem;
+<<<<<<< HEAD
+  border: 0.013333rem solid #e0e0e0;
+=======
   border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-input-textarea .lebra-input-item {
   height: 3.2rem;
   padding: 0.266667rem 0.106667rem;
+<<<<<<< HEAD
+  border: 0.013333rem solid #e0e0e0;
+=======
   border: 1px solid #e0e0e0;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   resize: none;
   font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
 }
@@ -88,6 +114,12 @@
   position: absolute;
   right: 0.133333rem;
   bottom: 0.133333rem;
+<<<<<<< HEAD
+  font-size: 0.186667rem;
+  color: #424242;
+}
+
+=======
   color: #424242;
 }
 
@@ -103,6 +135,7 @@
   font-size: 21px;
 }
 
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 .lebra-input-font-length .total-length {
   color: #e0e0e0;
 }
@@ -197,11 +230,17 @@
 }
 
 .lebra-switch .lebra-track {
+<<<<<<< HEAD
+  transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
+  display: inline-block;
+  box-sizing: border-box;
+=======
   -webkit-transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
   transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   width: 0.693333rem;
   height: 0.426667rem;
   border: solid 0.026667rem #e6e6e6;
@@ -214,6 +253,11 @@
 }
 
 .lebra-switch .lebra-handle {
+<<<<<<< HEAD
+  transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+  -webkit-transition-property: background-color, transform;
+  transition-property: background-color, transform;
+=======
   -webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
   transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
   -webkit-transition-property: background-color, transform;
@@ -221,6 +265,7 @@
   transition-property: background-color, -webkit-transform;
   transition-property: background-color, transform;
   transition-property: background-color, transform, -webkit-transform;
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   position: absolute;
   display: block;
   width: 0.346667rem;
@@ -229,8 +274,12 @@
   background-color: #fff;
   top: 0.04rem;
   left: 0.053333rem;
+<<<<<<< HEAD
+  box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+=======
   -webkit-box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-switch .lebra-handle:before {
@@ -269,6 +318,10 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
+<<<<<<< HEAD
+  -ms-transform: translate(-50%, -50%);
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   text-align: center;
@@ -298,6 +351,10 @@
 .lebra-dialog-ft {
   position: relative;
   display: -webkit-box;
+<<<<<<< HEAD
+  display: -webkit-flex;
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   display: -ms-flexbox;
   display: flex;
 }
@@ -305,6 +362,10 @@
 .lebra-dialog-btn {
   display: block;
   -webkit-box-flex: 1;
+<<<<<<< HEAD
+  -webkit-flex: 1;
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   -ms-flex: 1;
   flex: 1;
   line-height: 0.64rem;
@@ -323,6 +384,160 @@
   color: #e14c46;
 }
 
+<<<<<<< HEAD
+.lebra-toast {
+  position: fixed;
+  z-index: 5000;
+  width: 7.6em;
+  min-height: 7.6em;
+  top: 2.4rem;
+  left: 50%;
+  margin-left: -3.8em;
+  background: rgba(17, 17, 17, 0.7);
+  text-align: center;
+  border-radius: 0.066667rem;
+  color: #FFFFFF;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.lebra-listview-row {
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  height: 0.64rem;
+  padding: 0 0 0 0.213333rem;
+  margin: 0.106667rem 0;
+  position: relative;
+}
+
+.lebra-listview-row.lebra-list-arrow::after {
+  content: '';
+  display: inline-block;
+  width: 0.133333rem;
+  height: 0.133333rem;
+  border-left: 0.026667rem solid #e0e0e0;
+  border-bottom: 0.026667rem solid #e0e0e0;
+  position: absolute;
+  top: 50%;
+  right: 0.106667rem;
+  z-index: 2;
+  transform: translate(0, -50%) rotate(-135deg);
+}
+
+.lebra-listview-row .lebra-list-item {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0;
+  color: #000;
+  transition: all ease .3s;
+  border-bottom: 0.013333rem solid #e0e0e0;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-left {
+  margin: 0;
+  padding: 0;
+  margin-right: 0.066667rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
+  position: relative;
+  paddint-top: 0.053333rem;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-badge {
+  position: absolute;
+  top: 0.066667rem;
+  right: 0.066667rem;
+  width: 0.266667rem;
+  height: 0.266667rem;
+  text-align: center;
+  line-height: 0.266667rem;
+  padding: 0;
+  font-size: 0.133333rem;
+  border-radius: 50%;
+  min-width: auto;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-list-item-img {
+  width: 0.533333rem;
+  height: 0.533333rem;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-list-item-img.lebra-img-square {
+  border-radius: 0;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body {
+  flex: 1;
+  height: 0.64rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body.body-justify-start {
+  justify-content: flex-start;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-title {
+  font-size: 0.213333rem;
+  margin-bottom: 0.026667rem;
+  color: #616161;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-title.lebra-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-text {
+  height: 0.213333rem;
+  line-height: 0.213333rem;
+  font-size: 0.186667rem;
+  color: #424242;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-text.lebra-text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lebra-listview-row .lebra-list-item .lebra-um-list-right {
+  font-size: 0.186667rem;
+  color: #424242;
+  height: 0.64rem;
+  margin-right: 0.173333rem;
+  width: 0.6rem;
+}
+
+=======
+>>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 body {
   font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
 }

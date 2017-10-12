@@ -5,6 +5,7 @@
     min-height: 120px; /*px*/
     background-color: #fff;
     vertical-align: middle;
+    margin: 30px 15px;
     overflow: hidden;
     transition: background-color .2s;
     &-label {
@@ -32,6 +33,9 @@
         font-size: @normal-size; /*px*/
         line-height: inherit;
         cursor: text;
+        &:disabled{
+            color: @default-color;
+        }
     }
     &-inline {
         display: flex;
@@ -44,7 +48,7 @@
     }
     &-vertical {
         .lebra-input-label {
-
+            display: block;
         }
         .lebra-input-item {
             height: 120px;/*px*/
@@ -54,6 +58,9 @@
         }
     }
     &-textarea {
+        .lebra-input-label {
+            display: block;
+        }
         .lebra-input-item {
             height: 240px;/*px*/
             padding: 40px 16px;

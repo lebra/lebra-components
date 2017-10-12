@@ -9,7 +9,7 @@ const eslint = require('gulp-eslint');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const postcssPlugin = require('./postcss.config');
-
+const px2rem = require('postcss-px2rem');
 //js
 const rollup = require('rollup');
 const babel = require('rollup-plugin-babel');
@@ -78,9 +78,10 @@ gulp.task('js_build', function () {
 //less编译
 
 gulp.task('less_build', function () {
+    var processors = [px2rem({remUnit: 75})];
 	gulp.src('./src/style/index.less')
 		.pipe(less())
-		.pipe(postcss(postcssPlugin))
+		.pipe(postcss(processors))
 		.pipe(rename('lebra.css'))
 		.pipe(gulp.dest('./lib'));
 
