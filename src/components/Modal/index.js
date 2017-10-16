@@ -1,37 +1,6 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-//import Mark from 'mask.jsx'
-
-class Mask extends Component {
-    static propTypes = {
-        transparent: PropTypes.bool
-    };
-
-    static defaultProps = {
-        transparent: false
-    };
-    constructor(props, context){
-        super(props, context);
-    }
-    render() {
-        const {
-            transparent,
-            className,
-            ...props
-            } = this.props;
-
-        const classes = classNames({
-            'lebra-mask': !transparent,
-            'lebra-mask-transparent': transparent
-        }, className);
-
-        return (
-            <div className={classes}></div>
-        );
-    }
-}
-
 
 const propTypes = {
     buttons: PropTypes.array,
@@ -103,6 +72,36 @@ class Modal extends Component {
         );
     }
 }
+
+class Mask extends Component {
+    static propTypes = {
+        transparent: PropTypes.bool
+    };
+
+    static defaultProps = {
+        transparent: false
+    };
+    constructor(props, context){
+        super(props, context);
+    }
+    render() {
+        const {
+            transparent,
+            className,
+            ...props
+            } = this.props;
+
+        const classes = classNames({
+            'lebra-mask': !transparent,
+            'lebra-mask-transparent': transparent
+        }, className);
+
+        return (
+            <div className={classes}></div>
+        );
+    }
+}
+
 Modal.propTypes = propTypes;
 Modal.defaultProps = defaultProps;
 export default Modal;
