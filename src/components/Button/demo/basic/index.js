@@ -17,11 +17,11 @@ export default class BaseDemo extends Component {
         <Button size='md'>文字描述长长的</Button>
       </div>
       <div className="right">
-        <Button colors="dark">确定</Button>
-        <Button colors="dark" disabled>确定</Button>
-        <Button colors="dark" shape='floating'> 确定</Button>
-        <Button colors="dark" shape='floating' disabled> 确定</Button>
-        <Button colors="dark" size="md">确定</Button>
+        <Button color="dark">确定</Button>
+        <Button color="dark" disabled>确定</Button>
+        <Button color="dark" shape='floating'> 确定</Button>
+        <Button color="dark" shape='floating' disabled> 确定</Button>
+        <Button color="dark" size="md">确定</Button>
       </div>
     </div> )
   }
