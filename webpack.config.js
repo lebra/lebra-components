@@ -34,6 +34,9 @@ module.exports = {
 		"react-dom": "ReactDOM"
 	},
 	resolve : {
+        extensions: [
+            ".jsx", ".js"
+        ],
 		alias: {
 			components: path.resolve(__dirname, 'src/components/'),
 			assets: path.resolve(__dirname, 'src/assets/'),

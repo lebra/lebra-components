@@ -1,7 +1,17 @@
-import Icon from '../index';
-import React, { Component } from 'react';
-import './index.less;
+import Icon from '../../index';
+import React, {Component} from 'react';
+import {render} from 'react-dom';
+
+import './index.less';
+
 class BaseDemo extends Component {
-render(){return( <Icon/> )}
+    render() {
+        return (
+            <Icon type="xiaoxi" />
+        )
+    }
 }
-export default BaseDemo;
+
+let root = document.getElementById('app');
+
+render(<BaseDemo />, root);
