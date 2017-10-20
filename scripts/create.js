@@ -36,7 +36,7 @@ var srcComponentContentDemo =  [
     "import " + componentName + " from '../../index';",
     "import React, { Component } from 'react';",
     "import {render} from 'react-dom';",
-    "import './index.less;'",
+    "import './index.less';",
     "class BaseDemo extends Component {",
     "render(){return( <" + componentName + "/> )}",
     "}",
