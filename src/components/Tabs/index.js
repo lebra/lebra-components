@@ -1,6 +1,4 @@
-import Tabs from './Tabs';
-import TabPane from './TabPane';
-import TabContent from './TabContent';
-
-export default Tabs;
-export { TabPane, TabContent };
+//export { Models } from './Models';
+//export { PropsType as PropsType, TabBarPropsType } from './PropsType';
+export { Tabs } from './Tabs';
+export { DefaultTabBar } from './DefaultTabBar';
