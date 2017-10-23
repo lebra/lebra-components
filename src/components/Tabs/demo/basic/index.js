@@ -61,7 +61,6 @@ class BasicDemo extends React.Component{
                 { key: 't4', title: 't4' },
                 { key: 't5', title: 't5' }]
               } 
-              initialPage={'t2'}
             >
               {this.renderContent()}
             </Tabs>
