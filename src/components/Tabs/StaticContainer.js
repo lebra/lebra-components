@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 const propTypes = {
-  shouldUpdate:PropTypes.any
+  shouldUpdate:PropTypes.bool
 }
 const defaultProps = { 
   shouldUpdate: true 

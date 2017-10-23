@@ -15,7 +15,7 @@ class BasicDemo extends React.Component{
     };
   }
 
-  renderContent(data) {
+  renderContent() {
     const pStyle = { margin: 0, padding: 10 };
     return [
       <div key="t1" style={{ background: '#ADFFD7' }}>
@@ -33,37 +33,13 @@ class BasicDemo extends React.Component{
       <div key="t3" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 3 1</p>
         <p style={pStyle}>tab 3 2</p>
-        <p style={pStyle}>{JSON.stringify(data)}</p>
       </div>,
       <div key="t4" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 4 1</p>
       </div>,
       <div key="t5" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 5 1</p>
-      </div>,
-       <div key="t6" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 1 1</p>
-        <p style={pStyle}>tab 1 2</p>
-        <p style={pStyle}>tab 1 3</p>
-        <p style={pStyle}>tab 1 4</p>
-      </div>,
-      <div key="t7" style={{ background: '#ADFFD7' }}>
-         <p style={pStyle}>tab 1 1</p>
-        <p style={pStyle}>tab 1 2</p>
-        <p style={pStyle}>tab 1 3</p>
-        <p style={pStyle}>tab 1 4</p>
-      </div>,
-      <div key="t8" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 3 1</p>
-        <p style={pStyle}>tab 3 2</p>
-        <p style={pStyle}>{JSON.stringify(data)}</p>
-      </div>,
-      <div key="t9" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 4 1</p>
-      </div>,
-      <div key="t10" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 5 1</p>
-      </div>,
+      </div>
     ];
   }
 
@@ -76,7 +52,7 @@ class BasicDemo extends React.Component{
       <div>
         <div style={baseStyle}>
           <div style={{ ...baseStyle }}>
-            <h2>destroyInactiveTab</h2>
+            <h2>1</h2>
             <Tabs 
               tabs={[
                 { key: 't1', title: 't1' },
@@ -85,11 +61,11 @@ class BasicDemo extends React.Component{
                 { key: 't4', title: 't4' },
                 { key: 't5', title: 't5' }]
               } 
-              initalPage={'t2'}
-              destroyInactiveTab={true}
+              initialPage={'t2'}
             >
               {this.renderContent()}
             </Tabs>
+            
           </div>
         </div> 
       </div>

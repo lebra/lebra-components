@@ -11,9 +11,9 @@ const propTypes = {
   /** tabs data */
   tabs: PropTypes.any,                         //必须的，key与title
   /** current active tab */
-  activeTab: PropTypes.any,                    //必须的
+  activeTab: PropTypes.number,            //必须的
   /** use animate | default: true */
-  animated: PropTypes.any,                    //必须的
+  animated: PropTypes.bool,                    //必须的
   /** render the tab of tabbar */
   renderTab:PropTypes.func,
   /** page size of tabbar's tab | default: 5 */
@@ -21,7 +21,7 @@ const propTypes = {
   /** on tab click */
   onTabClick: PropTypes.func,
   /** tabBar's position | defualt: top */
-  tabBarPosition:PropTypes.oneOf(['top', 'bottom','left','right']),
+  tabBarPosition:PropTypes.oneOf(['top','bottom','left','right']),
   /** tabBar underline style */
   tabBarUnderlineStyle:PropTypes.object,
   /** tabBar background color */
@@ -32,12 +32,12 @@ const propTypes = {
   tabBarInactiveTextColor:PropTypes.string,
   /** tabBar text style */
   tabBarTextStyle:PropTypes.object,
-  /** default: rmc-tabs-tab-bar */
+  /** default: lebra-tabs-tab-bar */
   prefixCls:PropTypes.string
 }
 
 const defaultProps = {
-    prefixCls: 'rmc-tabs-tab-bar',
+    prefixCls: 'lebra-tabs-tab-bar',
     animated: true,
     tabs: [],
     goToTab: () => { },
@@ -50,22 +50,6 @@ const defaultProps = {
     tabBarTextStyle: {}
 }
  
-const StateType = {
-  transform: PropTypes.string,
-  isMoving: PropTypes.boolean,
-  showPrev: PropTypes.boolean,
-  showNext: PropTypes.boolean,
-}
-
-const defaultStateType = {
-  transform: '',
-  isMoving: false,
-  showPrev: false,
-  showNext: false
-}
-
-
-
 export class DefaultTabBar extends React.PureComponent{
   //props: propsType
   constructor(props) {
@@ -263,9 +247,3 @@ export class DefaultTabBar extends React.PureComponent{
 
 DefaultTabBar.propTypes = propTypes;
 DefaultTabBar.defaultProps = defaultProps ;
-// DefaultTabBar.StateType = StateType;
-// DefaultTabBar.defaultStateType = defaultStateType;
-// Button.propTypes = propTypes;
-// Button.defaultProps = defaultProps;
-// export default Button;
-

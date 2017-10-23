@@ -15,31 +15,31 @@ const propTypes = {
   /** TabBar's position | default: top */
   tabBarPosition:PropTypes.oneOf(['top', 'bottom','left','right']),     
   /** render for TabBar */
-  renderTabBar: PropTypes.oneOfType([PropTypes.func,PropTypes.boolean]),
+  renderTabBar: PropTypes.oneOfType([PropTypes.func,PropTypes.bool]),
   /** initial Tab, index or key */
-  initialPage: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
+  initialPage: PropTypes.oneOfType([ PropTypes.number, PropTypes.string]),
   /** current tab, index or key */
   page: PropTypes.oneOfType([ PropTypes.number,PropTypes.string]),
   /** whether to switch tabs with swipe gestrue in the content | default: true */
-  swipeable: PropTypes.any,
+  swipeable: PropTypes.bool,
   /** use scroll follow pan | default: true */
-  useOnPan: PropTypes.any,
+  useOnPan: PropTypes.bool,
   /** pre-render nearby # sibling, Infinity: render all the siblings, 0: render current page | default: 1 */
   prerenderingSiblingsNumber: PropTypes.number,
   /** whether to change tabs with animation | default: true */
-  animated: PropTypes.any,
+  animated: PropTypes.bool,
   /** callback when tab is switched */
   onChange: PropTypes.func,
   /** on tab click */
   onTabClick: PropTypes.func,
   /** destroy inactive tab | default: false */
-  destroyInactiveTab: PropTypes.any,
+  destroyInactiveTab: PropTypes.bool,
   /** distance to change tab, width ratio | default: 0.3 */
   distanceToChangeTab: PropTypes.number,
   /** use paged | default: true */
-  usePaged: PropTypes.any,
+  usePaged: PropTypes.bool,
   /** tab paging direction | default: horizontal */
-  tabDirection: PropTypes.oneOfType([ "horizontal", "vertical"]),
+  tabDirection: PropTypes.oneOf([ "horizontal", "vertical"]),
   /** tabBar underline style */
   tabBarUnderlineStyle:PropTypes.object,
   /** tabBar background color */
@@ -50,7 +50,7 @@ const propTypes = {
   tabBarInactiveTextColor:PropTypes.string,
   /** tabBar text style */
   tabBarTextStyle:PropTypes.object,
-  /** default: rmc-tabs-tab-bar */
+  /** default: lebra-tabs-tab-bar */
   prefixCls:PropTypes.string
 }
 
@@ -65,7 +65,7 @@ const defaultProps = {
     usePaged: true,
     tabDirection: 'horizontal',
     distanceToChangeTab: .3,
-    prefixCls: 'rmc-tabs',
+    prefixCls: 'lebra-tabs',
     useOnPan: true,
 } 
 
@@ -249,6 +249,7 @@ export class Tabs extends Component{
     const isTabVertical = this.isTabVertical(tabDirection);
     //const tabBarProps: TabBarPropsType
     const tabBarProps = {
+      //得到TabBar的很多参数
       ...this.getTabBarBaseProps(),
     };
 
@@ -262,7 +263,7 @@ export class Tabs extends Component{
         direction={isTabVertical ? 'vertical' : 'horizontal'}
         onSwipe={this.onSwipe}
         {...onPan}
-      >
+      > 
         {this.renderContent()}
       </Gesture>,
     ];
@@ -277,5 +278,3 @@ export class Tabs extends Component{
 
 Tabs.propTypes = propTypes;
 Tabs.defaultProps = defaultProps;
-// Tabs.StateType = StateType;
-// Tabs.defaultStateType = defaultStateType;

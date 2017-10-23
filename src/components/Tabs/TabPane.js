@@ -4,12 +4,12 @@ import { StaticContainer } from './StaticContainer';
 import { getPxStyle, getTransformPropValue } from './util';
 
 const propTypes = {
- // key: PropTypes.string,
+ // key?: PropTypes.string,
   className: PropTypes.string,
-  shouldUpdate: PropTypes.any,
-  active: PropTypes.any,
-  fixX: PropTypes.any,
-  fixY: PropTypes.any
+  shouldUpdate: PropTypes.bool,
+  active: PropTypes.bool,
+  fixX: PropTypes.bool,
+  fixY: PropTypes.bool
 }
 
 const defaultProps ={

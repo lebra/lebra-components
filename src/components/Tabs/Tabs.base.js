@@ -5,47 +5,35 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
    /** tabs data */
-    tabs: PropTypes.object,                                      //必须的
+    tabs: PropTypes.any,                                      //必须的
     /** TabBar's position | default: top */
-    tabBarPosition:PropTypes.oneOf(['top', 'bottom','left','right']),     
+    tabBarPosition:PropTypes.oneOf(['top','bottom','left','right']),     
     /** render for TabBar */
-    renderTabBar: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.boolean
-    ]),
+    renderTabBar: PropTypes.oneOfType([PropTypes.func,PropTypes.bool]),
     /** initial Tab, index or key */
-    initialPage: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string
-    ]),
+    initialPage: PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
     /** current tab, index or key */
-    page: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.string
-    ]),
+    page: PropTypes.oneOfType([PropTypes.number,PropTypes.string]),
     /** whether to switch tabs with swipe gestrue in the content | default: true */
-    swipeable: PropTypes.boolean,
+    swipeable: PropTypes.bool,
     /** use scroll follow pan | default: true */
-    useOnPan: PropTypes.boolean,
+    useOnPan: PropTypes.bool,
     /** pre-render nearby # sibling, Infinity: render all the siblings, 0: render current page | default: 1 */
     prerenderingSiblingsNumber: PropTypes.number,
     /** whether to change tabs with animation | default: true */
-    animated: PropTypes.boolean,
+    animated: PropTypes.bool,
     /** callback when tab is switched */
     onChange: PropTypes.func,
     /** on tab click */
     onTabClick: PropTypes.func,
     /** destroy inactive tab | default: false */
-    destroyInactiveTab: PropTypes.boolean,
+    destroyInactiveTab: PropTypes.bool,
     /** distance to change tab, width ratio | default: 0.3 */
     distanceToChangeTab: PropTypes.number,
     /** use paged | default: true */
-    usePaged: PropTypes.boolean,
+    usePaged: PropTypes.bool,
     /** tab paging direction | default: horizontal */
-    tabDirection: PropTypes.oneOfType([
-      "horizontal",
-      "vertical"
-    ]),
+    tabDirection: PropTypes.oneOf(["horizontal","vertical"]),
     /** tabBar underline style */
     tabBarUnderlineStyle:PropTypes.object,
     /** tabBar background color */
@@ -71,16 +59,13 @@ const defaultProps = {
     distanceToChangeTab: .3,
 }
 
-const StateType = {
-  currentTab: PropTypes.number,
-  minRenderIndex: PropTypes.number,
-  maxRenderIndex: PropTypes.number
-}
 
 export  class Tabs extends React.PureComponent{
   //props: P
   constructor(props) {
     super(props);
+    this.currentTab=PropTypes.number;
+    this.minRenderIndex=PropTypes.number;
     //第二个参数ass
     this.state = this.getPrerenderRange(props.prerenderingSiblingsNumber, {
       currentTab: this.getTabIndex(props),
@@ -278,15 +263,8 @@ export  class Tabs extends React.PureComponent{
       return subElements;
     };
   }
-
-  getSubElement(
-    tab: PropTypes.object,
-    index:PropTypes.number,
-    // subElements: (defaultPrefix, allPrefix) => { [key: string]: any },
-    subElements:PropTypes.object,
-    defaultPrefix= '$i$-',
-    allPrefix= '$ALL$'
-  ) {
+  //tab: PropTypes.object,index:PropTypes.number,subElements: (defaultPrefix, allPrefix) => { [key: string]: any },subElements:PropTypes.object,defaultPrefix= '$i$-',allPrefix= '$ALL$'
+  getSubElement(tab,index,subElements,defaultPrefix= '$i$-',allPrefix= '$ALL$') {
     const key = tab.key || `${defaultPrefix}${index}`;
     const elements = subElements(defaultPrefix, allPrefix);
     let component = elements[key] || elements[allPrefix];
@@ -300,5 +278,4 @@ export  class Tabs extends React.PureComponent{
 
 Tabs.propTypes = propTypes;
 Tabs.defaultProps = defaultProps;
-// Tabs.StateType = StateType;
 
