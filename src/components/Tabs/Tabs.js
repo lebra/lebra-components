@@ -73,12 +73,12 @@ export class Tabs extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      ...this.state,
       currentTab:0,
       minRenderIndex:0,
       maxRenderIndex:0,
       transform:"",
       isMoving:false,
+      ...this.state,
       transform: this.getTransformByIndex(this.getTabIndex(props), this.isTabVertical(props.tabDirection)),
     };
     //node

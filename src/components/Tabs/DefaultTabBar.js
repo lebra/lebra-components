@@ -55,11 +55,11 @@ export class DefaultTabBar extends React.PureComponent{
   constructor(props) {
     super(props);
     this.state = {
-    transform: '',
-    isMoving: false,
-    showPrev: false,
-    showNext: false,
-    ...this.getTransformByIndex(props),
+      transform: '',
+      isMoving: false,
+      showPrev: false,
+      showNext: false,
+      ...this.getTransformByIndex(props),
     };
     this.layout = null;
   }
@@ -78,7 +78,6 @@ export class DefaultTabBar extends React.PureComponent{
   onPan = (() => {
     let lastOffset: number | string = 0;
     let finalOffset = 0;
-
     const getLastOffset = (isVertical = this.isTabBarVertical()) => {
       let offset = +`${lastOffset}`.replace('%', '');
       if (`${lastOffset}`.indexOf('%') >= 0) {

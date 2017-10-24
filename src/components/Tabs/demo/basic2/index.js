@@ -76,43 +76,26 @@ class BasicDemo extends React.Component{
       <div>
         <div style={baseStyle}>
           <div style={{ ...baseStyle }}>
-            <Tabs tabs={[
-            { key: 't1', title: 't1' },
-            { key: 't2', title: 't2' },
-            { key: 't3', title: 't3' },
-          ]} page={this.state.page}
-            onChange={(tab, index) => {
-              console.log('onChange', tab, index);
-              this.setState({ page: index });
-            }}
-            onTabClick={(tab, index) => {
-              console.log('onTabClick', tab, index);
-            }}
-            renderTabBar={(props) => <DefaultTabBar
-              {...props}
-              renderTab={(tab: Models.TabData) => {
-                if (tab.key === 't2') {
-                  return <div style={{ position: 'relative' }}>
-                    {tab.title}
-                    <div style={{
-                      position: 'absolute',
-                      right: -3,
-                      top: -1,
-                      width: 6, height: 6,
-                      background: 'red',
-                      borderTopLeftRadius: 6,
-                      borderBottomLeftRadius: 6,
-                      borderBottomRightRadius: 6,
-                      borderTopRightRadius: 6,
-                    }}></div>
-                  </div>;
-                }
-                return <div>{tab.title}</div>;
-              }}
-            />}
-          >
-            {this.renderContent(this.state.data)}
-          </Tabs>
+            <div className="example-item">
+              <h2>基础的tabs,不可左右滑动</h2>
+              <Tabs 
+                tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                ]} 
+                page={this.state.page}
+                onChange={(tab, index) => {
+                  console.log('onChange', tab, index);
+                  this.setState({ page: index });
+                }}
+                onTabClick={(tab, index) => {
+                  console.log('onTabClick', tab, index);
+                }}
+              >
+                {this.renderContent()}
+              </Tabs>
+            </div>
           </div>
         </div> 
       </div>

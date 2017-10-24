@@ -11,7 +11,7 @@ class BasicDemo extends React.Component{
     super(props);
 
     this.state = {
-      page: 0
+      page: 1
     };
   }
 
@@ -34,12 +34,32 @@ class BasicDemo extends React.Component{
         <p style={pStyle}>tab 3 1</p>
         <p style={pStyle}>tab 3 2</p>
       </div>,
-      <div key="t4" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 4 1</p>
+    ];
+  }
+  
+  renderContentk() {
+    const pStyle = { margin: 0, padding: 10 };
+    return [
+      <div key="k1" style={{ background: '#ADFFD7' }}>
+        <p style={pStyle}>tab 1 1</p>
+        <p style={pStyle}>tab 1 2</p>
+        <p style={pStyle}>tab 1 3</p>
+        <p style={pStyle}>tab 1 4</p>
       </div>,
-      <div key="t5" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 5 1</p>
-      </div>
+      <div key="k2" style={{ background: '#ADFFD7' }}>
+         <p style={pStyle}>tab 2 1</p>
+        <p style={pStyle}>tab 2 2</p>
+        <p style={pStyle}>tab 2 3</p>
+        <p style={pStyle}>tab 2 4</p>
+      </div>,
+      <div key="k3" style={{ background: '#ADFFD7' }}>
+        <p style={pStyle}>tab 3 1</p>
+        <p style={pStyle}>tab 3 2</p>
+      </div>,
+       <div key="k4" style={{ background: '#ADFFD7' }}>
+        <p style={pStyle}>tab 3 1</p>
+        <p style={pStyle}>tab 3 2</p>
+      </div>,
     ];
   }
 
@@ -52,19 +72,47 @@ class BasicDemo extends React.Component{
       <div>
         <div style={baseStyle}>
           <div style={{ ...baseStyle }}>
-            <h2>1</h2>
-            <Tabs 
-              tabs={[
-                { key: 't1', title: 't1' },
-                { key: 't2', title: 't2' },
-                { key: 't3', title: 't3' },
-                { key: 't4', title: 't4' },
-                { key: 't5', title: 't5' }]
-              } 
-            >
-              {this.renderContent()}
-            </Tabs>
+            <div className="example-item">
+                <h2>基础的tabs</h2>
+                <Tabs 
+                  tabs={[
+                    { key: 't1', title: 't1' },
+                    { key: 't2', title: 't2' },
+                    { key: 't3', title: 't3' },
+                  ]} 
+                  page={this.state.page}
+                  onChange={(tab, index) => {
+                    console.log('onChange', tab, index);
+                    this.setState({ page: index });
+                  }}
+                  onTabClick={(tab, index) => {
+                    console.log('onTabClick', tab, index);
+                  }}
+                >
+                  {this.renderContent()}
+                </Tabs>
+            </div>
             
+            <div className="example-item">
+              <h2>基础的tabs,默认一个起始页</h2>
+              <Tabs 
+                tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                ]} 
+               
+                onChange={(tab, index) => {
+                  console.log('onChange', tab, index);
+                  this.setState({ page: index });
+                }}
+                onTabClick={(tab, index) => {
+                  console.log('onTabClick', tab, index);
+                }}
+              >
+                {this.renderContent()}
+              </Tabs>
+            </div>
           </div>
         </div> 
       </div>

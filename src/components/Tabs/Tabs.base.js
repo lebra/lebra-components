@@ -64,8 +64,8 @@ export class Tabs extends React.PureComponent {
     //props: P
     constructor(props) {
         super(props);
-        this.currentTab = PropTypes.number;
-        this.minRenderIndex = PropTypes.number;
+        // this.currentTab = PropTypes.number;
+        // this.minRenderIndex = PropTypes.number;
         //第二个参数ass
         this.state = this.getPrerenderRange(props.prerenderingSiblingsNumber, {
             currentTab: this.getTabIndex(props),
@@ -222,10 +222,7 @@ export class Tabs extends React.PureComponent {
     }
 
     getTabBarBaseProps() {
-        const {
-            currentTab
-        } = this.state;
-
+        const { currentTab } = this.state;
         const {
             animated,
             onTabClick,
@@ -254,25 +251,19 @@ export class Tabs extends React.PureComponent {
 
     //tabBarProps: any, DefaultTabBar: React.ComponentClass
     renderTabBar(tabBarProps, DefaultTabBar) {
-        const {
-            renderTabBar
-        } = this.props;
+        const { renderTabBar } = this.props;
         if (renderTabBar === false) {
             return null;
         } else if (renderTabBar) {
             // return React.cloneElement(this.props.renderTabBar(props), props);
             return renderTabBar(tabBarProps);
         } else {
-            return <DefaultTabBar { ...tabBarProps
-            }
-            />;
+            return <DefaultTabBar { ...tabBarProps } />;
         }
     }
 
     getSubElements = () => {
-        const {
-            children
-        } = this.props;
+        const { children } = this.props;
         //let subElements: { [key: string]: React.ReactNode } = {};
         let subElements = {};
         //defaultPrefix: string = '$i$-', allPrefix: string = '$ALL$'
