@@ -11,7 +11,7 @@ class BasicDemo extends React.Component{
     super(props);
 
     this.state = {
-      page: 0
+      page: 1
     };
   }
 
@@ -75,28 +75,66 @@ class BasicDemo extends React.Component{
     return (
       <div>
         <div style={baseStyle}>
-          <div style={{ ...baseStyle }}>
+          
             <div className="example-item">
-              <h2>基础的tabs,不可左右滑动</h2>
-              <Tabs 
-                tabs={[
+              <h2>bottom</h2>
+                <Tabs tabs={[
                   { key: 't1', title: 't1' },
                   { key: 't2', title: 't2' },
                   { key: 't3', title: 't3' },
+                  { key: 't4', title: 't4' },
                 ]} 
-                page={this.state.page}
-                onChange={(tab, index) => {
-                  console.log('onChange', tab, index);
-                  this.setState({ page: index });
-                }}
-                onTabClick={(tab, index) => {
-                  console.log('onTabClick', tab, index);
-                }}
-              >
+                initialPage={'t2'} 
+                tabBarPosition="bottom"
+                >
                 {this.renderContent()}
-              </Tabs>
+                </Tabs>
             </div>
-          </div>
+
+
+            <div className="example-item">
+              <h2>left</h2>
+                <Tabs tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                  { key: 't4', title: 't4' },
+                ]} 
+                tabBarPosition="left"
+                >
+                {this.renderContent()}
+                </Tabs>
+            </div>
+
+            <div className="example-item">
+              <h2>right</h2>
+                <Tabs tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                  { key: 't4', title: 't4' },
+                ]} 
+                initialPage={'t2'} 
+                tabBarPosition="right"
+                >
+                {this.renderContent()}
+                </Tabs>
+            </div>
+
+            <div className="example-item">
+              <h2>top</h2>
+                <Tabs tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                  { key: 't4', title: 't4' },
+                ]} 
+                initialPage={'t2'} 
+                tabBarPosition="top"
+                >
+                {this.renderContent()}
+                </Tabs>
+            </div>
         </div> 
       </div>
     )

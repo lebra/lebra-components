@@ -67,10 +67,8 @@ class BasicDemo extends React.Component{
     const baseStyle = {
       display: 'flex', flexDirection: 'column', marginTop: 10, marginBottom: 10, fontSize: 14
     };
-
     return (
       <div>
-        <div style={baseStyle}>
           <div style={{ ...baseStyle }}>
             <div className="example-item">
                 <h2>基础的tabs</h2>
@@ -80,7 +78,6 @@ class BasicDemo extends React.Component{
                     { key: 't2', title: 't2' },
                     { key: 't3', title: 't3' },
                   ]} 
-                  page={this.state.page}
                   onChange={(tab, index) => {
                     console.log('onChange', tab, index);
                     this.setState({ page: index });
@@ -92,16 +89,15 @@ class BasicDemo extends React.Component{
                   {this.renderContent()}
                 </Tabs>
             </div>
-            
             <div className="example-item">
-              <h2>基础的tabs,默认一个起始页</h2>
+              <h2>基础的tabs,默认起始</h2>
               <Tabs 
                 tabs={[
-                  { key: 't1', title: 't1' },
-                  { key: 't2', title: 't2' },
-                  { key: 't3', title: 't3' },
+                  { key: 't1', title: 't11' },
+                  { key: 't2', title: 't22' },
+                  { key: 't3', title: 't33' },
                 ]} 
-               
+                initialPage={'t2'}
                 onChange={(tab, index) => {
                   console.log('onChange', tab, index);
                   this.setState({ page: index });
@@ -113,8 +109,23 @@ class BasicDemo extends React.Component{
                 {this.renderContent()}
               </Tabs>
             </div>
+  
+            <div className="example-item">
+              <h2>基础的tabs,no-swiped</h2>
+              <Tabs 
+                tabs={[
+                  { key: 't1', title: 't1' },
+                  { key: 't2', title: 't2' },
+                  { key: 't3', title: 't3' },
+                ]} 
+                initialPage={this.state.page}
+                swipeable={false}
+              >
+                {this.renderContent()}
+              </Tabs>
+            </div>
           </div>
-        </div> 
+       
       </div>
     )
   }
