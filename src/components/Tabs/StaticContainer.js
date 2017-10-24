@@ -18,6 +18,7 @@ export class StaticContainer extends React.Component{
     if (!child) {
       return null;
     }
+    //console.log(React.Children.count(child))
     return React.Children.only(child);
   }
 }

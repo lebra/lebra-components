@@ -23,7 +23,8 @@ subtitle: 页签
 |onTabClick(tab,index)|点击页签|func|---|
 |onChange(tab,index)|左右滑动Tabpane|func|---|
 |tabBarPosition|tabBar的位置|[top,left,right,bottom]|top|
-|renderTabBar|渲染TabBar的方法，不设置时组件自动使用<DefaultTabBar/>}|func|null|
+|tabDirection|tab内容切换时需要滑动的方向，vertical不可滑动切换内容|["horizontal","vertical"]|horizontal|
+|renderTabBar|渲染TabBar的方法，不设置该参数时组件自动使用<DefaultTabBar/>}|func|null|
 
 #TabBar
 ### API

@@ -37,32 +37,31 @@ class BasicDemo extends React.Component{
     ];
   }
   
-  renderContentk() {
+  renderContentWithoutkey(){
     const pStyle = { margin: 0, padding: 10 };
     return [
-      <div key="k1" style={{ background: '#ADFFD7' }}>
+      <div key="k11" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 1 1</p>
         <p style={pStyle}>tab 1 2</p>
         <p style={pStyle}>tab 1 3</p>
         <p style={pStyle}>tab 1 4</p>
       </div>,
-      <div key="k2" style={{ background: '#ADFFD7' }}>
+      <div key="k22" style={{ background: '#ADFFD7' }}>
          <p style={pStyle}>tab 2 1</p>
         <p style={pStyle}>tab 2 2</p>
         <p style={pStyle}>tab 2 3</p>
         <p style={pStyle}>tab 2 4</p>
       </div>,
-      <div key="k3" style={{ background: '#ADFFD7' }}>
+      <div key="k33" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 3 1</p>
         <p style={pStyle}>tab 3 2</p>
       </div>,
-       <div key="k4" style={{ background: '#ADFFD7' }}>
+       <div key="k44" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 3 1</p>
         <p style={pStyle}>tab 3 2</p>
       </div>,
     ];
   }
-
   render() {
     const baseStyle = {
       display: 'flex', flexDirection: 'column', marginTop: 10, marginBottom: 10, fontSize: 14
@@ -93,9 +92,9 @@ class BasicDemo extends React.Component{
               <h2>基础的tabs,默认起始</h2>
               <Tabs 
                 tabs={[
-                  { key: 't1', title: 't11' },
-                  { key: 't2', title: 't22' },
-                  { key: 't3', title: 't33' },
+                  { title: 't11' },
+                  { title: 't22' },
+                  { title: 't33' },
                 ]} 
                 initialPage={'t2'}
                 onChange={(tab, index) => {
@@ -106,7 +105,7 @@ class BasicDemo extends React.Component{
                   console.log('onTabClick', tab, index);
                 }}
               >
-                {this.renderContent()}
+                {this.renderContentWithoutkey()}
               </Tabs>
             </div>
   

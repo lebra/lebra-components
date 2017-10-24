@@ -37,33 +37,7 @@ class BasicDemo extends React.Component{
       </div>,
       <div key="t4" style={{ background: '#ADFFD7' }}>
         <p style={pStyle}>tab 4 1</p>
-      </div>,
-      <div key="t5" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 5 1</p>
-      </div>,
-       <div key="t6" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 1 1</p>
-        <p style={pStyle}>tab 1 2</p>
-        <p style={pStyle}>tab 1 3</p>
-        <p style={pStyle}>tab 1 4</p>
-      </div>,
-      <div key="t7" style={{ background: '#ADFFD7' }}>
-         <p style={pStyle}>tab 1 1</p>
-        <p style={pStyle}>tab 1 2</p>
-        <p style={pStyle}>tab 1 3</p>
-        <p style={pStyle}>tab 1 4</p>
-      </div>,
-      <div key="t8" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 3 1</p>
-        <p style={pStyle}>tab 3 2</p>
-        <p style={pStyle}>{JSON.stringify(data)}</p>
-      </div>,
-      <div key="t9" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 4 1</p>
-      </div>,
-      <div key="t10" style={{ background: '#ADFFD7' }}>
-        <p style={pStyle}>tab 5 1</p>
-      </div>,
+      </div>
     ];
   }
 

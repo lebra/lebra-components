@@ -49,70 +49,57 @@ class BasicDemo extends React.Component{
 
     return (
       <div>
-        <div style={baseStyle}>
-          <h2>vertical</h2>
-          <Tabs tabs={[
-            { title: 't1' },
-            { title: 't2' },
-            { title: 't3' },
-            { title: 't4' },
-            { title: 't5' },
-          ]} tabBarPosition="left"
+        <div className="example-item">
+          <h2>可以左右滑动</h2>
+          <Tabs 
+            tabs={[
+              { title: 't1' },
+              { title: 't2' },
+              { title: 't3' },
+              { title: 't4' },
+              { title: 't5' },
+            ]} 
+            tabBarPosition="left"
           >
             {this.renderContent()}
           </Tabs>
         </div>
-        <div style={{ ...baseStyle, height: 200 }}>
-          <h2>vertical fixed height</h2>
-          <Tabs tabs={[
-            { title: 't1' },
-            { title: 't2' },
-            { title: 't3' },
-            { title: 't4' },
-            { title: 't5' },
-          ]} tabBarPosition="left" tabDirection="vertical"
+        <div className="example-item" style={{height:"240px"}}>
+          <h2>不可左右滑动</h2>
+          <Tabs 
+            tabs={[
+              { title: 't1' },
+              { title: 't2' },
+              { title: 't3' },
+              { title: 't4' },
+              { title: 't5' },
+              { title: 't6' },
+              { title: 't7' },
+              { title: 't8' },
+              { title: 't9' }
+            ]} 
+            tabBarPosition="left" 
+            tabDirection="vertical"
           >
             {this.renderContent()}
           </Tabs>
         </div>
-        <div style={{ ...baseStyle, height: 200 }}>
-          <h2>vertical right</h2>
-          <Tabs tabs={[
-            { title: 't1' },
-            { title: 't2' },
-            { title: 't3' },
-            { title: 't4' },
-            { title: 't5' },
-          ]} tabBarPosition="right" tabDirection="vertical"
-          >
-            {this.renderContent()}
-          </Tabs>
-        </div>
-        <div style={{ ...baseStyle, height: 200 }}>
-          <h2>no paged</h2>
-          <Tabs tabs={[
-            { title: 't1' },
-            { title: 't2' },
-            { title: 't3' },
-            { title: 't4' },
-            { title: 't5' },
-          ]} tabBarPosition="right" tabDirection="vertical" usePaged={false}
-          >
-            {this.renderContent()}
-          </Tabs>
-        </div>
-        <div style={{ ...baseStyle, height: 200 }}>
-          <h2>vertical right</h2>
-          <Tabs tabs={[
-            { title: 't1' },
-            { title: 't2' },
-            { title: 't3' },
-            { title: 't4' },
-            { title: 't5' },
-            { title: 't6' },
-            { title: 't7' },
-            { title: 't8' },
-          ]} tabBarPosition="left" tabDirection="vertical"
+        <div className="example-item" style={{height:"240px"}}>
+          <h2>不可左右滑动2</h2>
+          <Tabs 
+            tabs={[
+              { title: 't1' },
+              { title: 't2' },
+              { title: 't3' },
+              { title: 't4' },
+              { title: 't5' },
+              { title: 't6' },
+              { title: 't7' },
+              { title: 't8' },
+              { title: 't9' }
+            ]} 
+            tabBarPosition="right" 
+            tabDirection="vertical"
           >
             {this.renderContent()}
           </Tabs>
