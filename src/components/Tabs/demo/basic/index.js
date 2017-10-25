@@ -96,7 +96,7 @@ class BasicDemo extends React.Component{
                   { title: 't22' },
                   { title: 't33' },
                 ]} 
-                initialPage={'t2'}
+                initialPage={1}
                 onChange={(tab, index) => {
                   console.log('onChange', tab, index);
                   this.setState({ page: index });

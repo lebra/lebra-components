@@ -1,0 +1,126 @@
+@import "../../style/theme/default";
+@import "../../style/mixins";
+@import './item.less';
+@import './hairline.less';
+@flexPrefixCls: lebra-flexbox;
+@gridPrefixCls: lebra-grid;
+@hd:1px;
+/* flexbox */
+.@{gridPrefixCls} {
+  .@{flexPrefixCls} {
+    background: @fill-base;
+
+    .@{flexPrefixCls}-item {
+      margin-left: 0;
+
+      &.@{gridPrefixCls}-item {
+        position: relative;
+      }
+
+      &.@{gridPrefixCls}-item-active {
+        .@{gridPrefixCls}-item-content {
+          background-color: #ddd;
+        }
+      }
+
+      .@{gridPrefixCls}-item-content {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 15 * @hd 0;
+
+        .@{gridPrefixCls}-item-inner-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .@{gridPrefixCls}-icon {
+            max-width: 100%;
+          }
+
+          .@{gridPrefixCls}-text {
+            margin-top: 9 * @hd;
+            font-size: 12 * @hd;
+            color: #000;
+            text-align: center;
+          }
+
+          &.column-num-3 {
+            .@{gridPrefixCls}-text {
+              font-size: 16 * @hd;
+            }
+          }
+
+          &.column-num-2 {
+            .@{gridPrefixCls}-text {
+              margin-top: 15 * @hd;
+              font-size: 18 * @hd;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.@{gridPrefixCls}-line {
+    position: relative;
+    &:not(.@{gridPrefixCls}-carousel) {
+      .hairline('top');
+      .hairline('right');
+    }
+
+    .@{flexPrefixCls} {
+      position: relative;
+      .hairline('bottom');
+
+      .@{flexPrefixCls}-item {
+        position: relative;
+        &:first-child {
+          .hairline('left');
+        }
+        &:not(:last-child) {
+          .hairline('right');
+        }
+      }
+    }
+  }
+  &.@{gridPrefixCls}-carousel {
+    .@{gridPrefixCls}-carousel-page {
+      .hairline('top');
+      .hairline('right');
+    }
+  }
+
+ /*  .am-carousel {
+   .am-carousel-wrap-dot > span {
+     background: #dcdee3;
+   }
+ 
+   .am-carousel-wrap-dot-active > span {
+     background: #0ae;
+   }
+ } */
+
+  &.@{gridPrefixCls}-square {
+    .@{gridPrefixCls}-item {
+      &:before {
+        display: block;
+        content: ' ';
+        padding-bottom: 100%;
+      }
+      .@{gridPrefixCls}-item-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .@{gridPrefixCls}-item-inner-content {
+        height: 100%;
+        .@{gridPrefixCls}-icon {
+          margin-top: 9 * @hd;
+          width: 28%!important;
+        }
+      }
+    }
+  }
+}

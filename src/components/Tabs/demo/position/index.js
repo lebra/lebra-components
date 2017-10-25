@@ -60,6 +60,11 @@ class BasicDemo extends React.Component{
                 ]} 
                 initialPage={'t2'} 
                 tabBarPosition="bottom"
+                tabBarUnderlineStyle={{border:"1px solid black"}}
+                tabBarBackgroundColor={'red'}
+                tabBarActiveTextColor={"yellow"}
+                tabBarInactiveTextColor={'green'}
+                tabBarTextStyle={{fontSize:".2rem",padding:".5rem 0"}}
                 >
                 {this.renderContent()}
                 </Tabs>
