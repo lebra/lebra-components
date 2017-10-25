@@ -22,7 +22,7 @@ class BaseDemo extends Component {
 					<Grid data={data} columnNum={3} />
 
 					<div className="sub-title">ColumnNum=3 </div>
-					<Grid data={data} columnNum={4} />
+					<Grid data={data1} columnNum={4} />
 				</div>
 
 		 )

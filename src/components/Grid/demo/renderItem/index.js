@@ -18,7 +18,7 @@ class BaseDemo extends Component {
 	render(){
 		return( 
 				<div>
-					<div className="sub-title">Custom content</div>
+					<div className="sub-title">自定义渲染内容</div>
 					<Grid data={data1}
 					columnNum={3}
 					renderItem={dataItem => (

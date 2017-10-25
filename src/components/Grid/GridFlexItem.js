@@ -7,7 +7,7 @@ const propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.node,
   style:PropTypes.object,
-   prefixCls: PropTypes.string,
+  prefixCls: PropTypes.string,
   className: PropTypes.string,
 }
 

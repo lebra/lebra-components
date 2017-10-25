@@ -18,8 +18,8 @@ const propTypes = {
   className: PropTypes.string,
   square: PropTypes.bool,
   //activeClassName: PropTypes.string,
- // activeStyle:PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  //activeStyle:PropTypes.object,
+  //activeStyle:PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+ //activeStyle:PropTypes.object,
   
 }
 
@@ -82,7 +82,7 @@ class Grid extends React.Component<GridProps, any> {
     let { columnNum, data, renderItem, prefixCls, onClick, activeStyle, activeClassName } = this.props;
     const rowsArr = [];
 
-    columnNum = columnNum==undefined ? 0 : columnNum;
+    columnNum = columnNum==undefined ? 1 : columnNum;
 
     const rowWidth = `${100 / columnNum}%`;
     const colStyle = {
@@ -117,7 +117,7 @@ class Grid extends React.Component<GridProps, any> {
         }
         rowArr.push(itemEl);
       }
-      rowsArr.push(<GridFlex key={`grid-row-${i}`} justify="center" align="stretch" key={`gridline-${i}`}>{rowArr}</GridFlex>);
+      rowsArr.push(<GridFlex key={`${prefixCls}-row-${i}`} justify="center" align="stretch" >{rowArr}</GridFlex>);
     }
     return rowsArr;
   }
@@ -130,7 +130,7 @@ class Grid extends React.Component<GridProps, any> {
 
     const { initialSlideWidth } = this.state;
 
-    columnNum = columnNum== undefined ? 0 : columnNum;
+    columnNum = columnNum== undefined ? 1 : columnNum;
 
     const dataLength = data && data.length || 0;
 

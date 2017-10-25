@@ -137,38 +137,3 @@
     }
   }
 }
-
-.hairline-remove(@position) when (@position = 'left') {
-  border-left: 0;
-  &:before {
-    display: none !important;
-  }
-}
-
-.hairline-remove(@position) when (@position = 'right') {
-  border-right: 0;
-  &:after {
-    display: none !important;
-  }
-}
-
-.hairline-remove(@position) when (@position = 'top') {
-  border-top: 0;
-  &:before {
-    display: none !important;
-  }
-}
-
-.hairline-remove(@position) when (@position = 'bottom') {
-  border-bottom: 0;
-  &:after {
-    display: none !important;
-  }
-}
-
-.hairline-remove(@position) when (@position = 'all') {
-  border: 0;
-  &:before {
-    display: none !important;
-  }
-}
