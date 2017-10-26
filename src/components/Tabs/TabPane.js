@@ -1,48 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import createReactClass from 'create-react-class';
-import classnames from 'classnames';
-import { getDataAttr } from './utils';
+import { StaticContainer } from './StaticContainer';
+import { getPxStyle, getTransformPropValue } from './util';
 
-const TabPane = createReactClass({
-  displayName: 'TabPane',
-  propTypes: {
-    className: PropTypes.string,
-    active: PropTypes.bool,
-    style: PropTypes.any,
-    destroyInactiveTabPane: PropTypes.bool,
-    forceRender: PropTypes.bool,
-    placeholder: PropTypes.node,
-  },
-  getDefaultProps() {
-    return { placeholder: null };
-  },
+const propTypes = {
+ // key?: PropTypes.string,
+  className: PropTypes.string,
+  shouldUpdate: PropTypes.bool,
+  active: PropTypes.bool,
+  fixX: PropTypes.bool,
+  fixY: PropTypes.bool
+}
+
+const defaultProps ={
+  fixX: true,
+  fixY: true
+}
+
+
+export class TabPane extends React.PureComponent{
+  constructor(props) {
+    super(props);
+    //node
+    this.layout=null;
+    this.offsetX = 0;
+    this.offsetY = 0;
+    this.emptyContent = false;
+  }
+ 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.active !== nextProps.active) {
+      if (nextProps.active) {
+        this.offsetX = 0;
+        this.offsetY = 0;
+      } else {
+        this.offsetX = this.layout.scrollLeft;
+        this.offsetY = this.layout.scrollTop;
+      }
+    }
+    this.emptyContent = !(this.props.children && nextProps.children);
+  }
+
+  setLayout = (div) => {
+    this.layout = div;
+  }
+
   render() {
-    const {
-      className, destroyInactiveTabPane, active, forceRender,
-      rootPrefixCls, style, children, placeholder, ...restProps,
-    } = this.props;
-    this._isActived = this._isActived || active;
-    const prefixCls = `${rootPrefixCls}-tabpane`;
-    const cls = classnames({
-      [prefixCls]: 1,
-      [`${prefixCls}-inactive`]: !active,
-      [`${prefixCls}-active`]: active,
-      [className]: className,
-    });
-    const isRender = destroyInactiveTabPane ? active : this._isActived;
-    return (
-      <div
-        style={style}
-        role="tabpanel"
-        aria-hidden={active ? 'false' : 'true'}
-        className={cls}
-        {...getDataAttr(restProps)}
-      >
-        {isRender || forceRender ? children : placeholder}
-      </div>
-    );
-  },
-});
+    const { shouldUpdate, active, fixX, fixY, ...props } = this.props;
+    let style = {
+      ...fixX && this.offsetX ? getTransformPropValue(getPxStyle(-this.offsetX, 'px', false)) : {},
+      ...fixY && this.offsetY ? getTransformPropValue(getPxStyle(-this.offsetY, 'px', true)) : {},
+    };
 
-export default TabPane;
+    return <div {...props} style={style} ref={this.setLayout}>
+      <StaticContainer shouldUpdate={this.emptyContent || shouldUpdate}>
+        {props.children}
+      </StaticContainer>
+    </div>;
+  }
+}
+
+
+TabPane.propTypes = propTypes ;
+TabPane.defaultProps = defaultProps;

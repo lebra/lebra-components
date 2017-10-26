@@ -33,13 +33,15 @@ var srcComponentIndexLess = [
 ].join('\n');
 
 var srcComponentContentDemo =  [
-    "import " + componentName + " from '../index';",
+    "import " + componentName + " from '../../index';",
     "import React, { Component } from 'react';",
-    "import './index.less;",
+    "import {render} from 'react-dom';",
+    "import './index.less';",
     "class BaseDemo extends Component {",
     "render(){return( <" + componentName + "/> )}",
     "}",
-    "export default BaseDemo;"
+    "let root = document.getElementById('app');",
+    "render(<BaseDemo />, root);"
 ].join('\n');
 
 var srcComponentContentDemoLess = [

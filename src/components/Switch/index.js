@@ -36,7 +36,7 @@ class Switch extends Component {
             <label className={classes}>
                 <input type="checkbox"
                        disabled={disabled}
-                       onChange={this.props.onChange}
+                       onChange={this.props.handleChange}
                        defaultChecked={defaultChecked}
                 />
                 <div className="lebra-track">

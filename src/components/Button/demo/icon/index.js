@@ -8,8 +8,8 @@ export default class BaseDemo extends Component {
   render() {
     return (
       <div>
-      <Button iconType="uf uf-plus" shape="squared"></Button>
-      <Button iconType="uf uf-plus">确定</Button>
+      <Button iconType="iconfont icon-add" shape="squared"></Button>
+      <Button iconType="iconfont icon-add">确定</Button>
     </div> )
   }
 }
