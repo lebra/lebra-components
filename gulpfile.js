@@ -90,10 +90,8 @@ gulp.task('less_build', function () {
 //代码检查
 gulp.task('lint', function () {
 	let eslintCfg = fs.readFileSync('./.eslintrc.js');
-	console.log(eslint);
-	gulp.src([
-		path.join(process.cwd(), './src/**/*.js'),
-	])
+	//console.log(eslintCfg);
+	gulp.src('./src/components/*/*.js')
 		.pipe(eslint(eslintCfg))
 		.pipe(eslint.format('table'))
 		.pipe(eslint.failAfterError());

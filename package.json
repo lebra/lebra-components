@@ -33,6 +33,9 @@
     "url": "https://github.com/lebra/lebra-components/issues"
   },
   "homepage": "https://github.com/lebra/lebra-components#readme",
+  "pre-commit": [
+    "lint"
+  ],
   "devDependencies": {
     "autoprefixer": "^7.0.1",
     "babel": "^6.5.2",
