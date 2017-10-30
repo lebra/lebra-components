@@ -12,6 +12,7 @@ export default class NavDemo extends Component{
         return (
             <div className="nav-demo">
                 <Nav leftBtn={true}  navTitle="导航栏" onBack={this.onBack}/>
+                <Nav leftBtn={true} rightBtn={true} rightClass="icon-font" rightTxt="Edit" navTitle="导航栏" onBack={this.onBack}/>
             </div>
         )
     }

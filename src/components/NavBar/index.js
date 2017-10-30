@@ -9,7 +9,7 @@ const propTypes = {
     backTxt:     PropTypes.string,
     titleClass:  PropTypes.string,
     navTitle:    PropTypes.string,
-    rightBtn:    PropTypes.array,
+    rightBtn:    PropTypes.bool,
     rightClass:  PropTypes.string,
     rightTxt:    PropTypes.string,
 };
@@ -50,8 +50,8 @@ class Nav extends Component {
             'lebra-nav-title' : true
         },titleClass);
 
-        let rightBtnClassName = classNames({
-            'lebra-nav-rightBtn' : true
+        let rightClassName = classNames({
+            'lebra-nav-right' : true
         },rightClass);
 
 		return (
@@ -64,7 +64,7 @@ class Nav extends Component {
                 }
                 <h3 className={titleClassName}>{navTitle}</h3>
                 { rightBtn
-                    ? (<a className={rightBtnClassName} onClick={this.props.onRight}>{rightTxt}</a>)
+                    ? (<a className={rightClassName} onClick={this.props.onRight}>{rightTxt}</a>)
                     : null
                 }
             </div>
