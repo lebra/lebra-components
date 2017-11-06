@@ -1,78 +1,62 @@
+/* tslint:disable:jsx-no-multiline-js */
 import React, {Component} from 'react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const propTypes = {
-	className:   PropTypes.string,
-    leftBtn :    PropTypes.bool,
-    backClass:   PropTypes.string,
-    backTxt:     PropTypes.string,
-    titleClass:  PropTypes.string,
-    navTitle:    PropTypes.string,
-    rightBtn:    PropTypes.bool,
-    rightClass:  PropTypes.string,
-    rightTxt:    PropTypes.string,
-};
-
+import Icon from '../icon/index'
+import "./index.less"
 const defaultProps = {
-    backTxt: "返回"
+  prefixCls: 'lebra-navbar',
+  mode: 'dark',
+  iconName: 'back',
+  onLeftClick() {
+  },
 };
 
-class Nav extends Component {
-    constructor(props, context){
-       super(props, context);
-    }
-
-	render() {
-        let {
-            style,
-            className,
-            leftBtn,
-            backClass,
-            backTxt,
-            rightBtn,
-            rightClass,
-            rightTxt,
-            titleClass,
-            navTitle,
-            ...props
-        } = this.props;
-
-        let classes = classNames({
-            'lebra-nav' : true
-        },className);
-
-        let backClassName = classNames({
-            'lebra-nav-back' : true
-        },backClass);
-
-        let titleClassName = classNames({
-            'lebra-nav-title' : true
-        },titleClass);
-
-        let rightClassName = classNames({
-            'lebra-nav-right' : true
-        },rightClass);
-
-		return (
-            <div
-                className={classes}
-                style={ style ? style : null}>
-                { leftBtn
-                    ? (<a className={backClassName} onClick={this.props.onBack}>{backTxt}</a>)
-                    : null
-                }
-                <h3 className={titleClassName}>{navTitle}</h3>
-                { rightBtn
-                    ? (<a className={rightClassName} onClick={this.props.onRight}>{rightTxt}</a>)
-                    : null
-                }
-            </div>
-		);
-	}
+const propTypes = {
+  prefixCls: PropTypes.string,
+  className: PropTypes.string,
+  children: PropTypes.any,
+  mode: PropTypes.string,
+  iconName: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.string,
+  ]),
+  leftContent: PropTypes.any,
+  rightContent: PropTypes.any,
+  onLeftClick: PropTypes.func
 }
 
-Nav.propTypes = propTypes;
-Nav.defaultProps = defaultProps;
+class NavBar extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
 
-export default Nav;
+  render() {
+    const {
+      prefixCls, className, children, mode, iconName, leftContent, rightContent, onLeftClick
+      } = this.props;
+
+    const wrapCls = classnames(prefixCls, `${prefixCls}-${mode}`, className);
+
+    return (
+      <div className={wrapCls}>
+        <div className={`${prefixCls}-left`} role="button" onClick={onLeftClick}>
+          <span className={`${prefixCls}-left-icon`} aria-hidden="true">
+            {typeof iconName === 'string' ? <Icon type={iconName}/> : iconName}
+          </span>
+          <span className={`${prefixCls}-left-content`}>{leftContent}</span>
+        </div>
+        <div className={`${prefixCls}-title`}>{children}</div>
+        <div className={`${prefixCls}-right`}>
+          {rightContent}
+        </div>
+      </div>
+    );
+  }
+}
+
+NavBar.propTypes = propTypes;
+NavBar.defaultProps = defaultProps;
+
+export default NavBar;
