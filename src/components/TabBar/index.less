@@ -1,0 +1,76 @@
+@import "../../style/theme/default";
+@import "../../style/mixins";
+body {
+    margin: 0;
+
+}
+ul {
+    list-style:none;
+}
+a {
+    text-decoration: none;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.lebra-tabber {
+    width: 100%;
+    border-top: 1px solid #b2b2b2;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: row;
+    .lebra-tabber-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        position: relative;
+        color: #666666;
+        .lebra-tabbar-icon-box {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            font-size: 0;
+            .lebra-tabber-item-badge {
+                position: absolute;
+                left:28px;
+                top: -5px;
+                padding: 2px 3px;
+                border-radius: 20px;
+                font-size: 16px;
+                background-color: red;
+                color: #fff;
+                line-height: 1;
+            }
+            .lebra-tabber-item-dot {
+                position: absolute;
+                top:-5px;
+                left:28px;
+                width:14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: red;
+            }
+            .lebra-tabber-item-img {
+                display: block;
+                width: 32px;
+                height: 32px;
+            }
+            .lebra-tabber-item-icon {
+                font-size: 30px;
+            }
+        }
+
+        .lebra-tabbar-item-text {
+            margin-top: 6px;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
