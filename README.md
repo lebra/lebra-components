@@ -1,5 +1,14 @@
 # lebra-components
 
+
+[![npm version](https://img.shields.io/npm/v/lebra-components.svg)](https://www.npmjs.com/package/lebra-components)
+[![Build Status](https://img.shields.io/travis/lebra/lebra-components/master.svg)](https://travis-ci.org/lebra/lebra-components)
+[![Coverage Status](https://coveralls.io/repos/github/lebra/lebra-components/badge.svg?branch=master)](https://coveralls.io/github/lebra/lebra-components?branch=master)
+[![NPM downloads](http://img.shields.io/npm/dm/lebra-components.svg?style=flat)](https://npmjs.org/package/lebra-components)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/lebra/lebra-components.svg)](http://isitmaintained.com/project/lebra/lebra-components "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/lebra/lebra-components.svg)](http://isitmaintained.com/project/lebra/lebra-components "Percentage of issues still open")
+
+
 lebra(天枰座)是一款针对移动端的react组件库。
 
 ### 兼容说明
