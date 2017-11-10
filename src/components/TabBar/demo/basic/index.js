@@ -8,8 +8,8 @@ import tabber_fun from './tabber_fun.png'
 import tabber_fun_active from './tabber_fun_active.png'
 
 export default class TabBarDemo extends Component {
-    onClick = ()=> {
-        alert('has clicked');
+    onClick = (type)=> {
+        alert(type+'页被点击');
     }
 
     render() {
@@ -22,28 +22,33 @@ export default class TabBarDemo extends Component {
                                  badge='1'
                                  type='image'
                                  image={tabber_fun}
-                                 activeImg={tabber_fun_active}>
+                                 activeImg={tabber_fun_active}
+                                  onClick={this.onClick}>
                         消息
                     </TabBar.Item>
                     <TabBar.Item barKey='culture'
                                  badge='new'
                                  type='image'
                                  image={tabber_cultrue}
-                                 activeImg={tabber_cultrue_active}>
+                                 activeImg={tabber_cultrue_active}
+                                 onClick={this.onClick}>
                         文化
                     </TabBar.Item>
                     <TabBar.Item barKey='application'
-                                 badge='990'>
+                                 badge='990'
+                                 onClick={this.onClick}>
                         应用
                     </TabBar.Item>
-                    <TabBar.Item barKey='contact'>
+                    <TabBar.Item barKey='contact'
+                                 onClick={this.onClick}>
                         联系人
                     </TabBar.Item>
                     <TabBar.Item barKey='user'
                                  type='image'
                                  image={tabber_cultrue}
                                  activeImg={tabber_cultrue_active}
-                                 dot={true}>
+                                 dot={true}
+                                 onClick={this.onClick}>
                         我的
                     </TabBar.Item>
                 </TabBar>

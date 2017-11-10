@@ -77,6 +77,7 @@ class TabBar extends Component {
     onPress=(key,e)=>{
        e.preventDefault();
         e.stopPropagation();
+        this.props.changeTab(key);
         this.props.onClick(key);
     }
     render() {

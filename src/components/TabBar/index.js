@@ -42,7 +42,7 @@ class TabBar extends Component {
             activeTab:this.props.activeTab
         }
     }
-    onClick=(activeTab)=>{
+    changeTab=(activeTab)=>{
         this.setState({
             activeTab:activeTab
         })
@@ -53,7 +53,7 @@ class TabBar extends Component {
 
             if (child.type === TabBar.Item)
                 return React.cloneElement(child, {
-                    onClick:this.onClick,
+                    changeTab:this.changeTab,
                     activeColor: props.activeColor,
                     color:props.color,
                     activeTab:this.state.activeTab
