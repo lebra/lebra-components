@@ -1,18 +1,48 @@
 @import "../../style/theme/default";
 @import "../../style/mixins";
-.lebra-toast{
+.lebra-toast-overlay{
     position: fixed;
-    z-index: 5000;
-    width: 7.6em;
-    min-height: 7.6em;
-    top: 180px;
-    left: 50%;
-    margin-left: -3.8em;
-    background: rgba(17, 17, 17, 0.7);
-    text-align: center;
-    border-radius: 5px;
-    color: #FFFFFF;
-    &-content{
+    z-index: 99;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+}
+.lebra-toast-overlay-show {
+    background-color: rgba(0,0,0,0.2);
 
-    }
+}
+.lebra-toast-overlay-hide {
+    display: none;
+}
+.lebra-toast {
+    background-color: #616161;
+    color: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+.lebra-toast-child {
+    max-height: 72px;
+    line-height: 24px;
+    max-width: 200px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+    word-break: break-all;
+}
+.lebra-toast-bottom {
+    bottom: 50px;
+}
+.lebra-toast-center {
+    top: 50%;
+    margin-top: -30px;
+}
+.lebra-toast-top {
+    top: 50px;
 }

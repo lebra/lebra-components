@@ -79,6 +79,7 @@ class ListItem extends Component {
             arrow,
             rightItem,
             onClick,
+            children,
             clsPrefix,
             required,
             ...props
@@ -117,8 +118,8 @@ class ListItem extends Component {
                 <img alt="" src={imgSrc} className={imgClass}/>
             </div>)
         }
-        if(multipleLine && title){
-            itemTitle=<h4 className={titleClass}>{title}</h4>
+        if(multipleLine && children){
+            itemTitle=<h4 className={titleClass}>{children}</h4>
         }
         if(arrow){
             liClass='lebra-listview-row lebra-list-arrow'
