@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import GridFlex from './GridFlex';
 import GridFlexItem from './GridFlexItem';
-import TouchFeedback from 'rmc-feedback';
+//import TouchFeedback from 'rmc-feedback';
 import './index.less';
 
 const propTypes = {
