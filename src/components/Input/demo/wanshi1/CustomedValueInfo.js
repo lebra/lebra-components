@@ -17,7 +17,7 @@ const CustomedValueInfo = (props) =>{
 							type="money"
 							className="input-jindou"
 							onChange={(e) =>props.changeHonorAward(e)}
-							editable={true}
+							value={props.honorAward}
 							placeholder='0'
 							>
 					</Input>
@@ -31,7 +31,8 @@ const CustomedValueInfo = (props) =>{
 				<Input
 							type="money"
 							className="input-jindou"
-						
+							onChange={(e) =>props.changeHonorValue(e)}
+							value={props.honorValue} 
 							placeholder='0'
 							>
 					</Input>
@@ -58,12 +59,18 @@ const CustomedValueInfo = (props) =>{
 					<span className="recommend-item" onClick={(e)=>setClassify(e)}>培训</span>
 				</div>
 			</label>
-			<textarea 
+			{/* <textarea 
 				className="honor-desc" 
 				defaultValue={''} 
 				placeholder={'颁奖词'} 
 				onBlur={(e) =>props.changeHonorDesc(e)}
-			/>
+			/> */}
+			 <Input
+				pattern="textarea"
+				onBlur={(e) =>props.changeHonorDesc(e)}
+				placeholder="颁奖词">
+				颁奖词
+			</Input>
 		</div>
 	)
 }
