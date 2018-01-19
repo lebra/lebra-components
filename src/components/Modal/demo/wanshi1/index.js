@@ -18,8 +18,18 @@ class DetailGroup extends Component {
         honorList: [],
         modalIsOpen:false,
         memberModalIsOpen:false,//人员列表
-        showPageFlag: false
-      }
+        showPageFlag: false,
+        style1:{
+          buttons: [
+              {
+                  label: '我知道了',
+                  onClick: this.closeModal.bind(this)
+              }
+          ]
+        }
+      };
+
+      
     }
 
     componentDidMount () {
@@ -171,13 +181,12 @@ class DetailGroup extends Component {
             </div>
             <Modal
               show={this.state.memberModalIsOpen}
+              buttons={this.state.style1.buttons}
             >
               <div className="modal-body">
                 {memberArrary}
               </div>
-              <div className="modal-footer">
-                <button className="cancel-btn" onClick={this.closeModal}>我知道了</button>
-              </div>
+             
             </Modal>
           </div>
         </div>
