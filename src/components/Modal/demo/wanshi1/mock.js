@@ -1,0 +1,25 @@
+export const mockData = {
+	"data":{
+		"canShow":false,
+		"comment":"以振兴中华为己任，促进民族团结，自觉报效祖国！",
+		"companyLogo":"https://hongbao-cdn.yonyoucloud.com/uculture/app/company-avator/logo@2x.png",
+		"createTime":1515485289000,
+		"fromMember":{
+			"name":"yy_6167625888289522698ppKM0a",
+			"sex":0
+		},
+		"givenScore":"10",
+		"honourAward":"2",
+		"honourValue":"0",
+		"logo":"https://hongbao-cdn.yonyoucloud.com//uculture/app/honour-icon/second/workaholic@3x.png",
+		"tagName":"爱国",
+		"toMemberList":[
+			{
+				"name":"宋浩淼",
+				"sex":0
+			}
+		],
+		"toOwnerType":"1"
+	},
+	"flag":0
+}
