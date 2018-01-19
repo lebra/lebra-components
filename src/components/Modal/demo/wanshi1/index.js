@@ -94,20 +94,6 @@ class DetailGroup extends Component {
        this.setState({modalIsOpen:false,memberModalIsOpen:false});
     }
 
-    openModal = () => {
-      let self = this;
-      let canShow = this.state.honorDetail && this.state.honorDetail.canShow;
-      if(!canShow){
-        // summer.toast({
-        //   msg:"无权限分享"
-        // });
-        return false;
-      }
-      this.setState({modalIsOpen:true},function() {
-        //self.centerDialog();
-      });
-    }
-    
     openMemberListModal = () =>{
       let self = this;
       this.setState({memberModalIsOpen:true},function() {
@@ -142,42 +128,7 @@ class DetailGroup extends Component {
       dialogObj.style.top =  objTop + 'px'; 
     }
     
-    shareHonor = (shareScene) => {
-      let self = this;
-      return function() {
-        self.setState({modalIsOpen:false});
-        let scene = (shareScene == "timeline")? Wechat.Scene.TIMELINE : Wechat.Scene.SESSION;
-        //debugger;
-        let temp = self.state.honorDetail;
-        let url = `https://hongbao-cdn.yonyoucloud.com/uculture/app/html/share/honour/index.html?badgename=${temp.cultureName}&honorname=${temp.tagName}&fromname=${temp.fromMember.name}&honormsg=${temp.comment}&iconfont=${temp.logo}`;
-        //summer.showProgress();
-        //   Wechat.isInstalled(function(installed) {
-        //       summer.hideProgress();
-        //       Wechat.share({
-        //           message: {
-        //               title: "玩事",
-        //               description: "玩事，不一样的工作方式",
-        //               thumb : 'https://hongbao-cdn.yonyoucloud.com/uculture/app/other-image/share.png',
-        //               media: {
-        //                   type: Wechat.Type.WEBPAGE,
-        //                   webpageUrl: url
-        //               }
-        //           },
-        //           scene: scene  // share to Timeline
-        //       }, function () {
-        //           summer.hideProgress();
-        //           console.log("Success");
-        //       }, function (reason) {
-        //           summer.hideProgress();
-        //           console.log("Failed: " + reason);
-        //       });
-
-        //   }, function(reason) {
-        //       summer.hideProgress();
-        //       console.log(reason);
-        //   });
-       }
-    }
+   
 
     render() {
       let goldMainStyle = {
@@ -218,26 +169,8 @@ class DetailGroup extends Component {
                 <HonorDetail honorname={honorname} logo={logo} honormsg={honormsg} honorform={honorform} cultureName={cultureName} createTime={createTime}></HonorDetail>
                 {this.renderHonorFooter(memberArrary)}
             </div>
-            {/* <Modal
-              show={this.state.modalIsOpen}
-              style={shareCustomStyles}
-              className={"exchange-modal"}
-            >
-              <div className="modal-body share-body">
-                <span onClick={this.shareHonor("session")}>
-                  <img src='../static/img/chart2.png' alt=""/>
-                </span>
-                <span onClick={this.shareHonor("timeline")}>
-                  <img src='../static/img/timeline2.png' alt=""/>
-                </span>
-              </div>
-              <div className="modal-footer share-footer">
-                <button className="cancel-btn share-cancle" onClick={this.closeModal}>取消</button>
-              </div>
-            </Modal> */}
             <Modal
               show={this.state.memberModalIsOpen}
-              className={"all-member-modal exchange-modal"}
             >
               <div className="modal-body">
                 {memberArrary}
