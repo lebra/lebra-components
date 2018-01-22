@@ -122,6 +122,7 @@ export default class SwitchDemo extends Component{
 						<p className="bottom-tips">
 							* 消费金豆总数=（荣耀价值+金豆奖励）*颁发人数
 						</p>
+						<div class="submit-btn">发起</div>
 					</div>
 				)
 		}
