@@ -77,7 +77,6 @@ export default class SwitchDemo extends Component{
 							<Input
 									pattern="textarea"
 									placeholder="请输入描述">
-									描述
 							</Input>
 						</div>
 
@@ -107,7 +106,6 @@ export default class SwitchDemo extends Component{
 							<Input
 									pattern="textarea"
 									placeholder="请输入描述">
-									描述
 							</Input>
 						</div>
 
