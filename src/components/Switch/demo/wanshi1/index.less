@@ -1,0 +1,54 @@
+@import "../../../../style/index";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F6F6F6;
+    -webkit-tap-highlight-color: transparent; /*长按不会出现黑影*/
+    user-select: none;		/*文本不能被选择*/		
+}
+
+/*确认按键样式*/
+.submit-btn {
+    margin: 0.3rem auto;
+    font-size: .4rem;
+    text-align: center;
+    padding: .3rem;
+    background-image: linear-gradient(136deg, #C9A46F 0%, #E4C592 100%);
+    border-radius: 4px;
+    color: #fff;
+    width: 80%;
+}
+
+
+.cover ,.exam-item , .exam-item-top{
+    padding: .4rem .2rem;
+    width: 100%;
+    margin-bottom: 0.2rem;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.number-title , .target .text{
+    padding: .4rem .2rem;
+    background: #fff;
+}
+.lebra-switch input[type=checkbox]:checked~.lebra-track {
+    border-color: #4cd964;
+    background-color: #4cd964;
+}
+.lebra-input.lebra-input-inline.lebra-input-double {
+    min-height: 0px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    input{
+        text-align: right;
+        padding-right: .2rem;
+    }
+}
