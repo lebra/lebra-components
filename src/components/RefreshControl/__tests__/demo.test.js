@@ -1,0 +1,1 @@
+import React from 'react';,import RefreshControl from '../index';,import renderer from 'react-test-renderer';,test('RefreshControl should be exsit', () => {,});
