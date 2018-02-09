@@ -34,7 +34,7 @@ const defaultProps = {
 };
 
 
-class Grid extends React.Component<GridProps, any> {
+class Grid extends React.Component{
   constructor(props){
   	super(props);
   	this.state = {
