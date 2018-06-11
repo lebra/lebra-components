@@ -1,6 +1,153 @@
+@import "iconfont/iconfont.css";
+
+body {
+  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  /*页面缩放失效*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /*ios点击或出现灰色背景*/
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+.lebra-btn {
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  white-space: nowrap;
+  padding: 0 0.48rem;
+  margin: 0 0.266667rem 0.533333rem 0.266667rem;
+  color: #fff;
+  font-size: 0.373333rem;
+  cursor: pointer;
+}
+
+.lebra-btn.lebra-btn-primary {
+  background: #e14c46;
+  border: 0.026667rem solid #e14c46;
+}
+
+.lebra-btn.lebra-btn-primary.lebra-btn-disabled {
+  background: #e3817b;
+  border: 0.026667rem solid #e3817b;
+}
+
+.lebra-btn.lebra-btn-dark {
+  background: #5e6670;
+  border: 0.026667rem solid #5e6670;
+}
+
+.lebra-btn.lebra-btn-dark.lebra-btn-disabled {
+  background: #b0bec5;
+  border: 0.026667rem solid #b0bec5;
+}
+
+.lebra-btn.lebra-btn-priLine {
+  border: 0.026667rem solid #e14c46;
+  color: #e14c46;
+  background: #fff;
+}
+
+.lebra-btn.lebra-btn-priLine.lebra-btn-disabled {
+  border: 0.026667rem solid #e3817b;
+  color: #e3817b;
+}
+
+.lebra-btn.lebra-btn-darkLine {
+  background: #fff;
+  border: 0.026667rem solid #5e6670;
+  color: #5e6670;
+}
+
+.lebra-btn.lebra-btn-darkLine.lebra-btn-disabled {
+  border: 0.026667rem solid #b0bec5;
+  color: #b0bec5;
+}
+
+.lebra-btn.lebra-btn-floating {
+  border-radius: 0.106667rem;
+}
+
+.lebra-btn.lebra-btn-ghost {
+  background: transparent;
+  border: 0.026667rem solid transparent;
+  width: 3.253333rem;
+  height: 1.173333rem;
+  color: #e14c46;
+}
+
+.lebra-btn.lebra-btn-squared {
+  width: 1.173333rem;
+  height: 1.173333rem;
+  padding: 0;
+}
+
+.lebra-btn-disabled {
+  cursor: not-allowed;
+}
+
+.lebra-btn-lg {
+  width: 9.173333rem;
+  height: 1.173333rem;
+  line-height: 1.173333rem;
+}
+
+.lebra-btn-md {
+  width: 4.453333rem;
+  height: 1.173333rem;
+  line-height: 1.173333rem;
+}
+
+.lebra-btn-sm {
+  width: 2.133333rem;
+  height: 0.853333rem;
+  line-height: 0.853333rem;
+}
+
 .lebra-input {
   position: relative;
-  min-height: 1.6rem;
   background-color: #fff;
   vertical-align: middle;
   margin: 0.4rem 0.2rem;
@@ -8,117 +155,136 @@
   transition: background-color 0.2s;
 }
 
+[data-dpr="1"] .lebra-input {
+  min-height: 60px;
+}
+
+[data-dpr="2"] .lebra-input {
+  min-height: 120px;
+}
+
+[data-dpr="3"] .lebra-input {
+  min-height: 180px;
+}
+
 .lebra-input-label {
   width: 30%;
-  margin-left: 0.106667rem;
+  margin-left: 0.213333rem;
   overflow: hidden;
-  padding: 0.133333rem 0;
+  padding: 0.266667rem 0;
   text-align: left;
   white-space: nowrap;
   color: #9e9e9e;
 }
 
 [data-dpr="1"] .lebra-input-label {
-  font-size: 7px;
-}
-
-[data-dpr="2"] .lebra-input-label {
   font-size: 14px;
 }
 
+[data-dpr="2"] .lebra-input-label {
+  font-size: 28px;
+}
+
 [data-dpr="3"] .lebra-input-label {
-  font-size: 21px;
+  font-size: 42px;
 }
 
 .lebra-input-item {
   display: block;
   width: 100%;
   padding: 0;
-<<<<<<< HEAD
   box-sizing: border-box;
-=======
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   background-color: transparent;
   background-image: none;
   color: #424242;
   border: none;
   outline: 0;
-<<<<<<< HEAD
   box-shadow: none;
   border-radius: 0;
-  font-size: 0.186667rem;
-=======
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border-radius: 0;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   line-height: inherit;
   cursor: text;
 }
 
-<<<<<<< HEAD
-.lebra-input-inline {
-  display: flex;
-  align-items: center;
-  border: 0.013333rem solid #e0e0e0;
-=======
 [data-dpr="1"] .lebra-input-item {
-  font-size: 7px;
-}
-
-[data-dpr="2"] .lebra-input-item {
   font-size: 14px;
 }
 
+[data-dpr="2"] .lebra-input-item {
+  font-size: 28px;
+}
+
 [data-dpr="3"] .lebra-input-item {
-  font-size: 21px;
+  font-size: 42px;
+}
+
+.lebra-input-item:disabled {
+  color: #e0e0e0;
+}
+
+.lebra-input-clear {
+  position: relative;
+  right: 0.133333rem;
+  top: 0.026667rem;
+  color: #e0e0e0;
+  cursor: pointer;
 }
 
 .lebra-input-inline {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid #e0e0e0;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.lebra-input-vertical .lebra-input-label {
+  display: block;
 }
 
 .lebra-input-vertical .lebra-input-item {
-  height: 1.6rem;
-  padding: 0 0.106667rem;
-<<<<<<< HEAD
-  border: 0.013333rem solid #e0e0e0;
-=======
-  border: 1px solid #e0e0e0;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
+  padding: 0 0.213333rem;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+[data-dpr="1"] .lebra-input-vertical .lebra-input-item {
+  height: 60px;
+}
+
+[data-dpr="2"] .lebra-input-vertical .lebra-input-item {
+  height: 120px;
+}
+
+[data-dpr="3"] .lebra-input-vertical .lebra-input-item {
+  height: 180px;
+}
+
+.lebra-input-textarea .lebra-input-label {
+  display: block;
 }
 
 .lebra-input-textarea .lebra-input-item {
-  height: 3.2rem;
-  padding: 0.266667rem 0.106667rem;
-<<<<<<< HEAD
-  border: 0.013333rem solid #e0e0e0;
-=======
+  padding: 0.533333rem 0.213333rem;
   border: 1px solid #e0e0e0;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   resize: none;
   font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+}
+
+[data-dpr="1"] .lebra-input-textarea .lebra-input-item {
+  height: 120px;
+}
+
+[data-dpr="2"] .lebra-input-textarea .lebra-input-item {
+  height: 240px;
+}
+
+[data-dpr="3"] .lebra-input-textarea .lebra-input-item {
+  height: 360px;
 }
 
 .lebra-input-font-length {
   position: absolute;
   right: 0.133333rem;
   bottom: 0.133333rem;
-<<<<<<< HEAD
-  font-size: 0.186667rem;
-  color: #424242;
-}
-
-=======
   color: #424242;
 }
 
@@ -134,7 +300,6 @@
   font-size: 21px;
 }
 
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 .lebra-input-font-length .total-length {
   color: #e0e0e0;
 }
@@ -163,48 +328,68 @@
   color: #e0e0e0;
 }
 
-.lebra-nav {
-  position: relative;
-  min-height: 0.586667rem;
-  background-color: #e14c46;
-  z-index: 5;
+.lebra-navbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 0.6rem;
+  background-color: #108ee9;
+  color: #fff;
 }
 
-.lebra-nav-back {
-  color: #ffffff;
-  position: absolute;
-  top: 0;
-  left: 0.133333rem;
-  font-weight: 500;
-  line-height: 0.586667rem;
-  text-decoration: none;
-  height: 0.586667rem;
-  min-width: 0.586667rem;
+.lebra-navbar-left,
+.lebra-navbar-title,
+.lebra-navbar-right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.lebra-nav-back:before {
-  content: "";
-  display: inline-block;
-  width: 0.186667rem;
-  height: 0.186667rem;
-  border-left: 0.026667rem solid #ffffff;
-  border-bottom: 0.026667rem solid #ffffff;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-bottom: -0.026667rem;
+.lebra-navbar-left {
+  padding-left: 0.2rem;
+  font-size: 0.213333rem;
 }
 
-.lebra-nav-title {
-  color: #ffffff;
-  font-size: 1em;
-  text-align: center;
-  display: block;
-  margin: 0;
-  padding: 0.12rem 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.lebra-navbar-title {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 0.213333rem;
   white-space: nowrap;
-  pointer-events: none;
+}
+
+.lebra-navbar-right {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 0.213333rem;
+  margin-right: 0.2rem;
+}
+
+.lebra-navbar-light {
+  background-color: #eaeaea;
+  color: #108ee9;
+}
+
+.lebra-navbar-light .lebra-navbar-title {
+  color: #000;
 }
 
 .lebra-switch {
@@ -228,18 +413,14 @@
   background-color: #fff;
 }
 
+.lebra-switch input[type="checkbox"]:disabled ~ .lebra-track {
+  opacity: .3;
+}
+
 .lebra-switch .lebra-track {
-<<<<<<< HEAD
   transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
   display: inline-block;
   box-sizing: border-box;
-=======
-  -webkit-transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
-  transition: background-color ease-in-out 0.3s, border ease-in-out 0.3s;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   width: 0.693333rem;
   height: 0.426667rem;
   border: solid 0.026667rem #e6e6e6;
@@ -252,19 +433,9 @@
 }
 
 .lebra-switch .lebra-handle {
-<<<<<<< HEAD
   transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
   -webkit-transition-property: background-color, transform;
   transition-property: background-color, transform;
-=======
-  -webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
-  transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
-  -webkit-transition-property: background-color, transform;
-  -webkit-transition-property: background-color, -webkit-transform;
-  transition-property: background-color, -webkit-transform;
-  transition-property: background-color, transform;
-  transition-property: background-color, transform, -webkit-transform;
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   position: absolute;
   display: block;
   width: 0.346667rem;
@@ -273,12 +444,7 @@
   background-color: #fff;
   top: 0.04rem;
   left: 0.053333rem;
-<<<<<<< HEAD
   box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
-=======
-  -webkit-box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0.026667rem 0.093333rem rgba(0, 0, 0, 0.35), 0 0.013333rem 0.013333rem rgba(0, 0, 0, 0.15);
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 }
 
 .lebra-switch .lebra-handle:before {
@@ -317,14 +483,11 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-<<<<<<< HEAD
   -ms-transform: translate(-50%, -50%);
-=======
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   transform: translate(-50%, -50%);
   background-color: #FFFFFF;
   text-align: center;
-  border-radius: 0.04rem;
+  border-radius: 0.08rem;
   overflow: hidden;
 }
 
@@ -350,10 +513,7 @@
 .lebra-dialog-ft {
   position: relative;
   display: -webkit-box;
-<<<<<<< HEAD
   display: -webkit-flex;
-=======
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   display: -ms-flexbox;
   display: flex;
 }
@@ -361,10 +521,7 @@
 .lebra-dialog-btn {
   display: block;
   -webkit-box-flex: 1;
-<<<<<<< HEAD
   -webkit-flex: 1;
-=======
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
   -ms-flex: 1;
   flex: 1;
   line-height: 0.64rem;
@@ -373,6 +530,7 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   position: relative;
   color: #e14c46;
+  border-top: 0.013333rem solid #ddd;
 }
 
 .lebra-dialog-btn-default {
@@ -383,23 +541,358 @@
   color: #e14c46;
 }
 
-<<<<<<< HEAD
-.lebra-toast {
+.lebra-dialog-btn:first-child {
+  border-right: 0.013333rem solid #ddd;
+}
+
+.lebra-toast-overlay {
   position: fixed;
-  z-index: 5000;
-  width: 7.6em;
-  min-height: 7.6em;
-  top: 2.4rem;
-  left: 50%;
-  margin-left: -3.8em;
-  background: rgba(17, 17, 17, 0.7);
-  text-align: center;
-  border-radius: 0.066667rem;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.lebra-toast-overlay-show {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.lebra-toast-overlay-hide {
+  display: none;
+}
+
+.lebra-toast {
+  background-color: #616161;
   color: #FFFFFF;
+  position: absolute;
+  left: 50%;
+  padding: 0.133333rem;
+  font-size: 0.213333rem;
+}
+
+.lebra-toast-child {
+  max-height: 0.96rem;
+  line-height: 0.32rem;
+  max-width: 2.666667rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-break: break-all;
+}
+
+.lebra-toast-bottom {
+  bottom: 0.666667rem;
+}
+
+.lebra-toast-center {
+  top: 50%;
+  margin-top: -0.4rem;
+}
+
+.lebra-toast-top {
+  top: 0.666667rem;
+}
+
+.lebra-tabs {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.lebra-tabs * {
+  box-sizing: border-box;
+}
+
+.lebra-tabs-content-wrap {
+  display: flex;
+  width: 100%;
+}
+
+.lebra-tabs-content-wrap-animated {
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  will-change: transform;
+}
+
+.lebra-tabs-pane-wrap {
+  width: 100%;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.lebra-tabs-tab-bar-wrap {
+  flex-shrink: 0;
+}
+
+.lebra-tabs-horizontal .lebra-tabs-content-wrap {
+  flex-direction: row;
+}
+
+.lebra-tabs-horizontal .lebra-tabs-pane-wrap-active {
+  height: auto;
+}
+
+.lebra-tabs-horizontal .lebra-tabs-pane-wrap-inactive {
+  height: 0;
+  overflow: visible;
+}
+
+.lebra-tabs-vertical {
+  height: 100%;
+}
+
+.lebra-tabs-vertical .lebra-tabs-content-wrap {
+  flex-direction: column;
+}
+
+.lebra-tabs-vertical .lebra-tabs-pane-wrap {
+  height: 100%;
+}
+
+.lebra-tabs-vertical .lebra-tabs-pane-wrap-active {
+  overflow: auto;
+}
+
+.lebra-tabs-vertical .lebra-tabs-pane-wrap-inactive {
+  overflow: hidden;
+}
+
+.lebra-tabs-top,
+.lebra-tabs-bottom {
+  flex-direction: column;
+}
+
+.lebra-tabs-left,
+.lebra-tabs-right {
+  flex-direction: row;
+}
+
+.lebra-tabs-tab-bar {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 1;
+}
+
+.lebra-tabs-tab-bar-tab {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.186667rem;
+  line-height: 0.186667rem;
+}
+
+.lebra-tabs-tab-bar-tab-active {
+  color: #108ee9;
+}
+
+.lebra-tabs-tab-bar-underline {
+  position: absolute;
+  border: 0.013333rem #108ee9 solid;
+}
+
+.lebra-tabs-tab-bar-animated .lebra-tabs-tab-bar-content {
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  will-change: transform;
+}
+
+.lebra-tabs-tab-bar-animated .lebra-tabs-tab-bar-underline {
+  transition: top 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1), color 0.3s cubic-bezier(0.35, 0, 0.25, 1), width 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  will-change: top, left, width, color;
+}
+
+.lebra-tabs-tab-bar-top,
+.lebra-tabs-tab-bar-bottom {
+  flex-direction: row;
+}
+
+.lebra-tabs-tab-bar-top .lebra-tabs-tab-bar-content,
+.lebra-tabs-tab-bar-bottom .lebra-tabs-tab-bar-content {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.lebra-tabs-tab-bar-top .lebra-tabs-tab-bar-prevpage,
+.lebra-tabs-tab-bar-bottom .lebra-tabs-tab-bar-prevpage {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 0.786667rem;
+  height: 100%;
+  content: ' ';
+  z-index: 1;
+  left: 0;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.lebra-tabs-tab-bar-top .lebra-tabs-tab-bar-nextpage,
+.lebra-tabs-tab-bar-bottom .lebra-tabs-tab-bar-nextpage {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 0.786667rem;
+  height: 100%;
+  content: ' ';
+  z-index: 1;
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff);
+}
+
+.lebra-tabs-tab-bar-top .lebra-tabs-tab-bar-tab,
+.lebra-tabs-tab-bar-bottom .lebra-tabs-tab-bar-tab {
+  padding: 0.106667rem 0;
+}
+
+.lebra-tabs-tab-bar-top .lebra-tabs-tab-bar-underline,
+.lebra-tabs-tab-bar-bottom .lebra-tabs-tab-bar-underline {
+  bottom: 0;
+}
+
+.lebra-tabs-tab-bar-top {
+  border-bottom: 0.013333rem #eee solid;
+}
+
+.lebra-tabs-tab-bar-bottom {
+  border-top: 0.013333rem #eee solid;
+}
+
+.lebra-tabs-tab-bar-left,
+.lebra-tabs-tab-bar-right {
+  flex-direction: column;
+}
+
+.lebra-tabs-tab-bar-left .lebra-tabs-tab-bar-content,
+.lebra-tabs-tab-bar-right .lebra-tabs-tab-bar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.lebra-tabs-tab-bar-left .lebra-tabs-tab-bar-tab,
+.lebra-tabs-tab-bar-right .lebra-tabs-tab-bar-tab {
+  padding: 0 0.106667rem;
+}
+
+.lebra-tabs-tab-bar-left {
+  border-right: 0.013333rem #eee solid;
+}
+
+.lebra-tabs-tab-bar-left .lebra-tabs-tab-bar-underline {
+  right: 0;
+}
+
+.lebra-tabs-tab-bar-right {
+  border-left: 0.013333rem #eee solid;
+}
+
+.lebra-tabs-tab-bar-right .lebra-tabs-tab-bar-underline {
+  left: 0;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.lebra-list-box {
+  width: 100%;
+}
+
+.lebra-list-box .lebra-list-header {
+  width: 100%;
+  height: 0.426667rem;
+  line-height: 0.426667rem;
+  color: #424242;
+  text-align: left;
+  padding: 0 0.213333rem 0 0.426667rem;
+  background-color: #ccc;
+}
+
+[data-dpr="1"] .lebra-list-box .lebra-list-header {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-list-box .lebra-list-header {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-list-box .lebra-list-header {
+  font-size: 21px;
+}
+
+.lebra-list-box .lebra-list-header.lebra-list-header-center {
+  text-align: center;
+}
+
+.lebra-list-box .lebra-list-header.lebra-list-header-right {
+  text-align: right;
+}
+
+.lebra-list-box .lebra-list {
+  list-style: none;
+  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.lebra-list-box .lebra-list .lebra-listview-row:last-child .lebra-list-item {
+  border-bottom: none;
+}
+
+.lebra-list-box .lebra-list-footer {
+  width: 100%;
+  height: 0.426667rem;
+  line-height: 0.426667rem;
+  color: #424242;
+  text-align: left;
+  padding: 0 0.213333rem 0 0.426667rem;
+  background-color: #ccc;
+}
+
+[data-dpr="1"] .lebra-list-box .lebra-list-footer {
+  font-size: 7px;
+}
+
+[data-dpr="2"] .lebra-list-box .lebra-list-footer {
+  font-size: 14px;
+}
+
+[data-dpr="3"] .lebra-list-box .lebra-list-footer {
+  font-size: 21px;
+}
+
+.lebra-list-box .lebra-list-footer.lebra-list-footer-center {
+  text-align: center;
+}
+
+.lebra-list-box .lebra-list-footer.lebra-list-footer-right {
+  text-align: right;
 }
 
 body {
@@ -423,22 +916,22 @@ a {
 .lebra-listview-row {
   width: 100%;
   transform: translate3d(0, 0, 0);
-  height: 0.64rem;
-  padding: 0 0 0 0.213333rem;
-  margin: 0.106667rem 0;
+  height: 1.28rem;
+  padding: 0 0 0 0.426667rem;
+  margin: 0.213333rem 0 0 0;
   position: relative;
 }
 
 .lebra-listview-row.lebra-list-arrow::after {
   content: '';
   display: inline-block;
-  width: 0.133333rem;
-  height: 0.133333rem;
-  border-left: 0.026667rem solid #e0e0e0;
-  border-bottom: 0.026667rem solid #e0e0e0;
+  width: 0.266667rem;
+  height: 0.266667rem;
+  border-left: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
   position: absolute;
   top: 50%;
-  right: 0.106667rem;
+  right: 0.213333rem;
   z-index: 2;
   transform: translate(0, -50%) rotate(-135deg);
 }
@@ -458,30 +951,40 @@ a {
 .lebra-listview-row .lebra-list-item .lebra-list-item-left {
   margin: 0;
   padding: 0;
-  margin-right: 0.066667rem;
-  height: 0.64rem;
-  line-height: 0.64rem;
+  margin-right: 0.133333rem;
+  height: 1.28rem;
+  line-height: 1.28rem;
   position: relative;
-  paddint-top: 0.053333rem;
+  paddint-top: 0.106667rem;
 }
 
 .lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-badge {
   position: absolute;
   top: 0.066667rem;
   right: 0.066667rem;
-  width: 0.266667rem;
-  height: 0.266667rem;
+  width: 0.533333rem;
+  height: 0.533333rem;
   text-align: center;
-  line-height: 0.266667rem;
+  line-height: 0.533333rem;
   padding: 0;
-  font-size: 0.133333rem;
   border-radius: 50%;
-  min-width: auto;
+}
+
+[data-dpr="1"] .lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-badge {
+  font-size: 10px;
+}
+
+[data-dpr="2"] .lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-badge {
+  font-size: 20px;
+}
+
+[data-dpr="3"] .lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-badge {
+  font-size: 30px;
 }
 
 .lebra-listview-row .lebra-list-item .lebra-list-item-left .lebra-list-item-img {
-  width: 0.533333rem;
-  height: 0.533333rem;
+  width: 1.066667rem;
+  height: 1.066667rem;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
@@ -492,7 +995,7 @@ a {
 
 .lebra-listview-row .lebra-list-item .lebra-list-item-body {
   flex: 1;
-  height: 0.64rem;
+  height: 1.28rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -503,8 +1006,8 @@ a {
 }
 
 .lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-title {
-  font-size: 0.213333rem;
-  margin-bottom: 0.026667rem;
+  font-size: 0.426667rem;
+  margin-bottom: 0.053333rem;
   color: #616161;
 }
 
@@ -515,9 +1018,9 @@ a {
 }
 
 .lebra-listview-row .lebra-list-item .lebra-list-item-body .lebra-list-item-text {
-  height: 0.213333rem;
-  line-height: 0.213333rem;
-  font-size: 0.186667rem;
+  height: 0.426667rem;
+  line-height: 0.426667rem;
+  font-size: 0.373333rem;
   color: #424242;
 }
 
@@ -528,15 +1031,93 @@ a {
 }
 
 .lebra-listview-row .lebra-list-item .lebra-um-list-right {
-  font-size: 0.186667rem;
+  font-size: 0.373333rem;
   color: #424242;
-  height: 0.64rem;
-  margin-right: 0.173333rem;
-  width: 0.6rem;
+  height: 1.28rem;
+  margin-right: 0.346667rem;
+  width: 1.2rem;
 }
 
-=======
->>>>>>> 9092a193943f85e67e37dc1eed9e9ff29347a83b
 body {
-  font-family: "Helvetica Neue", Helvetica, "Microsoft Yahei", STHeiTi, Tahoma, Arial, Roboto, "Droid Sans", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.lebra-tabber {
+  width: 100%;
+  border-top: 0.013333rem solid #b2b2b2;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+}
+
+.lebra-tabber .lebra-tabber-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 0.133333rem;
+  padding-bottom: 0.066667rem;
+  position: relative;
+  color: #666666;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-icon-box {
+  width: 0.426667rem;
+  height: 0.426667rem;
+  position: relative;
+  font-size: 0;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-icon-box .lebra-tabber-item-badge {
+  position: absolute;
+  left: 0.373333rem;
+  top: -0.066667rem;
+  padding: 0.026667rem 0.04rem;
+  border-radius: 0.266667rem;
+  font-size: 0.213333rem;
+  background-color: red;
+  color: #fff;
+  line-height: 1;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-icon-box .lebra-tabber-item-dot {
+  position: absolute;
+  top: -0.066667rem;
+  left: 0.373333rem;
+  width: 0.186667rem;
+  height: 0.186667rem;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-icon-box .lebra-tabber-item-img {
+  display: block;
+  width: 0.426667rem;
+  height: 0.426667rem;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-icon-box .lebra-tabber-item-icon {
+  font-size: 0.4rem;
+}
+
+.lebra-tabber .lebra-tabber-item .lebra-tabbar-item-text {
+  margin-top: 0.08rem;
+  font-size: 0.266667rem;
+  text-align: center;
 }
