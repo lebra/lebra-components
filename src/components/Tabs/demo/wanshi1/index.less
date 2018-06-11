@@ -1,0 +1,86 @@
+@import "../../../../style/index";
+@import "../../../../style/theme/defaultWanshi";
+body {
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.lebra-tabs-tab-bar-content {
+    
+    box-sizing: content-box;
+    border-bottom: 1px solid @border-color ;
+    padding: 0.2rem 0;
+}
+
+
+.lebra-tabs-tab-bar-tab {
+    font-size: .25rem;
+    padding: 0 0.1rem;
+    color:@auxiliary-black-light ;
+    letter-spacing: 1px;
+    /* height: 48px; */
+}
+.lebra-tabs-tab-bar-tab.lebra-tabs-tab-bar-tab-active{
+    color: @primary;
+}
+.lebra-tabs-tab-bar-underline{
+    border: 1px solid @primary;
+}
+.um-header {
+    border-bottom: none;
+}
+/*paneMemberList*/
+
+
+.members-list {
+    font-size: .3rem;
+    background: #fff;
+    padding-bottom: .2rem;
+    min-height: 2rem;
+}
+
+.members-list .members-list-item {
+
+    border-bottom: 1px solid @border-color;
+    padding: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.members-list-item div.item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.members-list-item div.item:last-child {
+    justify-content: flex-end;
+}
+.members-list-item img.members-item-avatar {
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+}
+
+.members-list-item span.members-item-name {
+    padding-left: .2rem;
+}
+.members-list-item span.partipate-time {
+    color: @auxiliary-black-light;
+    font-size: .25rem;
+}
+span.members-item-name {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*暂无数据的图片格式*/
+
+.default-error img {
+  width: 2rem;
+  height: 3rem;
+}

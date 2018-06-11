@@ -19,7 +19,7 @@ const tabData = [
 
 class BasicDemo extends React.Component{
 
-  constructor(props: any) {
+  constructor(props) {
     super(props);
     this.state = {
       scData:'',

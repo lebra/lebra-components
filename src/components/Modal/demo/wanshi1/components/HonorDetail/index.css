@@ -1,0 +1,87 @@
+.honor-top{
+    width: 100%;
+   /*  padding-top: .5rem; */
+}
+.honour-text-container {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    /* top: 39%; */
+    top:20%;
+    color: #9D6F10;
+}
+.honour-text-container .honor-text-head {
+    font-size: .4rem;
+    color: #382508;
+    font-weight: bold;
+}
+.honour-text-container .honor-text-body {
+    font-size: .3rem;
+    width: 58%;
+    margin-left: 22%;
+    text-align: left;
+    min-height: 1rem;
+    max-height: 1.3rem;
+    color: #1A1308;
+}
+.honour-text-container .honor-text-footer {
+    width: 90%;
+    text-align: right;
+    font-size: .3rem;
+    color: #1A1308;
+}
+.honour-text-container .honor-text-footer span{
+  display: block;
+}
+.honour-container{
+    position: relative;
+    background-size: 100%;
+    width: 100%;
+}
+.honor-exchange {
+    width: 88%;
+    line-height: 1rem;
+    text-align: center;
+    font-size: .35rem;
+    margin-left: 6%;
+    color: #FFC67F;
+    background-image: linear-gradient(-180deg, #604308 0%, #2E2003 97%);
+    box-shadow: 0 2px 8px 0 #FFA83D;
+    border-radius: 25px;
+    margin-top: .3rem;
+}
+.icon-container {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 21%;
+}
+.icon-container .iconfont {
+    width: 10%; 
+    color: #9d6f10;
+    height: 100%;
+}
+
+.honour-container {
+  position: absolute;
+  background-size: 100%;
+  width: 100%;
+  text-align: center;
+
+}
+.honour-container img {
+  width: 98%;
+  height: 100%;
+}
+.name-container {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 75%;
+    font-size: .7rem;
+    font-family: MicrosoftYaHei;
+    color: #FFFCE4;
+    letter-spacing: 3px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.50);
+    font-weight: bold;
+}

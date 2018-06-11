@@ -1,0 +1,231 @@
+@import "../../../../style/index";
+//@import './detail.less';
+.hidden{
+  display: none;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width:100%;
+  height: 100%;
+}
+#root ,.root_content,.react-full-height , #app{
+  height: 100%;
+}
+.gold.main {
+  background-color: #fffad5;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  height: 100%;
+}
+
+.gold.main .honour-detail-con .cmt--content,
+.gold.main .honour-detail-con .honor-top,
+.gold.main .honour-detail-con .footer {
+  width: 85%;
+  position: relative;
+}
+
+
+
+/*荣耀详情的背景和标题部分*/
+
+.gold.main .honour-detail-con {
+  background-repeat: no-repeat;
+  background-size: 96% 96%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.gold.main .honour-detail-con .honour-detail-title {
+  box-sizing: border-box;
+  height: auto;
+  margin-top: 10%;
+  width: 2.5rem;
+}
+
+.gold.main .honour-detail-con .honour-detail-logo {
+  height: auto;
+  margin-top: 10%;
+  width: 2rem;
+}
+.gold.main .honour-detail-con  .header-company-logo {
+  min-width: 1rem;
+  min-height: .5rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 6%;
+  right: 8%;
+}
+/*logo*/
+.gold.main .honour-detail-con .honor-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gold.main .honour-detail-con .honor-logo .logo-name {
+  width: 3rem;
+  min-height: 1rem;
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #7d632d;
+  font-size: .35rem;
+  text-align: center;
+  line-height: .85rem;
+}
+/*内容部分*/
+
+.gold.main .cmt--content {
+  background-color: transparent;
+  color: #333;
+  font-size: .3rem;
+  line-height: .4rem;
+  min-height: 1.5rem;
+  margin: .5rem 0 0;
+  text-align: center;
+  width: 85%;
+  color: #382508;
+}
+
+.gold.main .cmt--content .cmt-body .con-name {
+
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+      padding: 0 0 .1rem 0;
+  position: relative;
+  margin-left: 5%;
+   width: 90%;
+  
+}
+
+/*.cmt--content .cmt-body .con-name:after {
+  content: '';
+  width: 90%;
+  height: .02rem;
+  background: #382508;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}*/
+.cmt--content .cmt-body .con-line {
+  height: .02rem;
+  background: #382508;
+  margin-left: 5%;
+   width: 90%;
+}
+.gold.main .cmt--content .cmt-body .con-desc {
+      padding: .1rem 0 0 0;
+  position: relative;
+  text-align: center;
+   margin-left: 5%;
+   width: 90%;
+}
+.cmt-body .con-desc span{
+  display: inline;
+}
+.gold.main .cmt--content .cmt-body .award-num {
+  font-size: .4rem;
+}
+
+/*纹章*/
+
+.gold.main .honor-top {
+  /* padding-top: 0;
+  padding-bottom: 1rem; */
+  margin-top: .1rem;
+  margin-bottom: 5%;
+}
+
+.gold.main .honour-detail-con .footer {
+  box-sizing: border-box;
+  color: #E7B76A;
+  font-size: .22rem;
+  /*  background-position: bottom left;
+ background-repeat: no-repeat;
+ background-size: 1rem;
+ height: auto;
+ min-height: 1rem; */
+  text-align: center;
+  margin-bottom: 6%;
+}
+
+.footer span.see-more {
+  text-align: center;
+  width: 100%;
+  /*   position: absolute;
+bottom: 0;
+right: 0; */
+}
+
+.gold.main .honour-detail-con .footer .wanshi-logo {
+  width: 20%;
+  height: auto;
+  margin-right: 16%;
+}
+
+.cancel-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: .3rem;
+  padding: .04rem .3rem;
+  height: .8rem;
+  width: 100%;
+}
+
+.modal-footer {
+ /*  bottom: .16rem;
+ position: absolute;
+ width: 88%;
+ padding-left: 6%;
+ box-sizing: border-box; */
+  margin-left: 6%;
+  margin-top: 6%;
+  width: 88%;
+}
+
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal-body span img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/*modal*/
+.gold.main .exchange-modal{
+  min-height: 1.6rem;
+}
+
+
+
+/*人员列表的modal*/
+
+.all-member-modal .modal-body {
+  font-size: .3rem;
+}
+
+.all-member-modal .cancel-btn {
+  color: #F5E0AB;
+}
+
+a.lebra-dialog-btn {
+  color: #666;
+  padding: .2rem 0;
+}

@@ -13,9 +13,9 @@ const tabData = [
   { title: 't5' },
 ];
 
-class BasicDemo extends React.Component<{}, any> {
+class BasicDemo extends React.Component{
 
-  constructor(props: any) {
+  constructor(props) {
     super(props);
     this.state = {
       scData:"",

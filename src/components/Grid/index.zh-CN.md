@@ -10,7 +10,7 @@ subtitle: 宫格
 #Grid
 ## API
 |参数|说明|类型|默认值|,|:--|:---|:--|:---|
-|data|传入菜单的数据|[Array<{icon, text}>|[]|
+|data|传入菜单的数据|[Array<{icon, text}>,icon,text可以是字符串或者是dom|[]|
 |columnNum|列数|number|4|
 |hasLine|是否有边框|boolean|true|
 |square|每个格子是否固定为正方形|boolean|true|

@@ -1,0 +1,222 @@
+@import "../../style/theme/default";
+@import "../../style/mixins";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  html>div , body>div ,#root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .root_content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .ws-kai {
+    font-family: Kai, "Kaiti SC", KaiTi, BiauKai, Georgia, "Times New Roman", Times, "FontAwesome", serif;
+  }
+  
+  .ws-monospace {
+    font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+  }
+  
+  .ws-hei {
+    font-family: STHeiti, SimHei, sans-serif;
+  }
+  
+  .ws-hidden {
+    display: none !important;
+  }
+  
+  .ws-invisible {
+    visibility: hidden !important;
+  }
+  
+  p {
+    margin: 0 0;
+  }
+  
+  .ws-abs-full-size {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .ws-clearfix {
+    zoom: 1;
+    &:after {
+      content: " ";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+  }
+  
+  .ws-no-tap-highlight {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .ws-link {
+    text-decoration: none;
+    color: inherit;
+    -webkit-appearance: none;
+  }
+  
+  .ws-nav-link {
+    .ws-link;
+  }
+  
+  .ws-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    font-size: inherit;
+    color: inherit;
+    height: 1.41176471em;
+    line-height: 1.41176471;
+    margin: 0;
+    padding: 0;
+    .ws-no-tap-highlight;
+  }
+  
+  .ws-table-cell {
+    display: table-cell;
+  }
+  
+  .ws-scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    // -webkit-transform: translateZ(0);
+    // -moz-transform: translateZ(0);
+    // -ms-transform: translateZ(0);
+    // -o-transform: translateZ(0);
+    // transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+  
+  .ws-btn {
+    outline: 0;
+  }
+  
+  .ws-mask {
+    .ws-abs-full-size;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .ws-pull-loading {
+    width: 100%;
+    height: 70px;
+  
+    .loading {
+      width: 146px;
+      height: 70px;
+      overflow: hidden;
+      margin: 0 auto;
+      text-indent: 36px;
+      line-height: 70px;
+      color: #bebec6;
+      font-size: 24px;
+      position: relative;
+      img {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 18px;
+        left: 0;
+      }
+    }
+  }
+  
+  .ws-scroll-y {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    width: 100%;
+    // -webkit-transform: translateZ(0);
+    // -moz-transform: translateZ(0);
+    // -ms-transform: translateZ(0);
+    // -o-transform: translateZ(0);
+    // transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+  
+  .ws-super-image-box {
+    position: relative;
+    overflow: hidden;
+  
+    .ws-loading-img {
+      width: 100% !important;
+      height: auto !important;
+      max-width: 200px !important;
+      position: absolute !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+  .ws-smart-image-box {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ws-thumbnail-image-box {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  body {
+    font-size: 12px;
+  }
+  
+  .ws-imgfile-in {
+    width: 100%;
+    height: 100%;
+    outline: medium;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .upload-input {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+    }
+  }
