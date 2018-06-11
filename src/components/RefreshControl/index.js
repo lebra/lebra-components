@@ -6,7 +6,6 @@ import TweenLite from "./TweenMax.min.js";
 import NativeScroller from "./NativeScroller";
 import TopRefresh from "./TopRefresh/index.js";
 import BottomRefresh from "./BottomRefresh/index.js";
-import './index.less'
 
 class RefreshControl extends Component {
 		constructor(props) {

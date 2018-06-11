@@ -1121,3 +1121,430 @@ a {
   font-size: 0.266667rem;
   text-align: center;
 }
+
+/* flexbox */
+
+.lebra-flexbox {
+  text-align: left;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.lebra-flexbox.lebra-flexbox-dir-row {
+  flex-direction: row;
+}
+
+.lebra-flexbox.lebra-flexbox-dir-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.lebra-flexbox.lebra-flexbox-dir-column {
+  flex-direction: column;
+}
+
+.lebra-flexbox.lebra-flexbox-dir-column-reverse {
+  flex-direction: column-reverse;
+}
+
+.lebra-flexbox.lebra-flexbox-nowrap {
+  flex-wrap: nowrap;
+}
+
+.lebra-flexbox.lebra-flexbox-wrap {
+  flex-wrap: wrap;
+}
+
+.lebra-flexbox.lebra-flexbox-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.lebra-flexbox.lebra-flexbox-justify-start {
+  justify-content: flex-start;
+}
+
+.lebra-flexbox.lebra-flexbox-justify-end {
+  justify-content: flex-end;
+}
+
+.lebra-flexbox.lebra-flexbox-justify-center {
+  justify-content: center;
+}
+
+.lebra-flexbox.lebra-flexbox-justify-between {
+  justify-content: space-between;
+}
+
+.lebra-flexbox.lebra-flexbox-justify-around {
+  justify-content: space-around;
+}
+
+.lebra-flexbox.lebra-flexbox-align-start {
+  align-items: flex-start;
+}
+
+.lebra-flexbox.lebra-flexbox-align-end {
+  align-items: flex-end;
+}
+
+.lebra-flexbox.lebra-flexbox-align-center {
+  align-items: center;
+}
+
+.lebra-flexbox.lebra-flexbox-align-stretch {
+  align-items: stretch;
+}
+
+.lebra-flexbox.lebra-flexbox-align-baseline {
+  align-items: baseline;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-start {
+  align-content: flex-start;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-end {
+  align-items: flex-end;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-center {
+  align-items: center;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-between {
+  align-items: stretch;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-around {
+  align-items: baseline;
+}
+
+.lebra-flexbox.lebra-flexbox-align-content-stretch {
+  align-items: baseline;
+}
+
+.lebra-flexbox .lebra-flexbox-item {
+  box-sizing: border-box;
+  flex: 1;
+  margin-left: 0.213333rem;
+  min-width: 0.133333rem;
+}
+
+.lebra-flexbox .lebra-flexbox-item:first-child {
+  margin-left: 0;
+}
+
+/* flexbox */
+
+.lebra-grid {
+  /*  .am-carousel {
+   .am-carousel-wrap-dot > span {
+     background: #dcdee3;
+   }
+
+   .am-carousel-wrap-dot-active > span {
+     background: #0ae;
+   }
+ } */
+}
+
+.lebra-grid .lebra-flexbox {
+  background: #fff;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item {
+  margin-left: 0;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item.lebra-grid-item {
+  position: relative;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item.lebra-grid-item-active .lebra-grid-item-content {
+  background-color: #ddd;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem 0;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content .lebra-grid-item-inner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content .lebra-grid-item-inner-content .lebra-grid-icon {
+  max-width: 100%;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content .lebra-grid-item-inner-content .lebra-grid-text {
+  margin-top: 0.12rem;
+  font-size: 0.16rem;
+  color: #000;
+  text-align: center;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content .lebra-grid-item-inner-content.column-num-3 .lebra-grid-text {
+  font-size: 0.213333rem;
+}
+
+.lebra-grid .lebra-flexbox .lebra-flexbox-item .lebra-grid-item-content .lebra-grid-item-inner-content.column-num-2 .lebra-grid-text {
+  margin-top: 0.2rem;
+  font-size: 0.24rem;
+}
+
+.lebra-grid.lebra-grid-line {
+  position: relative;
+}
+
+.lebra-grid.lebra-grid-line:not(.lebra-grid-carousel) {
+  border-top: 1PX solid #ddd;
+  border-right: 1PX solid #ddd;
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel) {
+    border-top: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel)::before {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 1PX;
+    transform-origin: 50% 0;
+    transform: scaleY(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel)::before {
+    transform: scaleY(0.33);
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel) {
+    border-right: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel)::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 1PX;
+    height: 100%;
+    background: #ddd;
+    transform-origin: 100% 50%;
+    transform: scaleX(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line:not(.lebra-grid-carousel)::after {
+    transform: scaleX(0.33);
+  }
+}
+
+.lebra-grid.lebra-grid-line .lebra-flexbox {
+  position: relative;
+  border-bottom: 1PX solid #ddd;
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox {
+    border-bottom: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1PX;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox::after {
+    transform: scaleY(0.33);
+  }
+}
+
+.lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item {
+  position: relative;
+}
+
+.lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:first-child {
+  border-left: 1PX solid #ddd;
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:first-child {
+    border-left: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:first-child::before {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 1PX;
+    height: 100%;
+    transform-origin: 100% 50%;
+    transform: scaleX(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:first-child::before {
+    transform: scaleX(0.33);
+  }
+}
+
+.lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:not(:last-child) {
+  border-right: 1PX solid #ddd;
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:not(:last-child) {
+    border-right: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 1PX;
+    height: 100%;
+    background: #ddd;
+    transform-origin: 100% 50%;
+    transform: scaleX(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-line .lebra-flexbox .lebra-flexbox-item:not(:last-child)::after {
+    transform: scaleX(0.33);
+  }
+}
+
+.lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page {
+  border-top: 1PX solid #ddd;
+  border-right: 1PX solid #ddd;
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page {
+    border-top: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page::before {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: 1PX;
+    transform-origin: 50% 0;
+    transform: scaleY(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page::before {
+    transform: scaleY(0.33);
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page {
+    border-right: none;
+  }
+
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page::after {
+    content: '';
+    position: absolute;
+    background-color: #ddd;
+    display: block;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 1PX;
+    height: 100%;
+    background: #ddd;
+    transform-origin: 100% 50%;
+    transform: scaleX(0.5);
+  }
+}
+
+@media (min-resolution: 2dppx) and (min-resolution: 3dppx) {
+  html:not([data-scale]) .lebra-grid.lebra-grid-carousel .lebra-grid-carousel-page::after {
+    transform: scaleX(0.33);
+  }
+}
+
+.lebra-grid.lebra-grid-square .lebra-grid-item:before {
+  display: block;
+  content: ' ';
+  padding-bottom: 100%;
+}
+
+.lebra-grid.lebra-grid-square .lebra-grid-item .lebra-grid-item-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lebra-grid.lebra-grid-square .lebra-grid-item .lebra-grid-item-inner-content {
+  height: 100%;
+}
+
+.lebra-grid.lebra-grid-square .lebra-grid-item .lebra-grid-item-inner-content .lebra-grid-icon {
+  margin-top: 0.12rem;
+  width: 28%!important;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import './GridFlex.less';
+
 
 const propsTypes = {
   direction: PropTypes.oneOf(['row','row-reverse','column','column-reverse']),
@@ -28,7 +28,7 @@ export default class GridFlex extends React.Component{
     super(props);
     this.Item;
   }
-  
+
   render() {
     let {
       direction, wrap, justify, align, alignContent, className, children, prefixCls, style, ...restProps,

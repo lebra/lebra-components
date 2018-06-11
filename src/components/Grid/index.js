@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import GridFlex from './GridFlex';
 import GridFlexItem from './GridFlexItem';
 //import TouchFeedback from 'rmc-feedback';
-import './index.less';
 
 const propTypes = {
   data:  PropTypes.array,
@@ -20,7 +19,7 @@ const propTypes = {
   //activeClassName: PropTypes.string,
   //activeStyle:PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
  //activeStyle:PropTypes.object,
-  
+
 }
 
 const defaultProps = {
@@ -41,14 +40,14 @@ class Grid extends React.Component{
       initialSlideWidth: 0, // only used in carousel model
   	}
   }
- 
+
 
   componentDidMount() {
     this.setState({
       initialSlideWidth: document.documentElement.clientWidth,
     });
   }
-  
+
   renderItem = (dataItem, index, columnNum, renderItem) => {
     const { prefixCls } = this.props;
     let itemEl = null;

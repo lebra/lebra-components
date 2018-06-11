@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import {TweenLite , TweenMax } from "../TweenMax.min.js";
 import {findDOMNode} from "react-dom";
 
-import "./index.less";
 import loadingImg from "./loading.png";
 import loadedImg from "./arrow.png";
 

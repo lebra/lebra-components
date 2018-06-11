@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 import {findDOMNode} from "react-dom";
 import TweenLite from "../TweenMax.min.js";
-import "./index.less";
 import loadingImg from "./loadingPost.gif";
 import loadLogp from "./loading.gif"
 

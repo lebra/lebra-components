@@ -1,6 +1,9 @@
 @import "../../style/theme/default";
 @import "../../style/mixins";
 
+@import "./TopRefresh/index";
+@import "./BottomRefresh/index";
+
 html, body {
     width: 100%;
     height: 100%;
@@ -19,31 +22,31 @@ html, body {
     overflow: hidden;
     position: relative;
   }
-  
+
   .ws-kai {
     font-family: Kai, "Kaiti SC", KaiTi, BiauKai, Georgia, "Times New Roman", Times, "FontAwesome", serif;
   }
-  
+
   .ws-monospace {
     font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
   }
-  
+
   .ws-hei {
     font-family: STHeiti, SimHei, sans-serif;
   }
-  
+
   .ws-hidden {
     display: none !important;
   }
-  
+
   .ws-invisible {
     visibility: hidden !important;
   }
-  
+
   p {
     margin: 0 0;
   }
-  
+
   .ws-abs-full-size {
     position: absolute;
     top: 0;
@@ -51,7 +54,7 @@ html, body {
     right: 0;
     bottom: 0;
   }
-  
+
   .ws-clearfix {
     zoom: 1;
     &:after {
@@ -62,21 +65,21 @@ html, body {
       visibility: hidden;
     }
   }
-  
+
   .ws-no-tap-highlight {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-  
+
   .ws-link {
     text-decoration: none;
     color: inherit;
     -webkit-appearance: none;
   }
-  
+
   .ws-nav-link {
     .ws-link;
   }
-  
+
   .ws-input {
     width: 100%;
     border: 0;
@@ -91,11 +94,11 @@ html, body {
     padding: 0;
     .ws-no-tap-highlight;
   }
-  
+
   .ws-table-cell {
     display: table-cell;
   }
-  
+
   .ws-scroller {
     position: absolute;
     z-index: 1;
@@ -116,21 +119,21 @@ html, body {
     -ms-text-size-adjust: none;
     text-size-adjust: none;
   }
-  
+
   .ws-btn {
     outline: 0;
   }
-  
+
   .ws-mask {
     .ws-abs-full-size;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
   }
-  
+
   .ws-pull-loading {
     width: 100%;
     height: 70px;
-  
+
     .loading {
       width: 146px;
       height: 70px;
@@ -150,7 +153,7 @@ html, body {
       }
     }
   }
-  
+
   .ws-scroll-y {
     overflow-y: scroll;
     overflow-x: hidden;
@@ -172,11 +175,11 @@ html, body {
     -ms-text-size-adjust: none;
     text-size-adjust: none;
   }
-  
+
   .ws-super-image-box {
     position: relative;
     overflow: hidden;
-  
+
     .ws-loading-img {
       width: 100% !important;
       height: auto !important;
@@ -191,19 +194,19 @@ html, body {
     width: 100%;
     height: 100%;
   }
-  
+
   .ws-thumbnail-image-box {
     overflow: hidden;
     position: relative;
     width: 100%;
     height: 100%;
   }
-  
-  
+
+
   body {
     font-size: 12px;
   }
-  
+
   .ws-imgfile-in {
     width: 100%;
     height: 100%;
