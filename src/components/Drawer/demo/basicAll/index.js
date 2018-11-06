@@ -31,7 +31,7 @@ class BaseDemo extends Component {
                     <div className="button" onClick={e=>this.changePos('bottom')}>bottom</div>
                     <h1>当前drawer的位置是{this.state.pos}</h1>
                 </div>
-                <Drawer placement={this.state.pos}>
+                <Drawer placement={this.state.pos} >
                     <div style={drawerStyle}>
                         这里是drawer内容哈哈哈
                         这里是drawer内容哈哈哈

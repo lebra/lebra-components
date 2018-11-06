@@ -9,12 +9,12 @@ class BaseDemo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-           level:['.main']
+           level:"all"
         }
     }
-    changeLevel = () =>{
+    changeLevel = (type) =>{
         this.setState({
-            level:!this.state.level?['.main']:null
+            level:type
         })
     }
     render() {
@@ -24,8 +24,13 @@ class BaseDemo extends Component {
                 <div className="navbar">这里是navbar</div>
                 <div className="main">
                     <h1 className="">正文的内容</h1>
-                    <div className="button" onClick={this.changeLevel}>点击修改level</div>
-                    <h1>{!this.state.level?'都不移动':'正文移动'}</h1>
+                    <div className="button" onClick={e=>this.changeLevel('all')}>level是all</div>
+                    <div className="button" onClick={e=>this.changeLevel('.main')}>level是main</div>
+                    <div className="button" onClick={e=>this.changeLevel(null)}>level是null</div>
+                    {this.state.level === 'all' && <h2>level是all，正文和nav随drawer移动</h2>}
+                    {this.state.level === '.main' && <h2>level是.main，正文随drawer移动</h2>}
+                    {this.state.level ===  null && <h2>level是null，都不随drawer移动</h2>}
+
                 </div>
                 <Drawer width="200px" level={this.state.level}>
                     <div

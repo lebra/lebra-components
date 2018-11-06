@@ -164,40 +164,12 @@ class Drawer extends React.PureComponent {
             });
         }
     }
-
-    onMaskTouchEnd = e => {
-        this.props.onMaskClick(e);
-        this.onTouchEnd(e, true);
-    };
-
-    onIconTouchEnd = e => {
-        this.props.onHandleClick(e);
-        this.onTouchEnd(e);
-    };
-    onTouchEnd = (e, close) => {
-        if (this.props.open !== undefined) {
-            return;
-        }
-        const open = close || this.state.open;
-        this.isOpenChange = true;
-        this.setState({
-            open: !open,
-        });
-    };
-
-    onWrapperTransitionEnd = (e) => {
-        if (e.target === this.contentWrapper) {
-            this.dom.style.transition = '';
-            if (!this.state.open && this.getCrrentDrawerSome()) {
-                document.body.style.overflowX = '';
-                if (this.maskDom) {
-                    this.maskDom.style.left = '';
-                    this.maskDom.style.width = '';
-                }
-            }
-        }
-    }
-
+    /**
+     * getParentAndLevelDom:获取drawer的parent和parent下面的leveldom,
+     * this.parent = getContainer, this.levelDom=this.parent.children
+     * this.defaultGetContainer:创建drawer div，并将其追加到this.parent上
+     * this.container = drawer
+     */
     getDefault = props => {
         this.getParentAndLevelDom(props);
         if (props.getContainer || props.parent) {
@@ -205,12 +177,7 @@ class Drawer extends React.PureComponent {
         }
     };
 
-    getCrrentDrawerSome = () => !Object.keys(currentDrawer).some(key => currentDrawer[key]);
-
-    getContainer = () => {
-        return this.container;
-    };
-
+   
     getParentAndLevelDom = props => {
         if (windowIsUndefined) {
             return;
@@ -249,6 +216,29 @@ class Drawer extends React.PureComponent {
         }
     };
 
+   
+    defaultGetContainer = () => {
+        if (windowIsUndefined) {
+            return null;
+        }
+        const container = document.createElement('div');
+        this.parent.appendChild(container);
+        if (this.props.wrapperClassName) {
+            container.className = this.props.wrapperClassName;
+        }
+        return container;
+    };
+
+    getCrrentDrawerSome = () => !Object.keys(currentDrawer).some(key => currentDrawer[key]);
+
+    getContainer = () => {
+        return this.container;
+    };
+    
+    /**
+     *  为this.levelDom的每一层添加动画样式,levelDom:是除去drawer的其他div
+     *  为 document.body, this.maskDom, this.handlerdom, this.contentDom 添加禁止滚动的事件
+     */
     setLevelDomTransform = (open, openTransition, placementName, value) => {
         const { placement, levelMove, duration, ease, onChange } = this.props;
         if (!windowIsUndefined) {
@@ -271,36 +261,8 @@ class Drawer extends React.PureComponent {
             // 处理 body 滚动
             const eventArray = ['touchstart'];
             const domArray = [document.body, this.maskDom, this.handlerdom, this.contentDom];
-            // const right = getScrollBarSize(1);
-            // let widthTransition = `width ${duration} ${ease}`;
-            // const trannsformTransition = `transform ${duration} ${ease}`;
             if (open && document.body.style.overflow !== 'hidden') {
                 document.body.style.overflow = 'hidden';
-                // if (right) {
-                //     document.body.style.position = 'relative';
-                //     document.body.style.width = `calc(100% - ${right}px)`;
-                //     this.dom.style.transition = 'none';
-                //     switch (placement) {
-                //         case 'right':
-                //             this.dom.style.transform = `translateX(-${right}px)`;
-                //             this.dom.style.msTransform = `translateX(-${right}px)`;
-                //             break;
-                //         case 'top':
-                //         case 'bottom':
-                //             this.dom.style.width = `calc(100% - ${right}px)`;
-                //             this.dom.style.transform = 'translateZ(0)';
-                //             break;
-                //         default:
-                //             break;
-                //     }
-                //     clearTimeout(this.timeout);
-                //     this.timeout = setTimeout(() => {
-                //         this.dom.style.transition = `${trannsformTransition},${widthTransition}`;
-                //         this.dom.style.width = '';
-                //         this.dom.style.transform = '';
-                //         this.dom.style.msTransform = '';
-                //     });
-                //}
                 // 手机禁滚
                 domArray.forEach((item, i) => {
                     if (!item) {
@@ -315,47 +277,6 @@ class Drawer extends React.PureComponent {
                 });
             } else if (this.getCrrentDrawerSome()) {
                 document.body.style.overflow = '';
-                // if ((this.isOpenChange || openTransition) && right) {
-                //     document.body.style.position = '';
-                //     document.body.style.width = '';
-                //     if (transitionStr) {
-                //         document.body.style.overflowX = 'hidden';
-                //     }
-                //     this.dom.style.transition = 'none';
-                //     let heightTransition;
-                //     switch (placement) {
-                //         case 'right': {
-                //             this.dom.style.transform = `translateX(${right}px)`;
-                //             this.dom.style.msTransform = `translateX(${right}px)`;
-                //             this.dom.style.width = '100%';
-                //             widthTransition = `width 0s ${ease} ${duration}`
-                //             if (this.maskDom) {
-                //                 this.maskDom.style.left = `-${right}px`;
-                //                 this.maskDom.style.width = `calc(100% + ${right}px)`;
-                //             }
-                //             break;
-                //         }
-                //         case 'top':
-                //         case 'bottom': {
-                //             this.dom.style.width = `calc(100% + ${right}px)`;
-                //             this.dom.style.height = '100%';
-                //             this.dom.style.transform = 'translateZ(0)';
-                //             heightTransition = `height 0s ${ease} ${duration}`
-                //             break;
-                //         }
-                //         default:
-                //             break;
-                //     }
-                //     clearTimeout(this.timeout);
-                //     this.timeout = setTimeout(() => {
-                //         this.dom.style.transition = `${trannsformTransition},${
-                //             heightTransition ? `${heightTransition},` : ''}${widthTransition}`;
-                //         this.dom.style.transform = '';
-                //         this.dom.style.msTransform = '';
-                //         this.dom.style.width = '';
-                //         this.dom.style.height = '';
-                //     });
-                // }
                 domArray.forEach((item, i) => {
                     if (!item) {
                         return;
@@ -376,6 +297,11 @@ class Drawer extends React.PureComponent {
         }
     };
 
+    /**
+     * return整个drawer框架，并添加动画效果
+     * this.dom=整个drawer,  this.maskDom=mask的dom , 
+     * this.contentWrapper, this.contentDom=drawer内部具体内容的dom
+     */
     getChildToRender = open => {
         const {
             className,
@@ -472,13 +398,12 @@ class Drawer extends React.PureComponent {
 
         this.props.open !== undefined ? this.props.open : this.state.open
     )
-
+    /**
+     * 增加 rect。
+     * 当父级 dom 的 overflow 未开启滚动时，scrollLeft 或 scrollTop 为 0, 而 scrollWidth 增加了，
+     * 父级是跟随子级的 rect, 直到父级设定了滚动.
+     */ 
     getTouchParentScroll = (root, currentTarget, differX, differY) => {
-        /**
-         * 增加 rect。
-         * 当父级 dom 的 overflow 未开启滚动时，scrollLeft 或 scrollTop 为 0, 而 scrollWidth 增加了，
-         * 父级是跟随子级的 rect, 直到父级设定了滚动.
-         */
         const rect = currentTarget.getBoundingClientRect();
         if (!currentTarget) {
             return false;
@@ -532,17 +457,39 @@ class Drawer extends React.PureComponent {
         e.target.style.transition = '';
     };
 
-    defaultGetContainer = () => {
-        if (windowIsUndefined) {
-            return null;
-        }
-        const container = document.createElement('div');
-        this.parent.appendChild(container);
-        if (this.props.wrapperClassName) {
-            container.className = this.props.wrapperClassName;
-        }
-        return container;
+    onMaskTouchEnd = e => {
+        this.props.onMaskClick(e);
+        this.onTouchEnd(e, true);
     };
+
+    onIconTouchEnd = e => {
+        this.props.onHandleClick(e);
+        this.onTouchEnd(e);
+    };
+    onTouchEnd = (e, close) => {
+        if (this.props.open !== undefined) {
+            return;
+        }
+        const open = close || this.state.open;
+        this.isOpenChange = true;
+        this.setState({
+            open: !open,
+        });
+    };
+
+    onWrapperTransitionEnd = (e) => {
+        if (e.target === this.contentWrapper) {
+            this.dom.style.transition = '';
+            if (!this.state.open && this.getCrrentDrawerSome()) {
+                document.body.style.overflowX = '';
+                if (this.maskDom) {
+                    this.maskDom.style.left = '';
+                    this.maskDom.style.width = '';
+                }
+            }
+        }
+    }
+
 
     render() {
         const { getContainer, wrapperClassName } = this.props;
@@ -564,7 +511,7 @@ class Drawer extends React.PureComponent {
         if (!this.container || !open && !this.firstEnter) {
             return null;
         }
-        // suppport react15
+        // not suppport react15
         if (!IS_REACT_16) {
             console.warn('react版本需要是16及其以上')
             return null;
